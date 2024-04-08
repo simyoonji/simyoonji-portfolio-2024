@@ -196,10 +196,13 @@ input::-webkit-search-results-decoration {
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8196078431);
+  background-color: rgba(0, 0, 0, 0.7);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.2s ease, visibility 0.2s ease;
+  -webkit-transition: opacity 0.2s ease, visibility 0.2s ease;
+  -moz-transition: opacity 0.2s ease, visibility 0.2s ease;
+  -o-transition: opacity 0.2s ease, visibility 0.2s ease;
   z-index: 9998;
 }
 #header .header-nav {
@@ -284,7 +287,7 @@ input::-webkit-search-results-decoration {
   left: 50%;
   top: 10%;
   transform: translateX(-50%);
-  max-width: 124rem;
+  max-width: 100rem;
 }
 #main .title::after {
   display: block;
@@ -296,7 +299,7 @@ input::-webkit-search-results-decoration {
 }
 #main .title div {
   width: 50%;
-  height: 10rem;
+  height: 9rem;
 }
 #main .title div:nth-of-type(1) {
   width: 50%;
@@ -320,6 +323,7 @@ input::-webkit-search-results-decoration {
 
 .profile {
   position: relative;
+  /* skills */
 }
 .profile-inner {
   display: flex;
@@ -328,15 +332,28 @@ input::-webkit-search-results-decoration {
   margin: 0 auto;
 }
 .profile-about {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 40%;
 }
+.profile-about::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 6rem;
+  width: 100%;
+  height: 0.2rem;
+  background-color: #e2edff;
+}
 .profile-about h2 {
-  padding: 1rem 0;
-  box-sizing: border-box;
-  white-space: nowrap;
+  position: absolute;
+  left: 0;
+  top: 2rem;
   color: #74a9ec;
   font-family: "EF_Rebecca";
-  border-bottom: 0.2rem double #e2edff;
 }
 .profile-about ul {
   position: relative;
@@ -346,16 +363,13 @@ input::-webkit-search-results-decoration {
 }
 .profile-about ul li:nth-of-type(1) {
   width: 100%;
-  padding: 5rem 0 3rem 0;
+  padding: 3rem 0 3rem 0;
   box-sizing: border-box;
   text-align: center;
   transition: padding 0.2s ease;
-  /* desktop */
-}
-@media screen and (max-width: 1200px) {
-  .profile-about ul li:nth-of-type(1) {
-    padding: 4rem 0 2rem 0;
-  }
+  -webkit-transition: padding 0.2s ease;
+  -moz-transition: padding 0.2s ease;
+  -o-transition: padding 0.2s ease;
 }
 .profile-about ul li:nth-of-type(1) img {
   width: 27rem;
@@ -390,7 +404,7 @@ input::-webkit-search-results-decoration {
   display: none;
 }
 .profile-about ul li:nth-of-type(2) dl dd {
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 2rem 0;
   font-size: 2rem;
   font-weight: 600;
 }
@@ -505,6 +519,211 @@ input::-webkit-search-results-decoration {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 1rem;
   border-radius: 2rem;
+}
+.profile .skills-modal {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 5;
+}
+.profile .skills-contents {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 59rem;
+  border-radius: 2rem;
+  background-color: #e2edff;
+  z-index: 6;
+  overflow: hidden;
+}
+.profile .skills-contents h4 {
+  position: relative;
+  height: 7%;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  line-height: 3.9rem;
+  font-size: 2rem;
+  font-style: italic;
+  color: #fff;
+  background-color: #74a9ec;
+}
+.profile .skills-contents h4::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  background: url(../img/star-yellow.png) center center no-repeat;
+  background-size: contain;
+}
+.profile .skills-inner {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  height: 93%;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+.profile .skills-inner ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 5rem 0 0;
+}
+.profile .skills-inner ul li {
+  display: flex;
+  align-items: center;
+}
+.profile .skills-inner ul li img {
+  width: 5rem;
+  height: 5rem;
+  margin: 0 2rem 0 0;
+}
+.profile .skills-inner ul li p {
+  position: relative;
+  width: 35rem;
+  height: 1.5rem;
+  border-radius: 1rem;
+  background-color: #fff;
+}
+.profile .skills-inner ul li p::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 1rem;
+  background-color: #74a9ec;
+  height: 1.5rem;
+}
+.profile .skills-inner ul li:nth-of-type(n+3):nth-of-type(-n+8) img {
+  border-radius: 1rem;
+}
+.profile .skills-inner ul li:nth-of-type(1) p::after {
+  animation: photoShopGage 1.6s forwards;
+}
+.profile .skills-inner ul li:nth-of-type(2) p::after {
+  animation: AiGage 1.6s forwards;
+}
+.profile .skills-inner ul li:nth-of-type(3) p::after {
+  animation: HtmlGage 2.5s forwards;
+}
+.profile .skills-inner ul li:nth-of-type(4) p::after {
+  animation: CssGage 2s forwards;
+}
+.profile .skills-inner ul li:nth-of-type(5) p::after {
+  animation: ScssGage 1.7s forwards;
+}
+.profile .skills-inner ul li:nth-of-type(6) p::after {
+  animation: JsGage 1s forwards;
+}
+.profile .skills-inner ul li:nth-of-type(7) p::after {
+  animation: FigmaGage 1.6s forwards;
+}
+.profile .skills-inner ul li:nth-of-type(8) p::after {
+  animation: GithubGage 1.6s forwards;
+}
+.profile .skills-inner-rt {
+  display: flex;
+}
+.profile .skills-inner-rt .motions {
+  display: flex;
+  flex-direction: column;
+  margin: 0 2rem 0 0;
+}
+.profile .skills-inner-rt .motions button {
+  width: 5rem;
+  height: 5rem;
+  margin: 0 0 1.5rem 0;
+  border-radius: 1rem;
+}
+.profile .skills-inner-rt .motions button:nth-of-type(1) {
+  background: url(../img/normal.png) center center no-repeat;
+  background-size: contain;
+}
+.profile .skills-inner-rt .motions button:nth-of-type(2) {
+  background: url(../img/Dash.png) center center no-repeat;
+  background-size: contain;
+}
+.profile .skills-inner-rt .motions button:nth-of-type(3) {
+  background: url(../img/Dance.png) center center no-repeat;
+  background-size: contain;
+}
+.profile .skills-inner-rt .motions button:hover {
+  box-shadow: 0 0 0 0.2rem #74a9ec;
+}
+.profile .skills-inner-rt dl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile .skills-inner-rt dl dt {
+  width: 25rem;
+  height: 35rem;
+  margin: 0 0 2rem 0;
+  border-radius: 2rem;
+  transition: background 0.1s ease-in;
+  -webkit-transition: background 0.1s ease-in;
+  -moz-transition: background 0.1s ease-in;
+  -o-transition: background 0.1s ease-in;
+}
+.profile .skills-inner-rt dl .changeMotion-normal {
+  background: url(../img/이모지-normal.gif) center center no-repeat;
+  background-size: cover;
+}
+.profile .skills-inner-rt dl .changeMotion-dash {
+  background: url(../img/이모지-dash.gif) center center no-repeat;
+  background-size: cover;
+}
+.profile .skills-inner-rt dl .changeMotion-dance {
+  background: url(../img/이모지-dance.gif) center center no-repeat;
+  background-size: cover;
+}
+.profile .skills-inner-rt dl dd {
+  width: 100%;
+  padding: 0.8rem 0;
+  margin: 0 0 0.8rem 0;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  font-family: "GangwonState";
+  color: #2e2e2e;
+}
+.profile .skills-inner-rt dl dd:nth-of-type(2) {
+  color: rgb(254, 137, 164);
+}
+.profile .skills-inner-rt .skills-close {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: 2rem;
+  color: #fff;
+  background-color: #74a9ec;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  -webkit-transition: color 0.2s ease, background-color 0.2s ease;
+  -moz-transition: color 0.2s ease, background-color 0.2s ease;
+  -o-transition: color 0.2s ease, background-color 0.2s ease;
+  font-size: 2rem;
+  font-style: italic;
+}
+.profile .skills-inner-rt .skills-close:hover {
+  color: #74a9ec;
+  background-color: #fff;
+}
+.profile .block {
+  display: block;
 }
 
 @keyframes cloud {

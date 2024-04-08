@@ -36,7 +36,7 @@
         left: 50%;
         top: 10%;
         transform: translateX(-50%);
-        max-width: 124rem;
+        max-width: 100rem;
 
         &::after {
          @include clearFix();
@@ -48,7 +48,7 @@
 
         div {
             width: 50%;
-            height: 10rem;
+            height: 9rem;
 
             &:nth-of-type(1) {
                width: 50%;

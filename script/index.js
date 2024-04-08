@@ -28,87 +28,92 @@ aAll.forEach((item) => {
 });
 
 // menu
-const headerMenuBox = document.querySelector('.header');
-const headerMenuBoxNav = headerMenuBox.querySelector('nav');
-const headerMenuList = headerMenuBox.querySelectorAll('li');
-const headerMenuBtn = document.querySelector('header > button');
-const headerMenuBtnText = headerMenuBtn.querySelector('span');
+const MenuBox = document.querySelector('.header');
+const MenuBoxNav = MenuBox.querySelector('nav');
+const MenuBoxList = MenuBox.querySelectorAll('li');
+const MenuOpen = document.querySelector('header > button');
+const headerMenuBtnText = MenuOpen.querySelector('span');
 const SHOW = 'show';
 
-headerMenuBtn.addEventListener('click', () => {
-    headerMenuBox.classList.toggle(SHOW);
+MenuOpen.addEventListener('click', () => {
+    MenuBox.classList.toggle(SHOW);
+    modalBg.classList.remove(BLOCK);
+    document.body.style.overflow = 'auto';
 
-    if (headerMenuBox.classList.contains(SHOW)) {
+    if (MenuBox.classList.contains(SHOW)) {
         headerMenuBtnText.innerText = 'close';
     } else {
         headerMenuBtnText.innerText = 'menu'; 
     }
 });
 
-headerMenuBox.addEventListener('click', (e) => {
-    if (!headerMenuBoxNav.contains(e.target)) {
-        headerMenuBox.classList.remove(SHOW);
+MenuBox.addEventListener('click', (e) => {
+    if (!MenuBoxNav.contains(e.target)) {
+        MenuBox.classList.remove(SHOW);
         headerMenuBtnText.innerText = 'menu'; 
     }
 });
 
-headerMenuList.forEach((e) => {
+MenuBoxList.forEach((e) => {
     e.addEventListener('click', () => {
-            headerMenuBox.classList.remove(SHOW);
+            MenuBox.classList.remove(SHOW);
             headerMenuBtnText.innerText = 'menu'; 
     });
 });
 
 // 클릭 이벤트 -> skills 열기
 const sectionProfile = document.getElementById('profile');
-const skillsBox = sectionProfile.querySelector('.profile-skills');
-const modalBg = sectionProfile.querySelector('.profile-modal-bg');
+const modalBg = sectionProfile.querySelector('.skills-modal');
+const skillsBox = sectionProfile.querySelector('.skills-contents');
 const skillsOpen = document.querySelector('.skillsOpen')
+const BLOCK = 'block';
 
 skillsOpen.addEventListener('click', () => {
-            modalBg.style.display = 'block';
-            skillsBox.style.display = 'block';
+            modalBg.classList.add(BLOCK);
             document.body.style.overflow = 'hidden';
         });
 
-// const skillsClose = document.querySelector('.skillsClose')
-//         .addEventListener('click', () => {
-//             modalBg.style.display = 'none';
-//             skillsBox.style.display = 'none';
-//             document.body.style.overflow = 'auto';
-//         });
-
-modalBg.addEventListener('click', () => {
-            modalBg.style.display = 'none';
-            skillsBox.style.display = 'none';
+const skillsClose = document.querySelector('.skills-close')
+        .addEventListener('click', () => {
+            modalBg.classList.remove(BLOCK);
             document.body.style.overflow = 'auto';
         });
 
+modalBg.addEventListener('click', (e) => {
+            if (!skillsBox.contains(e.target)) {
+                modalBg.classList.remove(BLOCK);
+                document.body.style.overflow = 'auto';
+            }
+        });
 
-// // skills 모션 변경
-// let motionImage = document.querySelector('.skills-right dt');
-// const MOTION_NORMAL = 'changeMotion-normal';
-// const MOTION_DASH = 'changeMotion-dash';
-// const MOTION_DANCE = 'changeMotion-dance';
 
-// // normal
-// document.querySelector('.motions > button:nth-of-type(1)')
-//         .addEventListener('click', () => {
-//             motionImage.classList.remove(MOTION_DASH);
-//             motionImage.classList.remove(MOTION_DANCE);
-//             motionImage.classList.add(MOTION_NORMAL);
-// });
-// // Dash
-// document.querySelector('.motions > button:nth-of-type(2)')
-//         .addEventListener('click', () => {
-//             motionImage.classList.remove(MOTION_NORMAL);
-//             motionImage.classList.remove(MOTION_DANCE);
-//             motionImage.classList.add(MOTION_DASH);
-// });
-// // Dance
-// document.querySelector('.motions > button:nth-of-type(3)')
-//         .addEventListener('click', () => {
-//             motionImage.classList.remove(MOTION_NORMAL);
-//             motionImage.classList.remove(MOTION_DASH);
-//             motionImage.classList.add(MOTION_DANCE);
-// });
+// skills 모션 변경
+let motionImage = document.querySelector('.skills-inner-rt dt');
+const MOTION_NORMAL = 'changeMotion-normal';
+const MOTION_DASH = 'changeMotion-dash';
+const MOTION_DANCE = 'changeMotion-dance';
+
+// normal
+ document.querySelector('.motions > button:nth-of-type(1)')
+         .addEventListener('click', () => {
+             motionImage.classList.remove(MOTION_DASH);
+             motionImage.classList.remove(MOTION_DANCE);
+
+             motionImage.classList.add(MOTION_NORMAL);
+ });
+// Dash
+document.querySelector('.motions > button:nth-of-type(2)')
+        .addEventListener('click', () => {
+            motionImage.classList.remove(MOTION_NORMAL);
+            motionImage.classList.remove(MOTION_DANCE);
+
+            motionImage.classList.add(MOTION_DASH);
+});
+// Dance
+document.querySelector('.motions > button:nth-of-type(3)')
+        .addEventListener('click', () => {
+            motionImage.classList.remove(MOTION_NORMAL);
+            motionImage.classList.remove(MOTION_DASH);
+            
+            motionImage.classList.add(MOTION_DANCE);
+});
