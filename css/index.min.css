@@ -351,7 +351,7 @@ input::-webkit-search-results-decoration {
 .profile-about h2 {
   position: absolute;
   left: 0;
-  top: 2rem;
+  top: 1.5rem;
   color: #74a9ec;
   font-family: "EF_Rebecca";
 }
@@ -724,6 +724,41 @@ input::-webkit-search-results-decoration {
 }
 .profile .block {
   display: block;
+}
+
+.publishing {
+  background-color: pink;
+}
+.publishing-inner {
+  position: relative;
+  max-width: 124rem;
+  height: 100%;
+  margin: 0 auto;
+}
+.publishing-inner h2 {
+  padding: 1.5rem 0;
+  margin: 0 0 5rem 0;
+  box-sizing: border-box;
+  color: #74a9ec;
+  font-family: "EF_Rebecca";
+  border: 1px solid red;
+}
+.publishing .swiper {
+  width: 100%;
+  height: 100%;
+  border: 1px solid red;
+}
+.publishing .swiper-slide {
+  cursor: none;
+}
+.publishing .swiper-pagination {
+  cursor: none;
+}
+.publishing .swiper-button-prev {
+  cursor: none;
+}
+.publishing .swiper-button-next {
+  cursor: none;
 }
 
 @keyframes cloud {

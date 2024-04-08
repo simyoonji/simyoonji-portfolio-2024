@@ -117,3 +117,4 @@ document.querySelector('.motions > button:nth-of-type(3)')
             
             motionImage.classList.add(MOTION_DANCE);
 });
+

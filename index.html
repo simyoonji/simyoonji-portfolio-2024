@@ -9,6 +9,8 @@
     <link rel="icon" href="/favicon.png" type="image/x-icon">
     <!-- font -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- css -->
     <link rel="stylesheet" href="./css/index.min.css">
    
@@ -34,7 +36,7 @@
                         <a href="#profile" class="BoldText">profile</a>
                     </li>
                     <li>
-                        <a href="#contents" class="BoldText">contents</a>
+                        <a href="#publishing" class="BoldText">publishing</a>
                     </li>
                     <li>
                         <a href="#" class="BoldText">footer</a>
@@ -241,17 +243,38 @@
         </div>
     </section>
 
-
-
     <!-- contents -->
-    <section id="contents" class="contents">
+    <section id="publishing" class="publishing">
         <!-- inner -->
-        <div class="contents-inner">
+        <div class="publishing-inner">
+            <h2>
+                publishing
+            </h2>
 
+            <!-- Slider main container -->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                </div>
+
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+            
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
         </div>
     </section>
 
+      <!-- swiper -->
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
       <!-- script -->
       <script src="./script/index.js" defer></script>
+      <script src="./script/slide.js" defer></script>
 </body>
 </html>
