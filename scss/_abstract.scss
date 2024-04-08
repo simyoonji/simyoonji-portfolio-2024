@@ -1,0 +1,54 @@
+@mixin absolute ($lf:50%, $rt:50%){
+    position: absolute;
+    left: $lf;
+    top: $rt;
+}
+@mixin clearFix(){
+    display: block;
+	content: '';
+	clear: both;
+}
+
+// variables 
+$color-primary: #74a9ec;
+$color-sub: #e2edff;
+$color-sub-pink : rgb(254, 137, 164);
+
+/* media */
+@mixin mq($screen-width) {
+    @if $screen-width == "1200" {
+        /* desktop */
+        @media screen and (max-width:1200px){ 
+            @content;
+        }
+    }    
+    @else if $screen-width == "980" {
+        /* tablet */
+        @media screen and (max-width:980px){
+            @content;
+        }
+    }
+    @else if $screen-width == "767" {
+        /* mobile */
+        @media screen and (max-width:767px){
+            @content;
+        }
+    }
+    @else if $screen-width == "600" {
+        /* mobile */
+        @media screen and (max-width:600px){
+            @content;
+        }
+    }
+    @else if $screen-width == "480" {
+        /* mobile */
+        @media screen and (max-width:480){
+            @content;
+        }
+    }
+    @else if $screen-width == "320" {
+        @media screen and (max-width:320px){
+            @content;
+        }
+    }
+}

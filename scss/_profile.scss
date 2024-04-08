@@ -1,0 +1,228 @@
+.profile {
+   position: relative;
+
+   &-inner {
+      display: flex;
+      max-width: 124rem;
+      height: 100%;
+      margin: 0 auto;
+   }
+   
+   &-about {
+      width: 40%;
+      
+   h2 {
+      padding: 1rem 0;
+      box-sizing: border-box;
+      white-space: nowrap;
+      color: $color-primary;
+      font-family: 'EF_Rebecca';
+      border-bottom: .2rem double $color-sub;
+   }
+
+   ul {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      li {
+         &:nth-of-type(1) {
+            width: 100%;
+            padding: 5rem 0 3rem 0;
+            box-sizing: border-box;
+            text-align: center;
+            transition: padding .2s ease;
+
+            @include mq('1200'){
+               padding: 4rem 0 2rem 0;
+            }
+
+            img {
+               width: 27rem;
+               border-radius: 3rem;
+               background: url('../img/그레인구름.jpg') 0 center / 120% repeat-x;
+               background: {
+                  size: cover;
+                  attachment: fixed;
+               };
+               animation: cloud 100s linear infinite alternate-reverse;
+            }
+         }
+
+         &:nth-of-type(2) {
+            h3 {
+               width: 100%;
+               padding: 0 0 3rem 0;
+               box-sizing: border-box;
+               text-align: center;
+               font-family: 'GangwonState';
+
+               @include mq('1200'){
+                  padding: 0 0 2rem 0;
+               }
+      
+               &::after {
+                  content: '(Sim Yoonji)';
+                  display: block;
+                  text-transform: none;
+               }
+            }
+      
+            dl {
+               white-space: nowrap;
+
+               dt {
+                  display: none;
+               }
+               dd {
+                  margin: 0 0 1.5rem 0;
+                 
+
+                  font : {
+                     size: 2rem;
+                     weight: 600;
+                  }
+      
+                  &::before {
+                     display: inline-block;
+                     color: $color-primary;
+                  }
+      
+                  &:nth-of-type(1){
+                     &::before {
+                        content: 'Birth';
+                        margin: 0 2.7rem 0 0;
+                     }
+                  }
+                  &:nth-of-type(2){
+                     &::before {
+                        content: 'Phone';
+                        margin: 0 1.7rem 0 0;
+                     }
+                  }
+                  &:nth-of-type(3){
+                     &::before {
+                        content: 'E-mail';
+                        margin: 0 1.4rem 0 0;
+                     }
+                  }
+               }
+            }
+         }
+         }
+      }
+   }
+
+   &-txt{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 60%;
+      padding: 5rem;
+      box-sizing: border-box;
+      background-color: #fff;
+      box-shadow: inset 0.5rem 0.4rem 1rem 0 #0000001c;
+
+      &-top {
+         box-sizing: border-box;
+
+         p {
+            display: inline-block;
+            position: relative;
+            left: 2rem;
+            z-index: 1;
+            font-size: 2.5rem;
+            color: $color-primary;
+
+            &::before {
+               content: '';
+               display: inline-block;
+               position: absolute;
+               left: -1.5rem;
+               top: -1.5rem;
+               background: url(../img/따옴표.png)center center no-repeat;
+               background-size: contain;
+               width: 2rem;
+               height: 2rem;
+               z-index: -1;
+            }
+
+            &::after {
+               content: '';
+               display: inline-block;
+               position: absolute;
+               right: -1rem;
+               bottom: 3rem;
+               background: url(../img/따옴표2.png)center center no-repeat;
+               background-size: contain;
+               width: 2rem;
+               height: 2rem;
+               z-index: -1;
+            }
+         }
+      }
+
+      &-bottom {
+         display: flex;
+         flex-direction: column;
+         position: relative;
+         text-transform: uppercase;
+
+         dl {
+            padding: 2rem;
+            box-sizing: border-box;
+
+            dt {
+               margin: 0 0 2rem 0;
+               font : {
+                  size: 2rem;
+                  weight: 600;
+               }
+               border-bottom: 2px solid $color-sub;
+               color: $color-primary;
+            }
+            
+            dd {
+               padding: 1rem 0;
+               box-sizing: border-box;
+
+               em {
+                  margin: 0 2rem 0 0;
+                  font-weight: 600;
+                  color: $color-primary;
+               }
+            }
+         }
+
+         .skillsOpen {
+            display: inline-block;
+            position: absolute;
+            right: 2rem;
+            bottom: 1rem;
+            width: 5rem;
+            height: 8rem;
+            background: url(../img/지팡이.png)center center no-repeat;
+            background-size: cover;
+            animation: skillsBtn 0.5s ease infinite alternate;
+
+            &::before {
+               content: 'skills';
+               display: inline-block;
+               position: absolute;
+               bottom: 0;
+               text-transform: uppercase;
+               font : {
+                  size : 1.4rem;
+                  style : italic;
+               }
+               color: $color-primary;
+               background-color: rgba(255, 255, 255, 0.9);
+               padding: 1rem;
+               border-radius: 2rem;
+            }
+          }
+      }
+   }
+}

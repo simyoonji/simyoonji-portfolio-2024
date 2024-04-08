@@ -1,0 +1,135 @@
+@keyframes cloud {
+    0%{
+       background-position: 0 0;
+    }
+    100% {
+       background-position: 3000px 0;
+   }
+ }
+ @keyframes island {
+    0%{
+        top: 70%;
+    }
+    100% {
+        top: 72%;
+   }
+ }
+ @keyframes title-1 {
+   0%{
+      opacity: 0;
+      top: -15%;
+   }
+   100% {
+      opacity: 1;
+      top: 15%;
+  }
+}
+@keyframes title-2 {
+   0%{
+      opacity: 0;
+      top: -5%;
+   }
+   100% {
+      opacity: 1;
+      top: 25%;
+  }
+}
+@keyframes headerBtn {
+   0%{
+      opacity: 0;
+      transform: rotate(0)
+   }
+   30% {
+      transform: rotate(-10deg);
+   }
+   60% {
+      transform: rotate(10deg);
+   }
+   100% {
+      opacity: 1;
+      transform: rotate(0deg);
+  }
+}
+ @keyframes star {
+   0%{
+      opacity: 0;
+      transform: scale(1);
+   }
+   100% {
+      opacity: 1;
+      transform: scale(2);
+  }
+}
+ /* about  */
+ @keyframes photoShopGage {
+    0%{
+       width: 0;
+    }
+    100%{
+       width: 30rem;
+    }
+ }
+ @keyframes AiGage {
+    0%{
+       width: 0;
+    }
+    100%{
+       width: 25rem;
+    }
+ }
+ @keyframes HtmlGage {
+    0%{
+       width: 0;
+    }
+    100%{
+       width: 34rem;
+    }
+ }
+ @keyframes CssGage {
+    0%{
+       width: 0;
+    }
+    100%{
+       width: 34rem;
+    }
+ }
+ @keyframes ScssGage {
+    0%{
+       width: 0;
+    }
+    100%{
+       width: 31.5rem;
+    }
+ }
+ @keyframes JsGage {
+    0%{
+       width: 0;
+    }
+    100%{
+       width: 23rem;
+    }
+ }
+ @keyframes FigmaGage {
+    0%{
+       width: 0;
+    }
+    100%{
+       width: 30rem;
+    }
+ }
+ @keyframes GithubGage {
+    0%{
+       width: 0;
+    }
+    100%{
+       width: 30rem;
+    }
+ }
+ @keyframes skillsBtn {
+   0% {
+      transform: translateY(0);
+  }
+  100% {
+      transform: translateY(-10px);
+  }
+}
