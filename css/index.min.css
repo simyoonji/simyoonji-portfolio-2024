@@ -164,31 +164,46 @@ input::-webkit-search-results-decoration {
 
 #header {
   position: fixed;
-  top: -5%;
-  right: 0%;
-  padding: 0 2rem;
-  box-sizing: border-box;
+  top: 1rem;
+  right: 2rem;
   z-index: 9970;
 }
 #header button {
   position: relative;
-  width: 15rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 2rem;
+  background-color: #e2edff;
   z-index: 9999;
-  animation: headerBtn 2s alternate forwards;
-}
-#header button img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 }
 #header button span {
-  content: "menu";
+  position: absolute;
+  right: 0.9rem;
+  width: 42%;
+  height: 0.53rem;
+  border-radius: 2rem;
+  background-color: #74a9ec;
+}
+#header button span::after {
+  content: "";
   display: inline-block;
   position: absolute;
-  left: 50%;
-  bottom: 18%;
-  transform: translateX(-50%);
-  color: rgba(255, 255, 255, 0.8196078431);
+  left: -1rem;
+  top: 0rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background-color: #74a9ec;
+}
+#header button span:nth-of-type(1) {
+  top: 1.1rem;
+}
+#header button span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+#header button span:nth-of-type(3) {
+  bottom: 1.1rem;
 }
 #header .header {
   position: fixed;
@@ -726,39 +741,92 @@ input::-webkit-search-results-decoration {
   display: block;
 }
 
-.publishing {
-  background-color: pink;
-}
-.publishing-inner {
-  position: relative;
+.projects-inner {
   max-width: 124rem;
   height: 100%;
   margin: 0 auto;
+  overflow: hidden;
 }
-.publishing-inner h2 {
-  padding: 1.5rem 0;
-  margin: 0 0 5rem 0;
-  box-sizing: border-box;
+.projects-inner h2 {
+  height: 8%;
+  line-height: 6.3rem;
   color: #74a9ec;
   font-family: "EF_Rebecca";
-  border: 1px solid red;
+  border-bottom: 0.3rem solid #e2edff;
 }
-.publishing .swiper {
+.projects .swiper {
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  height: 92%;
+}
+.projects .swiper-wrapper {
+  padding: 5rem 0;
+  box-sizing: border-box;
+}
+.projects .swiper-slide {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  background-color: #fff;
+  cursor: none;
+}
+.projects .swiper-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 100%;
-  border: 1px solid red;
 }
-.publishing .swiper-slide {
-  cursor: none;
+.projects .swiper-left h3 {
+  width: 80%;
+  margin: 0 0 4rem 0;
+  font-family: "EF_Rebecca";
 }
-.publishing .swiper-pagination {
-  cursor: none;
+.projects .swiper-left > div {
+  width: 80%;
+  margin: 0 0 4rem 0;
 }
-.publishing .swiper-button-prev {
-  cursor: none;
+.projects .swiper-left > div dl {
+  padding: 1.3rem 0;
+  box-sizing: border-box;
 }
-.publishing .swiper-button-next {
-  cursor: none;
+.projects .swiper-left > div dl dt {
+  margin: 0 0 0.3rem 0;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #444444;
+}
+.projects .swiper-left > div dl dd {
+  color: #666666;
+}
+.projects .swiper-left ul {
+  display: flex;
+  width: 80%;
+}
+.projects .swiper-left ul li {
+  font-size: 1.8rem;
+  border: 1px solid #74a9ec;
+  border-radius: 3rem;
+}
+.projects .swiper-left ul li a {
+  display: block;
+  width: 13rem;
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  color: #74a9ec;
+}
+.projects .swiper-left ul li:nth-of-type(1) {
+  margin: 0 1rem 0 0;
+}
+.projects .swiper picture {
+  position: relative;
+  height: 100%;
+}
+.projects .swiper picture img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 100%;
 }
 
 @keyframes cloud {
@@ -795,22 +863,6 @@ input::-webkit-search-results-decoration {
   100% {
     opacity: 1;
     top: 25%;
-  }
-}
-@keyframes headerBtn {
-  0% {
-    opacity: 0;
-    transform: rotate(0);
-  }
-  30% {
-    transform: rotate(-10deg);
-  }
-  60% {
-    transform: rotate(10deg);
-  }
-  100% {
-    opacity: 1;
-    transform: rotate(0deg);
   }
 }
 @keyframes star {

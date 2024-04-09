@@ -1,0 +1,110 @@
+.projects {
+    &-inner {
+        max-width: 124rem;
+        height: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+
+        h2 {
+            height: 8%;
+            line-height: 6.3rem;
+            color: $color-primary;
+            font-family: 'EF_Rebecca';
+            border-bottom: .3rem solid $color-sub;
+        }
+    }
+
+    .swiper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 92%;
+       
+        &-wrapper {
+            padding: 5rem 0;
+            box-sizing: border-box;
+        }
+
+        &-slide {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            background-color: #fff;
+            cursor: none;
+
+            &:nth-of-type(1) {
+            }
+            &:nth-of-type(2) {
+            }
+            &:nth-of-type(3) {
+            }
+        }
+
+        &-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+
+            h3 {
+                width: 80%;
+                margin: 0 0 4rem 0;
+                font-family: 'EF_Rebecca';
+            }
+
+            > div {
+                width: 80%;
+                margin: 0 0 4rem 0;
+
+                dl {
+                    padding: 1.3rem 0;
+                    box-sizing: border-box;
+
+                    dt {
+                        margin: 0 0 .3rem 0;
+                        font-size: 2rem;
+                        font-weight: 600;
+                        color: #444444;
+                    }
+                    dd {
+                        color: #666666;
+                    }
+                }
+            }
+
+            ul {
+                display: flex;
+                width: 80%;
+
+                li {
+                    font-size: 1.8rem;
+                    border: 1px solid $color-primary;
+                    border-radius: 3rem;
+
+                    a {
+                        display: block;
+                        width: 13rem;
+                        height: 4rem;
+                        line-height: 4rem;
+                        text-align: center;
+                        color: $color-primary;
+                    }
+
+                    &:nth-of-type(1) {
+                        margin: 0 1rem 0 0;
+                    }
+                }
+            }
+        }
+        picture {
+            position: relative;
+            height: 100%;
+
+            img {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                max-width: 100%;
+            }
+        }
+    }
+}

@@ -34,22 +34,6 @@
       top: 25%;
   }
 }
-@keyframes headerBtn {
-   0%{
-      opacity: 0;
-      transform: rotate(0)
-   }
-   30% {
-      transform: rotate(-10deg);
-   }
-   60% {
-      transform: rotate(10deg);
-   }
-   100% {
-      opacity: 1;
-      transform: rotate(0deg);
-  }
-}
  @keyframes star {
    0%{
       opacity: 0;

@@ -32,32 +32,23 @@ const MenuBox = document.querySelector('.header');
 const MenuBoxNav = MenuBox.querySelector('nav');
 const MenuBoxList = MenuBox.querySelectorAll('li');
 const MenuOpen = document.querySelector('header > button');
-const headerMenuBtnText = MenuOpen.querySelector('span');
 const SHOW = 'show';
 
 MenuOpen.addEventListener('click', () => {
     MenuBox.classList.toggle(SHOW);
     modalBg.classList.remove(BLOCK);
     document.body.style.overflow = 'auto';
-
-    if (MenuBox.classList.contains(SHOW)) {
-        headerMenuBtnText.innerText = 'close';
-    } else {
-        headerMenuBtnText.innerText = 'menu'; 
-    }
 });
 
 MenuBox.addEventListener('click', (e) => {
     if (!MenuBoxNav.contains(e.target)) {
         MenuBox.classList.remove(SHOW);
-        headerMenuBtnText.innerText = 'menu'; 
     }
 });
 
 MenuBoxList.forEach((e) => {
     e.addEventListener('click', () => {
             MenuBox.classList.remove(SHOW);
-            headerMenuBtnText.innerText = 'menu'; 
     });
 });
 
