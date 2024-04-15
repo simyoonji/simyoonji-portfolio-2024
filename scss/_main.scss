@@ -37,6 +37,7 @@
         top: 10%;
         transform: translateX(-50%);
         max-width: 100rem;
+        opacity: 0;
 
         &::after {
          @include clearFix();
@@ -64,14 +65,5 @@
             }
         }
  
-    }
-
-    p {
-      position: absolute;
-      left: 1%;
-      bottom: 1%;
-      color: #282828ab;
-      z-index: 6;
-      text-transform: uppercase;
     }
  }

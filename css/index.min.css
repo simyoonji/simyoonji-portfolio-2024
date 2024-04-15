@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap");
 html {
   font-size: 62.5%;
   font-family: "Lato", sans-serif;
@@ -41,7 +42,6 @@ em {
 
 section {
   width: 100%;
-  height: 100vh;
   overflow: hidden;
 }
 
@@ -55,15 +55,8 @@ span {
   display: inline-block;
 }
 
-.hide {
-  line-height: 0;
-  font-size: 1;
-  overflow: hidden;
-}
-
 h2 {
   font-size: 2.8rem;
-  text-transform: uppercase;
 }
 
 h3 {
@@ -143,12 +136,6 @@ input::-webkit-search-results-decoration {
 }
 
 @font-face {
-  font-family: "EF_Rebecca";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_Rebecca.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
   font-family: "GangwonState";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/GangwonState.woff2") format("woff2");
   font-weight: normal;
@@ -162,108 +149,31 @@ input::-webkit-search-results-decoration {
   text-transform: uppercase;
 }
 
-#header {
+nav {
   position: fixed;
-  top: 1rem;
   right: 2rem;
-  z-index: 9970;
-}
-#header button {
-  position: relative;
-  width: 5rem;
-  height: 5rem;
-  border-radius: 2rem;
-  background-color: #e2edff;
-  z-index: 9999;
-}
-#header button span {
-  position: absolute;
-  right: 0.9rem;
-  width: 42%;
-  height: 0.53rem;
-  border-radius: 2rem;
-  background-color: #74a9ec;
-}
-#header button span::after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  left: -1rem;
-  top: 0rem;
-  width: 0.6rem;
-  height: 0.6rem;
-  border-radius: 50%;
-  background-color: #74a9ec;
-}
-#header button span:nth-of-type(1) {
-  top: 1.1rem;
-}
-#header button span:nth-of-type(2) {
   top: 50%;
   transform: translateY(-50%);
+  z-index: 999;
 }
-#header button span:nth-of-type(3) {
-  bottom: 1.1rem;
-}
-#header .header {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
-  -webkit-transition: opacity 0.2s ease, visibility 0.2s ease;
-  -moz-transition: opacity 0.2s ease, visibility 0.2s ease;
-  -o-transition: opacity 0.2s ease, visibility 0.2s ease;
-  z-index: 9998;
-}
-#header .header-nav {
-  position: absolute;
-  left: 50%;
-  bottom: 15%;
-  transform: translateX(-50%);
-  width: 46rem;
-  padding: 3rem;
-  box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.3176470588);
-  border: 0.4rem double #fff;
-  border-radius: 2rem;
-}
-#header .header-menu {
+nav ul {
   display: grid;
   grid-template-columns: repeat(1fr, 1);
-  gap: 1rem;
-  border-radius: 2rem;
-}
-#header .header-menu li {
+  gap: 2.5rem;
   text-align: center;
-  border-radius: 2rem;
-  background-color: #e2edff;
-  box-shadow: inset 0 -0.4rem 0 0.1rem rgba(0, 0, 0, 0.2156862745);
 }
-#header .header-menu li:hover {
-  background-color: #74a9ec;
+nav ul li {
+  position: relative;
+  z-index: 998;
 }
-#header .header-menu li:hover a {
-  color: #e2edff;
+nav ul li:hover {
+  animation: bounce 0.5s linear;
 }
-#header .header-menu li:active {
-  background-color: rgb(254, 137, 164);
-}
-#header .header-menu li:active a {
-  color: #fff;
-}
-#header .header-menu li a {
-  padding: 2rem;
-  box-sizing: border-box;
-  color: #74a9ec;
-}
-#header .show {
-  opacity: 1;
-  visibility: visible;
+nav ul li a {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: pink;
+  border-radius: 50%;
 }
 
 #main {
@@ -303,6 +213,7 @@ input::-webkit-search-results-decoration {
   top: 10%;
   transform: translateX(-50%);
   max-width: 100rem;
+  opacity: 0;
 }
 #main .title::after {
   display: block;
@@ -327,17 +238,10 @@ input::-webkit-search-results-decoration {
   background-size: contain;
   float: right;
 }
-#main p {
-  position: absolute;
-  left: 1%;
-  bottom: 1%;
-  color: rgba(40, 40, 40, 0.6705882353);
-  z-index: 6;
-  text-transform: uppercase;
-}
 
 .profile {
   position: relative;
+  height: 100vh;
   /* skills */
 }
 .profile-inner {
@@ -353,28 +257,18 @@ input::-webkit-search-results-decoration {
   justify-content: center;
   width: 40%;
 }
-.profile-about::before {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  left: 0;
-  top: 6rem;
-  width: 100%;
-  height: 0.2rem;
-  background-color: #e2edff;
-}
 .profile-about h2 {
-  position: absolute;
-  left: 0;
-  top: 1.5rem;
-  color: #74a9ec;
-  font-family: "EF_Rebecca";
+  line-height: 0;
+  font-size: 1;
+  overflow: hidden;
 }
 .profile-about ul {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transform: translateX(-10%);
+  opacity: 0;
 }
 .profile-about ul li:nth-of-type(1) {
   width: 100%;
@@ -452,6 +346,8 @@ input::-webkit-search-results-decoration {
 }
 .profile-txt-top {
   box-sizing: border-box;
+  opacity: 0;
+  transform: translateX(10%);
 }
 .profile-txt-top p {
   display: inline-block;
@@ -490,6 +386,8 @@ input::-webkit-search-results-decoration {
   flex-direction: column;
   position: relative;
   text-transform: uppercase;
+  opacity: 0;
+  transform: translateX(10%);
 }
 .profile-txt-bottom dl {
   padding: 2rem;
@@ -522,18 +420,21 @@ input::-webkit-search-results-decoration {
   background-size: cover;
   animation: skillsBtn 0.5s ease infinite alternate;
 }
+.profile-txt-bottom .skillsOpen:hover {
+  animation: none;
+}
 .profile-txt-bottom .skillsOpen::before {
   content: "skills";
   display: inline-block;
   position: absolute;
-  bottom: 0;
+  bottom: 1rem;
   text-transform: uppercase;
   font-size: 1.4rem;
+  font-weight: 600;
   font-style: italic;
-  color: #74a9ec;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 1rem;
-  border-radius: 2rem;
+  font-family: "Nanum Myeongjo";
+  color: #000;
+  background-color: #fff;
 }
 .profile .skills-modal {
   display: none;
@@ -542,19 +443,45 @@ input::-webkit-search-results-decoration {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
 }
 .profile .skills-contents {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  width: 80rem;
   height: 59rem;
   border-radius: 2rem;
   background-color: #e2edff;
-  z-index: 6;
-  overflow: hidden;
+  z-index: 1001;
+}
+.profile .skills-contents::before {
+  content: "My skills possess";
+  display: inline-block;
+  position: absolute;
+  left: -13.5rem;
+  bottom: 10rem;
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: 600;
+  font-family: "Nanum Myeongjo";
+  color: #fff;
+  transform: rotate(-90deg);
+}
+.profile .skills-contents::after {
+  content: "Emoji Motions";
+  display: inline-block;
+  position: absolute;
+  right: -12.5rem;
+  top: 9rem;
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: 600;
+  font-family: "Nanum Myeongjo";
+  color: #fff;
+  transform: rotate(90deg);
 }
 .profile .skills-contents h4 {
   position: relative;
@@ -562,54 +489,56 @@ input::-webkit-search-results-decoration {
   padding: 0 2rem;
   box-sizing: border-box;
   line-height: 3.9rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
   font-size: 2rem;
   font-style: italic;
-  color: #fff;
+  color: transparent;
   background-color: #74a9ec;
 }
 .profile .skills-contents h4::after {
   content: "";
   display: inline-block;
   position: absolute;
-  left: 7rem;
+  left: 1.5rem;
   top: 50%;
   transform: translateY(-50%);
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   background: url(../img/star-yellow.png) center center no-repeat;
   background-size: contain;
 }
 .profile .skills-inner {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6rem;
   position: relative;
   height: 93%;
   padding: 2rem;
   box-sizing: border-box;
 }
-.profile .skills-inner ul {
+.profile .skills-inner > ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 0 5rem 0 0;
 }
-.profile .skills-inner ul li {
+.profile .skills-inner > ul li {
   display: flex;
   align-items: center;
 }
-.profile .skills-inner ul li img {
+.profile .skills-inner > ul li img {
   width: 5rem;
   height: 5rem;
   margin: 0 2rem 0 0;
 }
-.profile .skills-inner ul li p {
+.profile .skills-inner > ul li p {
   position: relative;
   width: 35rem;
   height: 1.5rem;
   border-radius: 1rem;
   background-color: #fff;
 }
-.profile .skills-inner ul li p::after {
+.profile .skills-inner > ul li p::after {
   content: "";
   display: inline-block;
   position: absolute;
@@ -620,102 +549,92 @@ input::-webkit-search-results-decoration {
   background-color: #74a9ec;
   height: 1.5rem;
 }
-.profile .skills-inner ul li:nth-of-type(n+3):nth-of-type(-n+8) img {
+.profile .skills-inner > ul li:nth-of-type(n+3):nth-of-type(-n+8) img {
   border-radius: 1rem;
 }
-.profile .skills-inner ul li:nth-of-type(1) p::after {
+.profile .skills-inner > ul li:nth-of-type(1) p::after {
   animation: photoShopGage 1.6s forwards;
 }
-.profile .skills-inner ul li:nth-of-type(2) p::after {
+.profile .skills-inner > ul li:nth-of-type(2) p::after {
   animation: AiGage 1.6s forwards;
 }
-.profile .skills-inner ul li:nth-of-type(3) p::after {
+.profile .skills-inner > ul li:nth-of-type(3) p::after {
   animation: HtmlGage 2.5s forwards;
 }
-.profile .skills-inner ul li:nth-of-type(4) p::after {
+.profile .skills-inner > ul li:nth-of-type(4) p::after {
   animation: CssGage 2s forwards;
 }
-.profile .skills-inner ul li:nth-of-type(5) p::after {
+.profile .skills-inner > ul li:nth-of-type(5) p::after {
   animation: ScssGage 1.7s forwards;
 }
-.profile .skills-inner ul li:nth-of-type(6) p::after {
+.profile .skills-inner > ul li:nth-of-type(6) p::after {
   animation: JsGage 1s forwards;
 }
-.profile .skills-inner ul li:nth-of-type(7) p::after {
+.profile .skills-inner > ul li:nth-of-type(7) p::after {
   animation: FigmaGage 1.6s forwards;
 }
-.profile .skills-inner ul li:nth-of-type(8) p::after {
+.profile .skills-inner > ul li:nth-of-type(8) p::after {
   animation: GithubGage 1.6s forwards;
 }
 .profile .skills-inner-rt {
   display: flex;
+  justify-content: end;
 }
-.profile .skills-inner-rt .motions {
-  display: flex;
-  flex-direction: column;
-  margin: 0 2rem 0 0;
-}
-.profile .skills-inner-rt .motions button {
-  width: 5rem;
-  height: 5rem;
-  margin: 0 0 1.5rem 0;
-  border-radius: 1rem;
-}
-.profile .skills-inner-rt .motions button:nth-of-type(1) {
-  background: url(../img/normal.png) center center no-repeat;
-  background-size: contain;
-}
-.profile .skills-inner-rt .motions button:nth-of-type(2) {
-  background: url(../img/Dash.png) center center no-repeat;
-  background-size: contain;
-}
-.profile .skills-inner-rt .motions button:nth-of-type(3) {
-  background: url(../img/Dance.png) center center no-repeat;
-  background-size: contain;
-}
-.profile .skills-inner-rt .motions button:hover {
-  box-shadow: 0 0 0 0.2rem #74a9ec;
-}
-.profile .skills-inner-rt dl {
+.profile .skills-inner-rt ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 2rem 0 0 0;
 }
-.profile .skills-inner-rt dl dt {
+.profile .skills-inner-rt ul li:nth-of-type(1) {
+  position: relative;
   width: 25rem;
   height: 35rem;
-  margin: 0 0 2rem 0;
   border-radius: 2rem;
   transition: background 0.1s ease-in;
   -webkit-transition: background 0.1s ease-in;
   -moz-transition: background 0.1s ease-in;
   -o-transition: background 0.1s ease-in;
 }
-.profile .skills-inner-rt dl .changeMotion-normal {
+.profile .skills-inner-rt ul .changeMotion-normal {
   background: url(../img/이모지-normal.gif) center center no-repeat;
   background-size: cover;
 }
-.profile .skills-inner-rt dl .changeMotion-dash {
+.profile .skills-inner-rt ul .changeMotion-dash {
   background: url(../img/이모지-dash.gif) center center no-repeat;
   background-size: cover;
 }
-.profile .skills-inner-rt dl .changeMotion-dance {
+.profile .skills-inner-rt ul .changeMotion-dance {
   background: url(../img/이모지-dance.gif) center center no-repeat;
   background-size: cover;
 }
-.profile .skills-inner-rt dl dd {
-  width: 100%;
-  padding: 0.8rem 0;
-  margin: 0 0 0.8rem 0;
-  box-sizing: border-box;
+.profile .skills-inner-rt ul .motions {
+  width: 80%;
   text-align: center;
-  border-radius: 0.5rem;
-  background-color: #fff;
-  font-family: "GangwonState";
-  color: #2e2e2e;
+  padding: 0.8rem 0;
+  margin: 1.5rem 0 0 0;
+  box-sizing: border-box;
 }
-.profile .skills-inner-rt dl dd:nth-of-type(2) {
-  color: rgb(254, 137, 164);
+.profile .skills-inner-rt ul .motions button {
+  width: 5rem;
+  height: 5rem;
+  margin: 0 0.5rem;
+  border-radius: 1rem;
+}
+.profile .skills-inner-rt ul .motions button:nth-of-type(1) {
+  background: url(../img/normal.png) center center no-repeat;
+  background-size: contain;
+}
+.profile .skills-inner-rt ul .motions button:nth-of-type(2) {
+  background: url(../img/Dash.png) center center no-repeat;
+  background-size: contain;
+}
+.profile .skills-inner-rt ul .motions button:nth-of-type(3) {
+  background: url(../img/Dance.png) center center no-repeat;
+  background-size: contain;
+}
+.profile .skills-inner-rt ul .motions button:hover {
+  box-shadow: 0 0 0 0.2rem #74a9ec;
 }
 .profile .skills-inner-rt .skills-close {
   position: absolute;
@@ -724,62 +643,79 @@ input::-webkit-search-results-decoration {
   padding: 1rem;
   box-sizing: border-box;
   border-radius: 2rem;
-  color: #fff;
-  background-color: #74a9ec;
+  color: #74a9ec;
+  background-color: #fff;
+  border: 0.2rem solid #74a9ec;
   transition: color 0.2s ease, background-color 0.2s ease;
   -webkit-transition: color 0.2s ease, background-color 0.2s ease;
   -moz-transition: color 0.2s ease, background-color 0.2s ease;
   -o-transition: color 0.2s ease, background-color 0.2s ease;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-style: italic;
 }
 .profile .skills-inner-rt .skills-close:hover {
-  color: #74a9ec;
-  background-color: #fff;
+  animation: bounce 0.5s linear;
 }
 .profile .block {
   display: block;
 }
 
+.projects {
+  position: relative;
+  height: auto;
+  box-sizing: border-box;
+}
+.projects h2 {
+  font-size: 9rem;
+  font-weight: 800;
+  font-style: italic;
+  font-family: "Nanum Myeongjo";
+  background-color: rgb(251, 251, 251);
+}
+.projects h2::after {
+  content: "projects";
+  display: block;
+  max-width: 124rem;
+  margin: 0 auto;
+  color: transparent;
+  text-align: start;
+  -webkit-text-stroke-width: 0.1rem;
+  -webkit-text-stroke-color: #74a9ec;
+}
 .projects-inner {
   max-width: 124rem;
   height: 100%;
   margin: 0 auto;
   overflow: hidden;
 }
-.projects-inner h2 {
-  height: 8%;
-  line-height: 6.3rem;
-  color: #74a9ec;
-  font-family: "EF_Rebecca";
-  border-bottom: 0.3rem solid #e2edff;
-}
 .projects .swiper {
-  display: flex;
-  flex-direction: column;
+  position: relative;
   width: 100%;
-  height: 92%;
-}
-.projects .swiper-wrapper {
+  height: 100%;
   padding: 5rem 0;
   box-sizing: border-box;
 }
 .projects .swiper-slide {
   display: grid;
-  grid-template-columns: 40% 60%;
-  background-color: #fff;
+  grid-template-columns: 35% 65%;
   cursor: none;
 }
 .projects .swiper-left {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
 }
 .projects .swiper-left h3 {
+  position: relative;
   width: 80%;
-  margin: 0 0 4rem 0;
-  font-family: "EF_Rebecca";
+  margin: 0 0 3rem 0;
+}
+.projects .swiper-left h3::after {
+  display: block;
+  text-transform: none;
+  color: #000;
+  font-size: 1.4rem;
+  font-weight: 100;
 }
 .projects .swiper-left > div {
   width: 80%;
@@ -790,13 +726,12 @@ input::-webkit-search-results-decoration {
   box-sizing: border-box;
 }
 .projects .swiper-left > div dl dt {
-  margin: 0 0 0.3rem 0;
+  margin: 0 0 0.5rem 0;
   font-size: 2rem;
   font-weight: 600;
-  color: #444444;
 }
 .projects .swiper-left > div dl dd {
-  color: #666666;
+  color: #444444;
 }
 .projects .swiper-left ul {
   display: flex;
@@ -806,6 +741,19 @@ input::-webkit-search-results-decoration {
   font-size: 1.8rem;
   border: 1px solid #74a9ec;
   border-radius: 3rem;
+  transition: background-color 0.2s ease;
+}
+.projects .swiper-left ul li:nth-of-type(2) {
+  border: none;
+  background-color: #e2edff;
+}
+.projects .swiper-left ul li:hover {
+  animation: bounce 0.5s linear;
+  background-color: #74a9ec;
+}
+.projects .swiper-left ul li:hover a {
+  color: #fff;
+  transform: scale(1.1);
 }
 .projects .swiper-left ul li a {
   display: block;
@@ -814,19 +762,188 @@ input::-webkit-search-results-decoration {
   line-height: 4rem;
   text-align: center;
   color: #74a9ec;
+  transition: color 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
 }
 .projects .swiper-left ul li:nth-of-type(1) {
   margin: 0 1rem 0 0;
 }
+.projects .swiper-left ul .hide {
+  display: none;
+}
 .projects .swiper picture {
   position: relative;
-  height: 100%;
 }
-.projects .swiper picture img {
+.projects .swiper picture div {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  max-width: 100%;
+  transform: translateY(-55%);
+  width: 99%;
+  height: 40rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: 2rem;
+  background-color: #fff;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1333333333);
+  overflow: hidden;
+  transition: top 0.2s ease;
+}
+.projects .swiper picture div:hover {
+  top: 45%;
+}
+.projects .swiper picture div:hover img {
+  transform: scale(1.01);
+}
+.projects .swiper picture img {
+  width: 100%;
+  transition: transform 0.2s ease;
+  object-fit: contain;
+}
+.projects .swiper-pagination {
+  bottom: 5rem;
+  text-align: right;
+}
+.projects .swiper-pagination-bullet-active {
+  background-color: #74a9ec;
+}
+.projects .sidmool h3::after {
+  content: "자연을 사랑하는 화장품 브랜드";
+}
+.projects .muvic h3::after {
+  content: "영화와 음악을 한번에 즐길 수 있는 사이트";
+}
+.projects .korean-air h3::after {
+  content: "비행의 완벽함 대한민국 대표 항공사";
+}
+.projects .spar h3::after {
+  content: "글로벌 프리미엄 베이킹 브랜드";
+}
+.projects .news h3::after {
+  content: "news api를 사용하여 제작된 사이트";
+}
+
+#projects-script {
+  height: auto;
+  padding: 0 0 10rem 0;
+  box-sizing: border-box;
+}
+#projects-script h2 {
+  margin: 0 0 5rem 0;
+  font-size: 9rem;
+  font-weight: 800;
+  font-style: italic;
+  font-family: "Nanum Myeongjo";
+  background-color: rgb(251, 251, 251);
+}
+#projects-script h2::after {
+  content: "script";
+  display: block;
+  max-width: 124rem;
+  margin: 0 auto;
+  color: transparent;
+  text-align: start;
+  -webkit-text-stroke-width: 0.1rem;
+  -webkit-text-stroke-color: #74a9ec;
+}
+#projects-script .script-inner {
+  max-width: 124rem;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+#projects-script > div {
+  padding: 5rem;
+  box-sizing: border-box;
+  border: 0.4rem double #000;
+}
+#projects-script > div ul li {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+#projects-script > div ul li picture {
+  height: 50rem;
+  border: 1px solid red;
+  background-color: pink;
+}
+#projects-script > div ul li dl {
+  border: 1px solid red;
+}
+
+#contact {
+  background-color: rgb(251, 251, 251);
+  text-align: center;
+}
+#contact h2 {
+  display: inline-block;
+  margin: 0 0 10rem 0;
+  font-size: 9rem;
+  font-weight: 800;
+  font-style: italic;
+  font-family: "Nanum Myeongjo";
+  border-bottom: 0.1rem dashed #74a9ec;
+  -webkit-text-stroke-width: 0.1rem;
+  -webkit-text-stroke-color: #74a9ec;
+  color: transparent;
+}
+#contact p {
+  padding: 2rem 0;
+  margin: 10rem 0 0 0;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  color: #444444;
+  background-color: rgb(245, 245, 245);
+}
+
+.contact-inner {
+  max-width: 110rem;
+  margin: 0 auto;
+}
+.contact-inner ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.contact-inner ul li {
+  text-align: center;
+  font-size: 2rem;
+}
+.contact-inner ul li:nth-of-type(1) {
+  height: 100%;
+  line-height: 4rem;
+  margin: 0 0 5rem 0;
+}
+.contact-inner ul li:nth-of-type(2) {
+  text-align: left;
+}
+.contact-inner ul li a {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  margin: 0 0 1rem 0;
+  box-sizing: border-box;
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  transition: box-shadow 0.2s ease;
+}
+.contact-inner ul li a span {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 2.5rem 0 0;
+}
+.contact-inner ul li a:hover {
+  box-shadow: 0 0 0 0.1rem #74a9ec;
+  text-decoration: underline;
+}
+.contact-inner ul li a:hover span {
+  animation: bounce 0.5s linear;
+}
+.contact-inner ul li a:nth-of-type(1) span {
+  background: url(../img/phone.png) center center no-repeat;
+  background-size: contain;
+}
+.contact-inner ul li a:nth-of-type(2) span {
+  background: url(../img/email.png) center center no-repeat;
+  background-size: contain;
 }
 
 @keyframes cloud {
@@ -863,6 +980,17 @@ input::-webkit-search-results-decoration {
   100% {
     opacity: 1;
     top: 25%;
+  }
+}
+@keyframes bounce {
+  40% {
+    transform: translateY(9px);
+  }
+  55% {
+    transform: translateY(-1px);
+  }
+  70% {
+    transform: translateY(4px);
   }
 }
 @keyframes star {
@@ -945,6 +1073,6 @@ input::-webkit-search-results-decoration {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-10px);
+    transform: translateY(-1rem);
   }
 }

@@ -35,7 +35,6 @@ em {
 }
 section {
     width: 100%;
-    height: 100vh;
     overflow: hidden;
  }
 button, select {
@@ -46,15 +45,8 @@ button, select {
 span {
     display: inline-block;
 }
-.hide {
-	line-height: 0;
-	font-size: 1;
-	overflow: hidden;
-}
-
 h2 {
     font-size: 2.8rem;
-    text-transform: uppercase;
 }
 h3 {
     font-size: 2.5rem;

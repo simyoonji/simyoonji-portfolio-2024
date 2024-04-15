@@ -1,34 +1,50 @@
 .projects {
+    position: relative;
+    height: auto;
+    box-sizing: border-box;
+
+    h2 {
+        font : {
+            size: 9rem;
+            weight: 800;
+            style : italic;
+            family:'Nanum Myeongjo';
+        }
+        background-color: rgb(251, 251, 251);
+
+        &::after {
+            content: 'projects';
+            display: block;
+            max-width: 124rem;
+            margin: 0 auto;
+            color: transparent;
+            text-align: start;
+            -webkit-text-stroke-width: .1rem;
+            -webkit-text-stroke-color: $color-primary;
+        }
+    }
+
     &-inner {
         max-width: 124rem;
         height: 100%;
         margin: 0 auto;
         overflow: hidden;
-
-        h2 {
-            height: 8%;
-            line-height: 6.3rem;
-            color: $color-primary;
-            font-family: 'EF_Rebecca';
-            border-bottom: .3rem solid $color-sub;
-        }
     }
 
     .swiper {
-        display: flex;
-        flex-direction: column;
+        position: relative;
         width: 100%;
-        height: 92%;
-       
+        height: 100%;
+        padding: 5rem 0;
+        box-sizing: border-box;
+
         &-wrapper {
-            padding: 5rem 0;
-            box-sizing: border-box;
+
         }
 
         &-slide {
             display: grid;
-            grid-template-columns: 40% 60%;
-            background-color: #fff;
+            grid-template-columns: 35% 65%;
             cursor: none;
 
             &:nth-of-type(1) {
@@ -43,12 +59,21 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            height: 100%;
 
             h3 {
+                position: relative;
                 width: 80%;
-                margin: 0 0 4rem 0;
-                font-family: 'EF_Rebecca';
+                margin: 0 0 3rem 0;
+
+                &::after {
+                    display: block;
+                    text-transform: none;
+                    color: #000;
+                    font : {
+                        size: 1.4rem;
+                        weight: 100;
+                    }
+                }
             }
 
             > div {
@@ -60,13 +85,12 @@
                     box-sizing: border-box;
 
                     dt {
-                        margin: 0 0 .3rem 0;
+                        margin: 0 0 .5rem 0;
                         font-size: 2rem;
                         font-weight: 600;
-                        color: #444444;
                     }
                     dd {
-                        color: #666666;
+                        color: #444444;
                     }
                 }
             }
@@ -79,7 +103,22 @@
                     font-size: 1.8rem;
                     border: 1px solid $color-primary;
                     border-radius: 3rem;
+                    transition: background-color .2s ease;
 
+                    &:nth-of-type(2){
+                        border: none;
+                        background-color: $color-sub;
+                    }
+
+                    &:hover {
+                        animation: bounce 0.5s linear;
+                        background-color: $color-primary;
+                    }
+                    &:hover a{
+                        color: #fff;
+                        transform: scale(1.1);
+                    }
+                    
                     a {
                         display: block;
                         width: 13rem;
@@ -87,23 +126,92 @@
                         line-height: 4rem;
                         text-align: center;
                         color: $color-primary;
+                        transition: color .2s ease, transform .2s ease;
+                        white-space: nowrap;
                     }
 
                     &:nth-of-type(1) {
                         margin: 0 1rem 0 0;
                     }
                 }
+                .hide {
+                    display: none;
+                }
             }
         }
         picture {
             position: relative;
-            height: 100%;
 
-            img {
+            div {
                 position: absolute;
                 top: 50%;
-                transform: translateY(-50%);
-                max-width: 100%;
+                transform: translateY(-55%);
+                width: 99%;
+                height: 40rem;
+                padding: 1rem;
+                box-sizing: border-box;
+                border-radius: 2rem;
+                background-color: #fff;
+                box-shadow: 0 0 1rem 0 #00000022;
+                overflow: hidden;
+                transition: top .2s ease;
+
+                &:hover {
+                    top: 45%;
+                }
+
+                &:hover img{
+                    transform: scale(1.01);
+                }
+            }
+
+            img {
+                width: 100%;
+                transition: transform .2s ease;
+                object-fit: contain;
+            }
+        }
+        &-pagination {
+            bottom: 5rem;
+            text-align: right;
+        }
+        &-pagination-bullet-active {
+            background-color: $color-primary;
+        }
+    }
+    .sidmool {
+        h3 {
+            &::after {
+                content: '자연을 사랑하는 화장품 브랜드';
+            }
+        }
+    }
+    .muvic {
+        h3 {
+            &::after {
+                content: '영화와 음악을 한번에 즐길 수 있는 사이트';
+            }
+        }
+    }
+
+    .korean-air {
+        h3 {
+            &::after {
+                content: '비행의 완벽함 대한민국 대표 항공사';
+            }
+        }
+    }
+    .spar {
+        h3 {
+            &::after {
+                content: '글로벌 프리미엄 베이킹 브랜드';
+            }
+        }
+    }
+    .news {
+        h3 {
+            &::after {
+                content: 'news api를 사용하여 제작된 사이트';
             }
         }
     }
