@@ -9,15 +9,18 @@
 
 nav {
     position: fixed;
-    right: 2rem;
+    right: 3rem;
     top: 50%;
     transform: translateY(-50%);
+    padding: 1.5rem .5rem;
+    box-sizing: border-box;
+    border-radius: 2rem;
     z-index: 999;
 
     ul {
         display: grid;
         grid-template-columns: repeat(1fr,1);
-        gap: 2.5rem;
+        gap: 1.5rem;
         text-align: center;
 
         li {
@@ -29,10 +32,20 @@ nav {
             }
            
             a {
-                width: 1.5rem;
-                height: 1.5rem;
-                background-color: pink;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 4rem;
+                height: 4rem;
+                background-color: #fff;
+                box-shadow: 0 0 .5rem 0 #00000030;
                 border-radius: 50%;
+
+                img {
+                    width: 3rem;
+                    height: 3rem;
+                    object-fit: cover;
+                }
             }
         }
     }

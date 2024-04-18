@@ -1,10 +1,12 @@
 #contact {
-    background-color: rgb(251, 251, 251);
-    text-align: center;
+    padding: 5rem 0 0 0;
+    box-sizing: border-box;
+    margin: 0 auto;
 
     h2 {
+        position: relative;
+        width: 100%;
         display: inline-block;
-        margin: 0 0 10rem 0;
         
         font : {
             size: 9rem;
@@ -12,35 +14,52 @@
             style : italic;
             family:'Nanum Myeongjo';
         }
-        border-bottom: .1rem dashed $color-primary;
+        color: #ffffff;
+        text-align: center;
         -webkit-text-stroke-width: .1rem;
         -webkit-text-stroke-color: $color-primary;
-        color: transparent;
+
+        &::after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: .4rem;
+            border-radius: 1rem;
+            background: url(../img/그레인구름.jpg)center center;
+            opacity: .3;
+        }
     }
 
     p {
         padding: 2rem 0;
         margin: 10rem 0 0 0;
         box-sizing: border-box;
-        font-size: 1.1rem;
-        color: #444444;
-        background-color: rgb(245, 245, 245);
+        font-size: 1rem;
+        text-align: center;
+        color: #989898;
     }
 }
 
 .contact {
     &-inner {
         max-width: 110rem;
+        padding: 2rem;
+        box-sizing: border-box;
         margin: 0 auto;
+        border-radius: 2rem;
 
         ul {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            
+            padding: 2rem;
+            box-sizing: border-box;
+            margin: 10rem 0 0 0;
 
             li {
+                position: relative;
                 text-align: center;
                 font-size: 2rem;
 
@@ -48,23 +67,48 @@
                     
                 }
 
-                
-
                 &:nth-of-type(1) {
-                    height: 100%;
                     line-height: 4rem;
                     margin: 0 0 5rem 0;
+
+                    &::before {
+                        content: '';
+                        display: inline-block;
+                        position: absolute;
+                        left: 1rem;
+                        top: -11rem;
+                        width: 10rem;
+                        height: 10rem;
+                        background: url(../img/구름일러스트.png)center center no-repeat;
+                        background-size: contain;
+                        animation: upDown 1.2s ease infinite alternate;
+                    }
                 }
 
                 &:nth-of-type(2) {
+                    display: flex;
+                    justify-content: center;
                     text-align: left;
+
+                    &::after {
+                        content: '';
+                        display: inline-block;
+                        position: absolute;
+                        right: 1rem;
+                        bottom: 0;
+                        width: 10rem;
+                        height: 10rem;
+                        background: url(../img/구름일러스트2.png)center center no-repeat;
+                        background-size: contain;
+                        animation: upDown 1.5s ease infinite alternate;
+                    }
                 }
 
                 a {
                     display: flex;
                     align-items: center;
                     padding: 1.5rem;
-                    margin: 0 0 1rem 0;
+                    margin: 0 1rem 0 0;
                     box-sizing: border-box;
                     border-radius: 2rem;
                     font-size: 1.5rem;
@@ -73,7 +117,7 @@
                     span {
                         width: 3rem;
                         height: 3rem;
-                        margin: 0 2.5rem 0 0;
+                        margin: 0 1rem 0 0;
                     }
 
                     &:hover {
@@ -86,16 +130,14 @@
                     }
 
                     &:nth-of-type(1) {
-
                         span {
-                            background: url(../img/phone.png)center center no-repeat;
+                            background: url(../img/보내다.png)center center no-repeat;
                             background-size: contain;
                         }
                     }
                     &:nth-of-type(2) {
-
                         span {
-                            background: url(../img/email.png)center center no-repeat;
+                            background: url(../img/전화기.png)center center no-repeat;
                             background-size: contain;
                         }
                     }

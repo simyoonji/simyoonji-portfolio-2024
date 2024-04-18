@@ -151,15 +151,18 @@ input::-webkit-search-results-decoration {
 
 nav {
   position: fixed;
-  right: 2rem;
+  right: 3rem;
   top: 50%;
   transform: translateY(-50%);
+  padding: 1.5rem 0.5rem;
+  box-sizing: border-box;
+  border-radius: 2rem;
   z-index: 999;
 }
 nav ul {
   display: grid;
   grid-template-columns: repeat(1fr, 1);
-  gap: 2.5rem;
+  gap: 1.5rem;
   text-align: center;
 }
 nav ul li {
@@ -170,10 +173,19 @@ nav ul li:hover {
   animation: bounce 0.5s linear;
 }
 nav ul li a {
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  background-color: #fff;
+  box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.1882352941);
   border-radius: 50%;
+}
+nav ul li a img {
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
 }
 
 #main {
@@ -418,7 +430,7 @@ nav ul li a {
   height: 8rem;
   background: url(../img/지팡이.png) center center no-repeat;
   background-size: cover;
-  animation: skillsBtn 0.5s ease infinite alternate;
+  animation: upDown 0.5s ease infinite alternate;
 }
 .profile-txt-bottom .skillsOpen:hover {
   animation: none;
@@ -663,6 +675,7 @@ nav ul li a {
 .projects {
   position: relative;
   height: auto;
+  margin: 0 0 5rem 0;
   box-sizing: border-box;
 }
 .projects h2 {
@@ -670,7 +683,6 @@ nav ul li a {
   font-weight: 800;
   font-style: italic;
   font-family: "Nanum Myeongjo";
-  background-color: rgb(251, 251, 251);
 }
 .projects h2::after {
   content: "projects";
@@ -692,7 +704,7 @@ nav ul li a {
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 5rem 0;
+  padding: 6rem 0;
   box-sizing: border-box;
 }
 .projects .swiper-slide {
@@ -717,20 +729,20 @@ nav ul li a {
   font-size: 1.4rem;
   font-weight: 100;
 }
-.projects .swiper-left > div {
+.projects .swiper-left-txt {
   width: 80%;
   margin: 0 0 4rem 0;
 }
-.projects .swiper-left > div dl {
+.projects .swiper-left-txt dl {
   padding: 1.3rem 0;
   box-sizing: border-box;
 }
-.projects .swiper-left > div dl dt {
+.projects .swiper-left-txt dl dt {
   margin: 0 0 0.5rem 0;
   font-size: 2rem;
   font-weight: 600;
 }
-.projects .swiper-left > div dl dd {
+.projects .swiper-left-txt dl dd {
   color: #444444;
 }
 .projects .swiper-left ul {
@@ -738,18 +750,36 @@ nav ul li a {
   width: 80%;
 }
 .projects .swiper-left ul li {
+  position: relative;
   font-size: 1.8rem;
   border: 1px solid #74a9ec;
   border-radius: 3rem;
   transition: background-color 0.2s ease;
+  box-shadow: inset 0 -0.3rem 0 0 rgba(95, 113, 195, 0.6117647059);
+  overflow: hidden;
 }
 .projects .swiper-left ul li:nth-of-type(2) {
   border: none;
   background-color: #e2edff;
 }
+.projects .swiper-left ul li::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 1%;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #74a9ec;
+  transition: transform 0.5s ease-in-out, opacity 0.2s ease;
+  opacity: 0;
+}
 .projects .swiper-left ul li:hover {
   animation: bounce 0.5s linear;
-  background-color: #74a9ec;
+}
+.projects .swiper-left ul li:hover::before {
+  transform: scale(24);
+  opacity: 1;
 }
 .projects .swiper-left ul li:hover a {
   color: #fff;
@@ -771,33 +801,51 @@ nav ul li a {
 .projects .swiper-left ul .hide {
   display: none;
 }
-.projects .swiper picture {
+.projects .swiper-right {
+  display: flex;
+  flex-direction: column;
   position: relative;
-}
-.projects .swiper picture div {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-55%);
   width: 99%;
-  height: 40rem;
-  padding: 1rem;
+  padding: 5rem 2rem 2rem 2rem;
   box-sizing: border-box;
-  border-radius: 2rem;
-  background-color: #fff;
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1333333333);
-  overflow: hidden;
-  transition: top 0.2s ease;
+  border-radius: 1rem;
+  border: 0.3rem solid #000;
+  background-color: #eef5ff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.projects .swiper picture div:hover {
-  top: 45%;
+.projects .swiper-right:hover {
+  transform: translate(-0.5%, -0.5%);
+  box-shadow: 0.5rem 0.5rem 0 0 rgb(254, 137, 164);
 }
-.projects .swiper picture div:hover img {
-  transform: scale(1.01);
-}
-.projects .swiper picture img {
+.projects .swiper-right span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
   width: 100%;
+  padding: 0.7rem 1rem;
+  box-sizing: border-box;
+  border-radius: 1rem;
+  border-bottom: 0.3rem solid #e2edff;
+  background-color: #fff;
+  font-size: 1.4rem;
+  font-weight: 800;
+  font-style: italic;
+  font-family: "Nanum Myeongjo";
+}
+.projects .swiper-right figure {
+  height: 100%;
+}
+.projects .swiper-right figure img {
+  width: 100%;
+  height: 100%;
   transition: transform 0.2s ease;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 1rem;
+  border: 0.3rem solid #e2edff;
+}
+.projects .swiper-right figure figcaption {
+  display: none;
 }
 .projects .swiper-pagination {
   bottom: 5rem;
@@ -824,16 +872,15 @@ nav ul li a {
 
 #projects-script {
   height: auto;
-  padding: 0 0 10rem 0;
+  padding: 0 0 15rem 0;
   box-sizing: border-box;
 }
 #projects-script h2 {
-  margin: 0 0 5rem 0;
+  padding: 1rem 0;
   font-size: 9rem;
   font-weight: 800;
   font-style: italic;
   font-family: "Nanum Myeongjo";
-  background-color: rgb(251, 251, 251);
 }
 #projects-script h2::after {
   content: "script";
@@ -848,78 +895,135 @@ nav ul li a {
 #projects-script .script-inner {
   max-width: 124rem;
   margin: 0 auto;
-  border: 1px solid red;
 }
 #projects-script > div {
   padding: 5rem;
   box-sizing: border-box;
-  border: 0.4rem double #000;
+  border-radius: 1rem;
+  border: 0.4rem double #e2edff;
 }
 #projects-script > div ul li {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 0 0 5rem 0;
 }
-#projects-script > div ul li picture {
+#projects-script > div ul li figure {
+  position: relative;
   height: 50rem;
-  border: 1px solid red;
-  background-color: pink;
+  padding: 3rem;
+  box-sizing: border-box;
+}
+#projects-script > div ul li figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
+  box-shadow: 0 0 0 1rem rgb(251, 251, 251);
+}
+#projects-script > div ul li figure figcaption {
+  display: none;
 }
 #projects-script > div ul li dl {
   border: 1px solid red;
 }
 
 #contact {
-  background-color: rgb(251, 251, 251);
-  text-align: center;
+  padding: 5rem 0 0 0;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 #contact h2 {
+  position: relative;
+  width: 100%;
   display: inline-block;
-  margin: 0 0 10rem 0;
   font-size: 9rem;
   font-weight: 800;
   font-style: italic;
   font-family: "Nanum Myeongjo";
-  border-bottom: 0.1rem dashed #74a9ec;
+  color: #ffffff;
+  text-align: center;
   -webkit-text-stroke-width: 0.1rem;
   -webkit-text-stroke-color: #74a9ec;
-  color: transparent;
+}
+#contact h2::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.4rem;
+  border-radius: 1rem;
+  background: url(../img/그레인구름.jpg) center center;
+  opacity: 0.3;
 }
 #contact p {
   padding: 2rem 0;
   margin: 10rem 0 0 0;
   box-sizing: border-box;
-  font-size: 1.1rem;
-  color: #444444;
-  background-color: rgb(245, 245, 245);
+  font-size: 1rem;
+  text-align: center;
+  color: #989898;
 }
 
 .contact-inner {
   max-width: 110rem;
+  padding: 2rem;
+  box-sizing: border-box;
   margin: 0 auto;
+  border-radius: 2rem;
 }
 .contact-inner ul {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  margin: 10rem 0 0 0;
 }
 .contact-inner ul li {
+  position: relative;
   text-align: center;
   font-size: 2rem;
 }
 .contact-inner ul li:nth-of-type(1) {
-  height: 100%;
   line-height: 4rem;
   margin: 0 0 5rem 0;
 }
+.contact-inner ul li:nth-of-type(1)::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 1rem;
+  top: -11rem;
+  width: 10rem;
+  height: 10rem;
+  background: url(../img/구름일러스트.png) center center no-repeat;
+  background-size: contain;
+  animation: upDown 1.2s ease infinite alternate;
+}
 .contact-inner ul li:nth-of-type(2) {
+  display: flex;
+  justify-content: center;
   text-align: left;
+}
+.contact-inner ul li:nth-of-type(2)::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  right: 1rem;
+  bottom: 0;
+  width: 10rem;
+  height: 10rem;
+  background: url(../img/구름일러스트2.png) center center no-repeat;
+  background-size: contain;
+  animation: upDown 1.5s ease infinite alternate;
 }
 .contact-inner ul li a {
   display: flex;
   align-items: center;
   padding: 1.5rem;
-  margin: 0 0 1rem 0;
+  margin: 0 1rem 0 0;
   box-sizing: border-box;
   border-radius: 2rem;
   font-size: 1.5rem;
@@ -928,7 +1032,7 @@ nav ul li a {
 .contact-inner ul li a span {
   width: 3rem;
   height: 3rem;
-  margin: 0 2.5rem 0 0;
+  margin: 0 1rem 0 0;
 }
 .contact-inner ul li a:hover {
   box-shadow: 0 0 0 0.1rem #74a9ec;
@@ -938,11 +1042,11 @@ nav ul li a {
   animation: bounce 0.5s linear;
 }
 .contact-inner ul li a:nth-of-type(1) span {
-  background: url(../img/phone.png) center center no-repeat;
+  background: url(../img/보내다.png) center center no-repeat;
   background-size: contain;
 }
 .contact-inner ul li a:nth-of-type(2) span {
-  background: url(../img/email.png) center center no-repeat;
+  background: url(../img/전화기.png) center center no-repeat;
   background-size: contain;
 }
 
@@ -1068,7 +1172,7 @@ nav ul li a {
     width: 30rem;
   }
 }
-@keyframes skillsBtn {
+@keyframes upDown {
   0% {
     transform: translateY(0);
   }

@@ -211,7 +211,7 @@
             height: 8rem;
             background: url(../img/지팡이.png)center center no-repeat;
             background-size: cover;
-            animation: skillsBtn 0.5s ease infinite alternate;
+            animation: upDown 0.5s ease infinite alternate;
 
             &:hover {
                animation: none;
