@@ -720,7 +720,7 @@ nav ul li a img {
 .projects .swiper-left h3 {
   position: relative;
   width: 80%;
-  margin: 0 0 3rem 0;
+  margin: 0 0 2rem 0;
 }
 .projects .swiper-left h3::after {
   display: block;
@@ -805,17 +805,18 @@ nav ul li a img {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 99%;
+  max-width: 80rem;
+  max-height: 45.8rem;
   padding: 5rem 2rem 2rem 2rem;
   box-sizing: border-box;
   border-radius: 1rem;
-  border: 0.3rem solid #000;
   background-color: #eef5ff;
+  border: 0.3rem solid #74a9ec;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .projects .swiper-right:hover {
   transform: translate(-0.5%, -0.5%);
-  box-shadow: 0.5rem 0.5rem 0 0 rgb(254, 137, 164);
+  box-shadow: 0.5rem 0.5rem 0 0 #74a9ec;
 }
 .projects .swiper-right span {
   position: absolute;
@@ -825,13 +826,26 @@ nav ul li a img {
   width: 100%;
   padding: 0.7rem 1rem;
   box-sizing: border-box;
-  border-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
   border-bottom: 0.3rem solid #e2edff;
+  color: #444444;
   background-color: #fff;
   font-size: 1.4rem;
   font-weight: 800;
   font-style: italic;
   font-family: "Nanum Myeongjo";
+}
+.projects .swiper-right span::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  right: 1rem;
+  top: 0.6rem;
+  width: 3rem;
+  height: 2rem;
+  background: url(../img/star-yellow.png) center center no-repeat;
+  background-size: contain;
 }
 .projects .swiper-right figure {
   height: 100%;
@@ -846,13 +860,6 @@ nav ul li a img {
 }
 .projects .swiper-right figure figcaption {
   display: none;
-}
-.projects .swiper-pagination {
-  bottom: 5rem;
-  text-align: right;
-}
-.projects .swiper-pagination-bullet-active {
-  background-color: #74a9ec;
 }
 .projects .sidmool h3::after {
   content: "자연을 사랑하는 화장품 브랜드";

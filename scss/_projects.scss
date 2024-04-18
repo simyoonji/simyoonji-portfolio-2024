@@ -63,7 +63,7 @@
             h3 {
                 position: relative;
                 width: 80%;
-                margin: 0 0 3rem 0;
+                margin: 0 0 2rem 0;
 
                 &::after {
                     display: block;
@@ -165,17 +165,18 @@
             display: flex;
             flex-direction: column;
             position: relative;
-            width: 99%;
+            max-width: 80rem;
+            max-height: 45.8rem;
             padding: 5rem 2rem 2rem 2rem;
             box-sizing: border-box;
             border-radius: 1rem;
-            border: .3rem solid #000;
             background-color: #eef5ff;
+            border: .3rem solid $color-primary;
             transition: transform .2s ease, box-shadow .2s ease;
 
             &:hover {
                 transform: translate(-.5%, -.5%);
-                box-shadow: .5rem .5rem 0 0 $color-sub-pink;
+                box-shadow: .5rem .5rem 0 0 $color-primary;
             }
 
             span {
@@ -186,8 +187,12 @@
                 width: 100%;
                 padding: .7rem 1rem;
                 box-sizing: border-box;
-                border-radius: 1rem;
-                border-bottom: .3rem solid $color-sub;
+                border : {
+                    top-left-radius: 1rem;
+                    top-right-radius: 1rem;
+                    bottom: .3rem solid $color-sub;
+                }
+                color: #444444;
                 background-color: #fff;
 
                 font : {
@@ -196,11 +201,22 @@
                     style : italic;
                     family:'Nanum Myeongjo';
                 }
+
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    position: absolute;
+                    right: 1rem;
+                    top: .6rem;
+                    width: 3rem;
+                    height: 2rem;
+                    background: url(../img/star-yellow.png)center center no-repeat;
+                    background-size: contain;
+                }
             }
 
             figure {
                 height: 100%;
-                
     
                 img {
                     width: 100%;
@@ -215,14 +231,6 @@
                     display: none;
                 }
             }
-        }
-        
-        &-pagination {
-            bottom: 5rem;
-            text-align: right;
-        }
-        &-pagination-bullet-active {
-            background-color: $color-primary;
         }
     }
     .sidmool {
