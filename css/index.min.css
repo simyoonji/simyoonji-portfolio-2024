@@ -254,7 +254,7 @@ nav ul li a img {
 .profile {
   position: relative;
   height: 100vh;
-  /* skills */
+  /* ability */
 }
 .profile-inner {
   display: flex;
@@ -421,7 +421,7 @@ nav ul li a img {
   font-weight: 600;
   color: #74a9ec;
 }
-.profile-txt-bottom .skillsOpen {
+.profile-txt-bottom .abilityOpen {
   display: inline-block;
   position: absolute;
   right: 2rem;
@@ -432,23 +432,25 @@ nav ul li a img {
   background-size: cover;
   animation: upDown 0.5s ease infinite alternate;
 }
-.profile-txt-bottom .skillsOpen:hover {
+.profile-txt-bottom .abilityOpen:hover {
   animation: none;
 }
-.profile-txt-bottom .skillsOpen::before {
-  content: "skills";
+.profile-txt-bottom .abilityOpen::before {
+  content: "ability";
   display: inline-block;
   position: absolute;
+  left: 50%;
   bottom: 1rem;
+  transform: translateX(-50%);
   text-transform: uppercase;
+  letter-spacing: 0.3rem;
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 700;
   font-style: italic;
-  font-family: "Nanum Myeongjo";
-  color: #000;
+  color: rgb(255, 196, 0);
   background-color: #fff;
 }
-.profile .skills-modal {
+.profile .ability-modal {
   display: none;
   position: absolute;
   left: 0;
@@ -458,23 +460,25 @@ nav ul li a img {
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1000;
 }
-.profile .skills-contents {
+.profile .ability-contents {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 80rem;
-  height: 59rem;
-  border-radius: 2rem;
-  background-color: #e2edff;
+  width: 60rem;
+  height: 65rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  border-radius: 1rem;
+  background-color: #f4f4f4;
   z-index: 1001;
 }
-.profile .skills-contents::before {
-  content: "My skills possess";
+.profile .ability-contents::before {
+  content: "My ability possess";
   display: inline-block;
   position: absolute;
-  left: -13.5rem;
-  bottom: 10rem;
+  left: -14.5rem;
+  bottom: 10.5rem;
   font-size: 3rem;
   font-style: italic;
   font-weight: 600;
@@ -482,12 +486,12 @@ nav ul li a img {
   color: #fff;
   transform: rotate(-90deg);
 }
-.profile .skills-contents::after {
-  content: "Emoji Motions";
+.profile .ability-contents::after {
+  content: "Aptitude Test";
   display: inline-block;
   position: absolute;
-  right: -12.5rem;
-  top: 9rem;
+  right: -11.5rem;
+  top: 8rem;
   font-size: 3rem;
   font-style: italic;
   font-weight: 600;
@@ -495,110 +499,191 @@ nav ul li a img {
   color: #fff;
   transform: rotate(90deg);
 }
-.profile .skills-contents h4 {
+.profile .ability-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 2rem 0;
+}
+.profile .ability-top h4 {
   position: relative;
-  height: 7%;
-  padding: 0 2rem;
-  box-sizing: border-box;
-  line-height: 3.9rem;
-  border-top-left-radius: 2rem;
-  border-top-right-radius: 2rem;
   font-size: 2rem;
   font-style: italic;
-  color: transparent;
-  background-color: #74a9ec;
+  font-family: "Nanum Myeongjo";
 }
-.profile .skills-contents h4::after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  left: 1.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 3rem;
-  height: 3rem;
-  background: url(../img/star-yellow.png) center center no-repeat;
-  background-size: contain;
-}
-.profile .skills-inner {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 6rem;
-  position: relative;
-  height: 93%;
-  padding: 2rem;
-  box-sizing: border-box;
-}
-.profile .skills-inner > ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.profile .skills-inner > ul li {
-  display: flex;
-  align-items: center;
-}
-.profile .skills-inner > ul li img {
-  width: 5rem;
-  height: 5rem;
-  margin: 0 2rem 0 0;
-}
-.profile .skills-inner > ul li p {
-  position: relative;
-  width: 35rem;
-  height: 1.5rem;
-  border-radius: 1rem;
-  background-color: #fff;
-}
-.profile .skills-inner > ul li p::after {
+.profile .ability-top h4::after {
   content: "";
   display: inline-block;
   position: absolute;
   left: 0;
-  top: 0;
+  bottom: -0.3rem;
+  width: 10rem;
+  height: 0.1rem;
+  background-color: #000;
+}
+.profile .ability-top button {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.4rem;
+  border: 0.2rem solid #444444;
+  background-color: #ececec;
+}
+.profile .ability-top button::before, .profile .ability-top button::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 0.2rem;
+  border-radius: 0.4rem;
+  background-color: #444444;
+}
+.profile .ability-top button::before {
+  transform: rotate(45deg);
+}
+.profile .ability-top button::after {
+  transform: rotate(-45deg);
+}
+.profile .ability-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.profile .ability-inner > div {
+  margin: 0 0 2rem 0;
+  text-align: center;
+}
+.profile .ability-inner > div span {
+  position: relative;
+  width: 24rem;
+  height: 22rem;
+  background: url(../img/인적성검사.png) center center no-repeat;
+  background-size: cover;
+}
+.profile .ability-inner > div span::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-45%, -56%);
+  width: 19rem;
+  height: 13rem;
+  background: url(../img/도형.png) center center no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+}
+.profile .ability-inner ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 2rem 0 0 0;
+  box-sizing: border-box;
+  border-top: 0.2rem dashed #444444;
+  /* before */
+  /* after */
+}
+.profile .ability-inner ul li {
+  display: grid;
+  grid-template-columns: 20% 75%;
+  gap: 1rem;
+  align-items: center;
+}
+.profile .ability-inner ul li img {
+  width: 100%;
+}
+.profile .ability-inner ul li p {
+  position: relative;
+  width: 100%;
+  height: 1.5rem;
+  background-color: #fff;
+  box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.1450980392);
+}
+.profile .ability-inner ul li p::before {
+  display: block;
+  position: absolute;
+  top: -1.6rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: "Nanum Myeongjo";
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: #444444;
+}
+.profile .ability-inner ul li p::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
   bottom: 0;
-  border-radius: 1rem;
   background-color: #74a9ec;
   height: 1.5rem;
 }
-.profile .skills-inner > ul li:nth-of-type(n+3):nth-of-type(-n+8) img {
+.profile .ability-inner ul li:nth-of-type(1) p::before {
+  content: "photoshop";
+}
+.profile .ability-inner ul li:nth-of-type(2) p::before {
+  content: "illustrator";
+}
+.profile .ability-inner ul li:nth-of-type(3) p::before {
+  content: "html";
+}
+.profile .ability-inner ul li:nth-of-type(4) p::before {
+  content: "css";
+}
+.profile .ability-inner ul li:nth-of-type(5) p::before {
+  content: "scss";
+}
+.profile .ability-inner ul li:nth-of-type(6) p::before {
+  content: "javascript";
+}
+.profile .ability-inner ul li:nth-of-type(7) p::before {
+  content: "figma";
+}
+.profile .ability-inner ul li:nth-of-type(8) p::before {
+  content: "github";
+}
+.profile .ability-inner ul li:nth-of-type(n+3):nth-of-type(-n+8) img {
   border-radius: 1rem;
 }
-.profile .skills-inner > ul li:nth-of-type(1) p::after {
+.profile .ability-inner ul li:nth-of-type(1) p::after {
   animation: photoShopGage 1.6s forwards;
 }
-.profile .skills-inner > ul li:nth-of-type(2) p::after {
+.profile .ability-inner ul li:nth-of-type(2) p::after {
   animation: AiGage 1.6s forwards;
 }
-.profile .skills-inner > ul li:nth-of-type(3) p::after {
+.profile .ability-inner ul li:nth-of-type(3) p::after {
   animation: HtmlGage 2.5s forwards;
 }
-.profile .skills-inner > ul li:nth-of-type(4) p::after {
+.profile .ability-inner ul li:nth-of-type(4) p::after {
   animation: CssGage 2s forwards;
 }
-.profile .skills-inner > ul li:nth-of-type(5) p::after {
+.profile .ability-inner ul li:nth-of-type(5) p::after {
   animation: ScssGage 1.7s forwards;
 }
-.profile .skills-inner > ul li:nth-of-type(6) p::after {
+.profile .ability-inner ul li:nth-of-type(6) p::after {
   animation: JsGage 1s forwards;
 }
-.profile .skills-inner > ul li:nth-of-type(7) p::after {
+.profile .ability-inner ul li:nth-of-type(7) p::after {
   animation: FigmaGage 1.6s forwards;
 }
-.profile .skills-inner > ul li:nth-of-type(8) p::after {
+.profile .ability-inner ul li:nth-of-type(8) p::after {
   animation: GithubGage 1.6s forwards;
 }
-.profile .skills-inner-rt {
+.profile .ability-inner-rt {
   display: flex;
   justify-content: end;
 }
-.profile .skills-inner-rt ul {
+.profile .ability-inner-rt ul {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 2rem 0 0 0;
 }
-.profile .skills-inner-rt ul li:nth-of-type(1) {
+.profile .ability-inner-rt ul li:nth-of-type(1) {
   position: relative;
   width: 25rem;
   height: 35rem;
@@ -607,66 +692,6 @@ nav ul li a img {
   -webkit-transition: background 0.1s ease-in;
   -moz-transition: background 0.1s ease-in;
   -o-transition: background 0.1s ease-in;
-}
-.profile .skills-inner-rt ul .changeMotion-normal {
-  background: url(../img/이모지-normal.gif) center center no-repeat;
-  background-size: cover;
-}
-.profile .skills-inner-rt ul .changeMotion-dash {
-  background: url(../img/이모지-dash.gif) center center no-repeat;
-  background-size: cover;
-}
-.profile .skills-inner-rt ul .changeMotion-dance {
-  background: url(../img/이모지-dance.gif) center center no-repeat;
-  background-size: cover;
-}
-.profile .skills-inner-rt ul .motions {
-  width: 80%;
-  text-align: center;
-  padding: 0.8rem 0;
-  margin: 1.5rem 0 0 0;
-  box-sizing: border-box;
-}
-.profile .skills-inner-rt ul .motions button {
-  width: 5rem;
-  height: 5rem;
-  margin: 0 0.5rem;
-  border-radius: 1rem;
-}
-.profile .skills-inner-rt ul .motions button:nth-of-type(1) {
-  background: url(../img/normal.png) center center no-repeat;
-  background-size: contain;
-}
-.profile .skills-inner-rt ul .motions button:nth-of-type(2) {
-  background: url(../img/Dash.png) center center no-repeat;
-  background-size: contain;
-}
-.profile .skills-inner-rt ul .motions button:nth-of-type(3) {
-  background: url(../img/Dance.png) center center no-repeat;
-  background-size: contain;
-}
-.profile .skills-inner-rt ul .motions button:hover {
-  box-shadow: 0 0 0 0.2rem #74a9ec;
-}
-.profile .skills-inner-rt .skills-close {
-  position: absolute;
-  right: 2rem;
-  bottom: 2rem;
-  padding: 1rem;
-  box-sizing: border-box;
-  border-radius: 2rem;
-  color: #74a9ec;
-  background-color: #fff;
-  border: 0.2rem solid #74a9ec;
-  transition: color 0.2s ease, background-color 0.2s ease;
-  -webkit-transition: color 0.2s ease, background-color 0.2s ease;
-  -moz-transition: color 0.2s ease, background-color 0.2s ease;
-  -o-transition: color 0.2s ease, background-color 0.2s ease;
-  font-size: 1.8rem;
-  font-style: italic;
-}
-.profile .skills-inner-rt .skills-close:hover {
-  animation: bounce 0.5s linear;
 }
 .profile .block {
   display: block;
@@ -1120,7 +1145,7 @@ nav ul li a img {
     width: 0;
   }
   100% {
-    width: 30rem;
+    width: 5rem;
   }
 }
 @keyframes AiGage {
@@ -1128,7 +1153,7 @@ nav ul li a img {
     width: 0;
   }
   100% {
-    width: 25rem;
+    width: 5rem;
   }
 }
 @keyframes HtmlGage {
@@ -1136,7 +1161,7 @@ nav ul li a img {
     width: 0;
   }
   100% {
-    width: 34rem;
+    width: 5rem;
   }
 }
 @keyframes CssGage {
@@ -1144,7 +1169,7 @@ nav ul li a img {
     width: 0;
   }
   100% {
-    width: 34rem;
+    width: 5rem;
   }
 }
 @keyframes ScssGage {
@@ -1152,7 +1177,7 @@ nav ul li a img {
     width: 0;
   }
   100% {
-    width: 31.5rem;
+    width: 5rem;
   }
 }
 @keyframes JsGage {
@@ -1160,7 +1185,7 @@ nav ul li a img {
     width: 0;
   }
   100% {
-    width: 23rem;
+    width: 5rem;
   }
 }
 @keyframes FigmaGage {
@@ -1168,7 +1193,7 @@ nav ul li a img {
     width: 0;
   }
   100% {
-    width: 30rem;
+    width: 5rem;
   }
 }
 @keyframes GithubGage {
@@ -1176,7 +1201,7 @@ nav ul li a img {
     width: 0;
   }
   100% {
-    width: 30rem;
+    width: 5rem;
   }
 }
 @keyframes upDown {

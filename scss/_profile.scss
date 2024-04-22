@@ -202,7 +202,7 @@
             }
          }
 
-         .skillsOpen {
+         .abilityOpen {
             display: inline-block;
             position: absolute;
             right: 2rem;
@@ -218,27 +218,28 @@
             }
 
             &::before {
-               content: 'skills';
+               content: 'ability';
                display: inline-block;
                position: absolute;
+               left: 50%;
                bottom: 1rem;
+               transform: translateX(-50%);
                text-transform: uppercase;
+               letter-spacing : .3rem;
                font : {
                   size : 1.4rem;
-                  weight : 600;
+                  weight : 700;
                   style : italic;
-                  family:'Nanum Myeongjo'
                }
-               color: #000;
+               color: rgb(255, 196, 0);
                background-color: #fff;
             }
           }
       }
    }
 
-   /* skills */
-   .skills {
-
+   /* ability */
+   .ability {
       &-modal {
          display: none;
          position: absolute;
@@ -253,18 +254,20 @@
       &-contents {
          @include absolute;
          transform: translate(-50%,-50%);
-         width: 80rem;
-         height: 59rem;
-         border-radius: 2rem;
-         background-color: $color-sub;
+         width: 60rem;
+         height: 65rem;
+         padding: 2rem;
+         box-sizing: border-box;
+         border-radius: 1rem;
+         background-color: #f4f4f4;
          z-index: 1001;
 
          &::before {
-            content: 'My skills possess';
+            content: 'My ability possess';
             display: inline-block;
             position: absolute;
-            left: -13.5rem;
-            bottom: 10rem;
+            left: -14.5rem;
+            bottom: 10.5rem;
 
             font : {
                size: 3rem;
@@ -277,11 +280,11 @@
          }
 
          &::after {
-            content: 'Emoji Motions';
+            content: 'Aptitude Test';
             display: inline-block;
             position: absolute;
-            right: -12.5rem;
-            top: 9rem;
+            right: -11.5rem;
+            top: 8rem;
 
             font : {
                size: 3rem;
@@ -292,86 +295,171 @@
             color: #fff;
             transform: rotate(90deg);
          }
+      }
+
+      &-top {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         margin: 0 0 2rem 0;
 
          h4 {
             position: relative;
-            height: 7%;
-            padding: 0 2rem;
-            box-sizing: border-box;
-            line-height: 3.9rem;
-
-            border : {
-               top-left-radius: 2rem;
-               top-right-radius: 2rem;
-            }
-
             font : {
              size: 2rem;
              style: italic;
+             family:'Nanum Myeongjo';
             }
-
-            color: transparent;
-            background-color: $color-primary;
 
             &::after {
                content: '';
                display: inline-block;
                position: absolute;
-               left: 1.5rem;
-               top: 50%;
-               transform: translateY(-50%);
-               width: 3rem;
-               height: 3rem;
-               background: url(../img/star-yellow.png)center center no-repeat;
-               background-size: contain;
+               left: 0;
+               bottom: -.3rem;
+               width: 10rem;
+               height: .1rem;
+               background-color: #000;
             }
          }
+
+         button {
+             position: relative;
+             width: 2.5rem;
+             height: 2.5rem;
+             border-radius: .4rem;
+             border: .2rem solid #444444;
+             background-color: #ececec;
+
+             &::before, &::after {
+               content: '';
+               display: inline-block;
+               position: absolute;
+               left: 0;
+               top: 50%;
+               transform: translateY(-50%);
+               width: 100%;
+               height: .2rem;
+               border-radius: .4rem;
+               background-color: #444444;
+             }
+
+             &::before {
+               transform: rotate(45deg);
+             }
+             &::after {
+               transform: rotate(-45deg);
+             }
+         }
       }
-
       &-inner {
-         display: grid;
-         grid-template-columns: repeat(2,1fr);
-         gap: 6rem;
          position: relative;
-         height: 93%;
-         padding: 2rem;
-         box-sizing: border-box;
+         display: flex;
+         flex-direction: column;
 
-            > ul {
-               display: flex;
-               flex-direction: column;
-               justify-content: space-between;
+         > div {
+            margin: 0 0 2rem 0;
+            text-align: center;
+
+            span {
+               position: relative;
+               width: 24rem;
+               height: 22rem;
+               background: url(../img/인적성검사.png)center center no-repeat;
+               background-size: cover;
+
+               
+            &::after {
+               content: '';
+               display: inline-block;
+               @include absolute();
+               transform: translate(-45%, -56%);
+               width: 19rem;
+               height: 13rem;
+               background: url(../img/도형.png)center center no-repeat;
+               background-size: cover;
+               opacity: 0.8;
+            }
+            }
+         }
+
+             ul {
+               display: grid;
+               grid-template-columns: repeat(2,1fr);
+               gap: 2rem;
+               padding: 2rem 0 0 0;
+               box-sizing: border-box;
+               border-top: .2rem dashed #444444;
 
                li {
-                  display: flex;
+                  display: grid;
+                  grid-template-columns: 20% 75%;
+                  gap: 1rem;
                   align-items: center;
 
                   img {
-                     width: 5rem;
-                     height: 5rem;
-                     margin: 0 2rem 0 0;
+                     width: 100%;
                   }
 
                   p {
                      position: relative;
-                     width: 35rem;
+                     width: 100%;
                      height: 1.5rem;
-                     border-radius: 1rem;
                      background-color: #fff;
+                     box-shadow: 0 0 .5rem 0 #00000025;
+
+                     &::before {
+                        display: block;
+                        position: absolute;
+                        top: -1.6rem;
+
+                        font : {
+                           size: 1.2rem;
+                           weight : 700;
+                           family:'Nanum Myeongjo';
+                          }
+                          text-transform: uppercase;
+                          letter-spacing: .1rem;
+                        color: #444444;
+                     }
 
                      &::after {
                         content: '';
                         display: inline-block;
                         position: absolute;
                         left: 0;
-                        top: 0;
                         bottom: 0;
-                        border-radius: 1rem;
                         background-color: $color-primary;
                         height: 1.5rem;
                      }
                   }
                }
+               /* before */
+               li:nth-of-type(1) p::before {
+                  content: 'photoshop';
+               }
+               li:nth-of-type(2) p::before {
+                  content: 'illustrator';
+               }
+               li:nth-of-type(3) p::before {
+                  content: 'html';
+               }
+               li:nth-of-type(4) p::before {
+                  content: 'css';
+               }
+               li:nth-of-type(5) p::before {
+                  content: 'scss';
+               }
+               li:nth-of-type(6) p::before {
+                  content: 'javascript';
+               }
+               li:nth-of-type(7) p::before {
+                  content: 'figma';
+               }
+               li:nth-of-type(8) p::before {
+                  content: 'github';
+               }
+               /* after */
                li:nth-of-type(n+3):nth-of-type(-n+8) img {
                   border-radius: 1rem;
                }
@@ -424,75 +512,6 @@
                         -o-transition: background .1s ease-in;
                      }
                    }
-
-                   .changeMotion-normal {
-                     background: url(../img/이모지-normal.gif)center center no-repeat;
-                     background-size: cover;
-                  }
-                  .changeMotion-dash {
-                     background: url(../img/이모지-dash.gif)center center no-repeat;
-                     background-size: cover;
-                  }
-                  .changeMotion-dance {
-                     background: url(../img/이모지-dance.gif)center center no-repeat;
-                     background-size: cover;
-                  }
-
-                  .motions {
-                     width: 80%;
-                     text-align: center;
-                     padding: .8rem 0;
-                     margin: 1.5rem 0 0 0;
-                     box-sizing: border-box;
-   
-                     button {
-                        width: 5rem;
-                        height: 5rem;
-                        margin: 0 .5rem;
-                        border-radius: 1rem;
-   
-                        &:nth-of-type(1) {
-                           background:url(../img/normal.png)center center no-repeat;
-                           background-size: contain;
-                        }
-                        &:nth-of-type(2) {
-                           background:url(../img/Dash.png)center center no-repeat;
-                           background-size: contain;
-                        }
-                        &:nth-of-type(3) {
-                           background:url(../img/Dance.png)center center no-repeat;
-                           background-size: contain;
-                        }
-                        &:hover {
-                           box-shadow: 0 0 0 .2rem $color-primary;
-                        }
-                     }
-                  }
-               }
-               
-               .skills-close {
-                  position: absolute;
-                  right: 2rem;
-                  bottom: 2rem;
-                  padding: 1rem;
-                  box-sizing: border-box;
-                  border-radius: 2rem;
-                  color: $color-primary;
-                  background-color: #fff;
-                  border: .2rem solid $color-primary;
-                  transition: color .2s ease, background-color .2s ease;
-                  -webkit-transition: color .2s ease, background-color .2s ease;         
-                  -moz-transition: color .2s ease, background-color .2s ease;
-                  -o-transition: color .2s ease, background-color .2s ease;
-
-                  font : {
-                     size: 1.8rem;
-                     style: italic;
-                  }
-
-                  &:hover {
-                     animation: bounce 0.5s linear;
-                  }
                }
             }
          }

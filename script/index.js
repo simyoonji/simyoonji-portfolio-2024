@@ -27,58 +27,27 @@ aAll.forEach((item) => {
     });
 });
 
-// 클릭 이벤트 -> skills 열기
+// 클릭 이벤트 -> ability 열기
 const sectionProfile = document.getElementById('profile');
-const modalBg = sectionProfile.querySelector('.skills-modal');
-const skillsBox = sectionProfile.querySelector('.skills-contents');
-const skillsOpen = document.querySelector('.skillsOpen')
+const modalBg = sectionProfile.querySelector('.ability-modal');
+const abilityBox = sectionProfile.querySelector('.ability-contents');
+const abilityOpen = document.querySelector('.abilityOpen')
 const BLOCK = 'block';
 
-skillsOpen.addEventListener('click', () => {
+abilityOpen.addEventListener('click', () => {
             modalBg.classList.add(BLOCK);
             document.body.style.overflow = 'hidden';
         });
 
-const skillsClose = document.querySelector('.skills-close')
+const abilityClose = document.querySelector('.ability-close')
         .addEventListener('click', () => {
             modalBg.classList.remove(BLOCK);
             document.body.style.overflow = 'auto';
         });
 
 modalBg.addEventListener('click', (e) => {
-            if (!skillsBox.contains(e.target)) {
+            if (!abilityBox.contains(e.target)) {
                 modalBg.classList.remove(BLOCK);
                 document.body.style.overflow = 'auto';
             }
         });
-
-// skills 모션 변경
-let motionImage = document.querySelector('.skills-inner-rt ul li:nth-of-type(1)');
-const MOTION_NORMAL = 'changeMotion-normal';
-const MOTION_DASH = 'changeMotion-dash';
-const MOTION_DANCE = 'changeMotion-dance';
-
-// normal
- document.querySelector('.motions > button:nth-of-type(1)')
-         .addEventListener('click', () => {
-             motionImage.classList.remove(MOTION_DASH);
-             motionImage.classList.remove(MOTION_DANCE);
-
-             motionImage.classList.add(MOTION_NORMAL);
- });
-// Dash
-document.querySelector('.motions > button:nth-of-type(2)')
-        .addEventListener('click', () => {
-            motionImage.classList.remove(MOTION_NORMAL);
-            motionImage.classList.remove(MOTION_DANCE);
-
-            motionImage.classList.add(MOTION_DASH);
-});
-// Dance
-document.querySelector('.motions > button:nth-of-type(3)')
-        .addEventListener('click', () => {
-            motionImage.classList.remove(MOTION_NORMAL);
-            motionImage.classList.remove(MOTION_DASH);
-            
-            motionImage.classList.add(MOTION_DANCE);
-});
