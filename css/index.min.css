@@ -1,8 +1,8 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap");
 html {
-  font-size: 62.5%;
-  font-family: "Lato", sans-serif;
+  font-size: 10px;
+  font-font-family: "Pretendard-Regular";
 }
 
 body, html {
@@ -65,7 +65,7 @@ h3 {
 }
 
 p, dd {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 /* input x 지우기 */
@@ -136,8 +136,14 @@ input::-webkit-search-results-decoration {
 }
 
 @font-face {
-  font-family: "GangwonState";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/GangwonState.woff2") format("woff2");
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ONE-Mobile-Title";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -226,6 +232,7 @@ nav ul li a img {
   transform: translateX(-50%);
   max-width: 100rem;
   opacity: 0;
+  animation: title 0.7s forwards;
 }
 #main .title::after {
   display: block;
@@ -245,10 +252,24 @@ nav ul li a img {
   background-size: contain;
 }
 #main .title div:nth-of-type(2) {
+  position: relative;
   width: 50%;
   background: url("../img/8비트-제목_03.png") center no-repeat;
   background-size: contain;
   float: right;
+}
+#main .title div:nth-of-type(2)::after {
+  content: "";
+  position: absolute;
+  right: -1.5rem;
+  top: -3.5rem;
+  width: 5rem;
+  height: 4rem;
+  background: url(../img/star-yellow.png) center center no-repeat;
+  background-size: cover;
+  animation: star 0.2s forwards;
+  animation-delay: 1s;
+  opacity: 0;
 }
 
 .profile {
@@ -257,8 +278,10 @@ nav ul li a img {
   /* ability */
 }
 .profile-inner {
-  display: flex;
-  max-width: 124rem;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  gap: 5rem;
+  max-width: 120rem;
   height: 100%;
   margin: 0 auto;
 }
@@ -267,7 +290,6 @@ nav ul li a img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 40%;
 }
 .profile-about h2 {
   line-height: 0;
@@ -293,11 +315,12 @@ nav ul li a img {
   -o-transition: padding 0.2s ease;
 }
 .profile-about ul li:nth-of-type(1) img {
-  width: 27rem;
+  width: 30rem;
   border-radius: 3rem;
   background: url("../img/그레인구름.jpg") 0 center/120% repeat-x;
   background-size: cover;
   background-attachment: fixed;
+  box-shadow: 0 0 0.7rem 0 rgba(2, 2, 2, 0.199) inset;
   animation: cloud 100s linear infinite alternate-reverse;
 }
 .profile-about ul li:nth-of-type(2) h3 {
@@ -305,7 +328,8 @@ nav ul li a img {
   padding: 0 0 3rem 0;
   box-sizing: border-box;
   text-align: center;
-  font-family: "GangwonState";
+  font-weight: 500;
+  font-family: "ONE-Mobile-Title";
   /* desktop */
 }
 @media screen and (max-width: 1200px) {
@@ -350,11 +374,12 @@ nav ul li a img {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 60%;
   padding: 5rem;
   box-sizing: border-box;
+  box-shadow: 8px 1px 5px -3px rgba(2, 2, 2, 0.071) inset;
+  -webkit-box-shadow: 8px 1px 5px -3px rgba(2, 2, 2, 0.071) inset;
+  -moz-box-shadow: 8px 1px 5px -3px rgba(2, 2, 2, 0.071) inset;
   background-color: #fff;
-  box-shadow: inset 0.5rem 0.4rem 1rem 0 rgba(0, 0, 0, 0.1098039216);
 }
 .profile-txt-top {
   box-sizing: border-box;
@@ -367,7 +392,9 @@ nav ul li a img {
   left: 2rem;
   z-index: 1;
   font-size: 2.5rem;
+  font-weight: 500;
   color: #74a9ec;
+  font-family: "ONE-Mobile-Title";
 }
 .profile-txt-top p::before {
   content: "";
@@ -474,10 +501,10 @@ nav ul li a img {
   z-index: 1001;
 }
 .profile .ability-contents::before {
-  content: "My ability possess";
+  content: "My skills possess";
   display: inline-block;
   position: absolute;
-  left: -14.5rem;
+  left: -14rem;
   bottom: 10.5rem;
   font-size: 3rem;
   font-style: italic;
@@ -570,11 +597,11 @@ nav ul li a img {
   left: 50%;
   top: 50%;
   transform: translate(-45%, -56%);
-  width: 19rem;
-  height: 13rem;
+  width: 0;
+  height: 0;
   background: url(../img/도형.png) center center no-repeat;
   background-size: cover;
-  opacity: 0.8;
+  animation: Aptitude 1.6s forwards;
 }
 .profile .ability-inner ul {
   display: grid;
@@ -698,81 +725,121 @@ nav ul li a img {
 }
 
 .projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
-  height: auto;
-  margin: 0 0 5rem 0;
+  padding: 0 0 10rem 0;
   box-sizing: border-box;
+  z-index: 1;
+}
+.projects::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -30%);
+  width: 100vw;
+  height: 50%;
+  background: url(../img/2.jpg) no-repeat;
+  background-size: cover;
+  opacity: 0.4;
+  z-index: 2;
 }
 .projects h2 {
-  font-size: 9rem;
+  padding: 8rem 0;
+  box-sizing: border-box;
+  font-size: 11rem;
   font-weight: 800;
   font-style: italic;
   font-family: "Nanum Myeongjo";
-}
-.projects h2::after {
-  content: "projects";
-  display: block;
-  max-width: 124rem;
-  margin: 0 auto;
+  text-align: center;
   color: transparent;
-  text-align: start;
   -webkit-text-stroke-width: 0.1rem;
   -webkit-text-stroke-color: #74a9ec;
 }
 .projects-inner {
-  max-width: 124rem;
-  height: 100%;
+  position: relative;
+  max-width: 120rem;
   margin: 0 auto;
-  overflow: hidden;
 }
 .projects .swiper {
-  position: relative;
   width: 100%;
-  height: 100%;
-  padding: 6rem 0;
+  padding: 7rem 1rem 2rem 1rem;
   box-sizing: border-box;
+  border-radius: 1rem;
+  border: 0.2rem solid #74a9ec;
+  background-color: #e2edff;
+  z-index: 3;
+}
+.projects .swiper::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  background-color: #fff;
+}
+.projects .swiper::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0.4rem;
+  right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  background: url(../img/star-yellow.png) center center no-repeat;
+  background-size: contain;
 }
 .projects .swiper-slide {
-  display: grid;
-  grid-template-columns: 35% 65%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 4rem 1rem;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 0 0 0.3rem 0 rgba(0, 0, 0, 0.4) inset;
   cursor: none;
 }
 .projects .swiper-left {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 35%;
 }
 .projects .swiper-left h3 {
-  position: relative;
-  width: 80%;
+  text-align: center;
   margin: 0 0 2rem 0;
-}
-.projects .swiper-left h3::after {
-  display: block;
-  text-transform: none;
-  color: #000;
-  font-size: 1.4rem;
-  font-weight: 100;
+  font-size: 4rem;
 }
 .projects .swiper-left-txt {
-  width: 80%;
-  margin: 0 0 4rem 0;
+  margin: 0 0 2rem 0;
+  position: relative;
 }
 .projects .swiper-left-txt dl {
+  display: flex;
+  align-items: baseline;
   padding: 1.3rem 0;
   box-sizing: border-box;
-}
-.projects .swiper-left-txt dl dt {
-  margin: 0 0 0.5rem 0;
   font-size: 2rem;
   font-weight: 600;
+}
+.projects .swiper-left-txt dl dt {
+  margin: 0 2rem 0.5rem 0;
+  background-color: pink;
 }
 .projects .swiper-left-txt dl dd {
   color: #444444;
 }
 .projects .swiper-left ul {
   display: flex;
-  width: 80%;
+  justify-content: center;
 }
 .projects .swiper-left ul li {
   position: relative;
@@ -828,78 +895,23 @@ nav ul li a img {
 }
 .projects .swiper-right {
   display: flex;
-  flex-direction: column;
-  position: relative;
-  max-width: 80rem;
-  max-height: 45.8rem;
-  padding: 5rem 2rem 2rem 2rem;
+  justify-content: end;
+  align-items: center;
+  width: 65%;
+  padding: 0 1rem 0 0;
   box-sizing: border-box;
-  border-radius: 1rem;
-  background-color: #eef5ff;
-  border: 0.3rem solid #74a9ec;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.projects .swiper-right:hover {
-  transform: translate(-0.5%, -0.5%);
-  box-shadow: 0.5rem 0.5rem 0 0 #74a9ec;
-}
-.projects .swiper-right span {
-  position: absolute;
-  left: 0;
-  top: 0;
-  display: block;
-  width: 100%;
-  padding: 0.7rem 1rem;
-  box-sizing: border-box;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-  border-bottom: 0.3rem solid #e2edff;
-  color: #444444;
-  background-color: #fff;
-  font-size: 1.4rem;
-  font-weight: 800;
-  font-style: italic;
-  font-family: "Nanum Myeongjo";
-}
-.projects .swiper-right span::after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  right: 1rem;
-  top: 0.6rem;
-  width: 3rem;
-  height: 2rem;
-  background: url(../img/star-yellow.png) center center no-repeat;
-  background-size: contain;
-}
-.projects .swiper-right figure {
-  height: 100%;
-}
-.projects .swiper-right figure img {
-  width: 100%;
-  height: 100%;
-  transition: transform 0.2s ease;
+.projects .swiper-right img {
+  width: 80%;
   object-fit: cover;
-  border-radius: 1rem;
-  border: 0.3rem solid #e2edff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.1490196078);
 }
-.projects .swiper-right figure figcaption {
-  display: none;
-}
-.projects .sidmool h3::after {
-  content: "자연을 사랑하는 화장품 브랜드";
-}
-.projects .muvic h3::after {
-  content: "영화와 음악을 한번에 즐길 수 있는 사이트";
-}
-.projects .korean-air h3::after {
-  content: "비행의 완벽함 대한민국 대표 항공사";
-}
-.projects .spar h3::after {
-  content: "글로벌 프리미엄 베이킹 브랜드";
-}
-.projects .news h3::after {
-  content: "news api를 사용하여 제작된 사이트";
+.projects .swiper-right img:hover {
+  transform: translate(-1%, -1%);
+  box-shadow: 1rem 1rem 0.4rem 0px #cccccc;
+  -webkit-box-shadow: 1rem 1rem 0.4rem 0px #cccccc;
+  -moz-box-shadow: 1rem 1rem 0.4rem 0px #cccccc;
 }
 
 #projects-script {
@@ -917,7 +929,7 @@ nav ul li a img {
 #projects-script h2::after {
   content: "script";
   display: block;
-  max-width: 124rem;
+  max-width: 120rem;
   margin: 0 auto;
   color: transparent;
   text-align: start;
@@ -925,7 +937,7 @@ nav ul li a img {
   -webkit-text-stroke-color: #74a9ec;
 }
 #projects-script .script-inner {
-  max-width: 124rem;
+  max-width: 120rem;
   margin: 0 auto;
 }
 #projects-script > div {
@@ -1098,24 +1110,24 @@ nav ul li a img {
     top: 72%;
   }
 }
-@keyframes title-1 {
-  0% {
-    opacity: 0;
-    top: -15%;
-  }
-  100% {
-    opacity: 1;
-    top: 15%;
-  }
-}
-@keyframes title-2 {
+@keyframes title {
   0% {
     opacity: 0;
     top: -5%;
   }
   100% {
     opacity: 1;
-    top: 25%;
+    top: 10%;
+  }
+}
+@keyframes star {
+  0% {
+    opacity: 0;
+    top: -15rem;
+  }
+  100% {
+    opacity: 1;
+    top: -3.5rem;
   }
 }
 @keyframes bounce {
@@ -1129,14 +1141,16 @@ nav ul li a img {
     transform: translateY(4px);
   }
 }
-@keyframes star {
+@keyframes Aptitude {
   0% {
     opacity: 0;
-    transform: scale(1);
+    width: 0rem;
+    height: 0rem;
   }
   100% {
-    opacity: 1;
-    transform: scale(2);
+    opacity: 0.8;
+    width: 19rem;
+    height: 13rem;
   }
 }
 /* about  */
@@ -1145,7 +1159,7 @@ nav ul li a img {
     width: 0;
   }
   100% {
-    width: 5rem;
+    width: 85%;
   }
 }
 @keyframes AiGage {
@@ -1153,7 +1167,7 @@ nav ul li a img {
     width: 0;
   }
   100% {
-    width: 5rem;
+    width: 70%;
   }
 }
 @keyframes HtmlGage {
@@ -1161,7 +1175,7 @@ nav ul li a img {
     width: 0;
   }
   100% {
-    width: 5rem;
+    width: 95%;
   }
 }
 @keyframes CssGage {
@@ -1169,7 +1183,7 @@ nav ul li a img {
     width: 0;
   }
   100% {
-    width: 5rem;
+    width: 90%;
   }
 }
 @keyframes ScssGage {
@@ -1177,7 +1191,7 @@ nav ul li a img {
     width: 0;
   }
   100% {
-    width: 5rem;
+    width: 88%;
   }
 }
 @keyframes JsGage {
@@ -1185,7 +1199,7 @@ nav ul li a img {
     width: 0;
   }
   100% {
-    width: 5rem;
+    width: 50%;
   }
 }
 @keyframes FigmaGage {
@@ -1193,7 +1207,7 @@ nav ul li a img {
     width: 0;
   }
   100% {
-    width: 5rem;
+    width: 60%;
   }
 }
 @keyframes GithubGage {
@@ -1201,7 +1215,7 @@ nav ul li a img {
     width: 0;
   }
   100% {
-    width: 5rem;
+    width: 70%;
   }
 }
 @keyframes upDown {

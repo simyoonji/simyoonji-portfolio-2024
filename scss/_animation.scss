@@ -14,24 +14,25 @@
         top: 72%;
    }
  }
- @keyframes title-1 {
-   0%{
-      opacity: 0;
-      top: -15%;
-   }
-   100% {
-      opacity: 1;
-      top: 15%;
-  }
-}
-@keyframes title-2 {
+ @keyframes title {
    0%{
       opacity: 0;
       top: -5%;
    }
+
    100% {
       opacity: 1;
-      top: 25%;
+      top: 10%;
+  }
+}
+@keyframes star {
+   0%{
+      opacity: 0;
+      top: -15rem;
+   }
+   100% {
+      opacity: 1;
+      top: -3.5rem;
   }
 }
 @keyframes bounce {
@@ -45,14 +46,16 @@
      transform: translateY(4px);
    }
  }
- @keyframes star {
+ @keyframes Aptitude {
    0%{
       opacity: 0;
-      transform: scale(1);
+      width: 0rem;
+      height: 0rem;
    }
    100% {
-      opacity: 1;
-      transform: scale(2);
+      opacity: 0.8;
+      width: 19rem;
+      height: 13rem;
   }
 }
  /* about  */
@@ -61,7 +64,7 @@
        width: 0;
     }
     100%{
-       width: 5rem;
+       width: 85%;
     }
  }
  @keyframes AiGage {
@@ -69,7 +72,7 @@
        width: 0;
     }
     100%{
-       width: 5rem;
+       width: 70%;
     }
  }
  @keyframes HtmlGage {
@@ -77,7 +80,7 @@
        width: 0;
     }
     100%{
-       width: 5rem;
+       width: 95%;
     }
  }
  @keyframes CssGage {
@@ -85,7 +88,7 @@
        width: 0;
     }
     100%{
-       width: 5rem;
+       width: 90%;
     }
  }
  @keyframes ScssGage {
@@ -93,7 +96,7 @@
        width: 0;
     }
     100%{
-       width: 5rem;
+       width: 88%;
     }
  }
  @keyframes JsGage {
@@ -101,7 +104,7 @@
        width: 0;
     }
     100%{
-       width: 5rem;
+       width: 50%;
     }
  }
  @keyframes FigmaGage {
@@ -109,7 +112,7 @@
        width: 0;
     }
     100%{
-       width: 5rem;
+       width: 60%;
     }
  }
  @keyframes GithubGage {
@@ -117,7 +120,7 @@
        width: 0;
     }
     100%{
-       width: 5rem;
+       width: 70%;
     }
  }
  @keyframes upDown {

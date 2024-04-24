@@ -38,6 +38,7 @@
         transform: translateX(-50%);
         max-width: 100rem;
         opacity: 0;
+        animation: title .7s forwards;
 
         &::after {
          @include clearFix();
@@ -58,10 +59,25 @@
             }
 
             &:nth-of-type(2) {
+               position: relative;
                width: 50%;
                background: url('../img/8비트-제목_03.png')center no-repeat;
                background-size: contain;
                float: right;
+
+               &::after {
+                  content: '';
+                  position: absolute;
+                  right: -1.5rem;
+                  top: -3.5rem;
+                  width: 5rem;
+                  height: 4rem;
+                  background: url(../img/star-yellow.png)center center no-repeat;
+                  background-size: cover;
+                  animation: star .2s forwards;
+                  animation-delay: 1s;
+                  opacity: 0;
+               }
             }
         }
  

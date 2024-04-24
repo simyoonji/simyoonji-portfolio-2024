@@ -1,10 +1,13 @@
+
 .profile {
    position: relative;
    height: 100vh;
 
    &-inner {
-      display: flex;
-      max-width: 124rem;
+      display: grid;
+      grid-template-columns: 30% 70%;
+      gap: 5rem;
+      max-width: 120rem;
       height: 100%;
       margin: 0 auto;
    }
@@ -14,11 +17,9 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      width: 40%;
       
    h2 {
       @include textHide();
-     
    }
 
    ul {
@@ -38,16 +39,17 @@
             transition: padding .2s ease;
             -webkit-transition: padding .2s ease;        
             -moz-transition: padding .2s ease;
-            -o-transition:padding .2s ease;
+            -o-transition: padding .2s ease;
 
             img {
-               width: 27rem;
+               width: 30rem;
                border-radius: 3rem;
                background: url('../img/그레인구름.jpg') 0 center / 120% repeat-x;
                background: {
                   size: cover;
                   attachment: fixed;
                };
+               box-shadow:0 0 .7rem 0 rgba(2, 2, 2, 0.199) inset;
                animation: cloud 100s linear infinite alternate-reverse;
             }
          }
@@ -58,7 +60,8 @@
                padding: 0 0 3rem 0;
                box-sizing: border-box;
                text-align: center;
-               font-family: 'GangwonState';
+               font-weight: 500;
+               font-family: 'ONE-Mobile-Title';
 
                @include mq('1200'){
                   padding: 0 0 2rem 0;
@@ -79,7 +82,6 @@
                }
                dd {
                   margin: 0 0 2rem 0;
-                 
 
                   font : {
                      size: 2rem;
@@ -121,11 +123,15 @@
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-      width: 60%;
       padding: 5rem;
-      box-sizing: border-box;
+      box : {
+         sizing: border-box;
+         shadow: 8px 1px 5px -3px rgba(2, 2, 2, 0.071) inset;
+      }
+      -webkit-box-shadow: 8px 1px 5px -3px rgba(2, 2, 2, 0.071) inset;
+      -moz-box-shadow: 8px 1px 5px -3px rgba(2, 2, 2, 0.071) inset;
       background-color: #fff;
-      box-shadow: inset 0.5rem 0.4rem 1rem 0 #0000001c;
+     
 
       &-top {
          box-sizing: border-box;
@@ -138,7 +144,9 @@
             left: 2rem;
             z-index: 1;
             font-size: 2.5rem;
+            font-weight: 500;
             color: $color-primary;
+            font-family: 'ONE-Mobile-Title';
 
             &::before {
                content: '';
@@ -263,10 +271,10 @@
          z-index: 1001;
 
          &::before {
-            content: 'My ability possess';
+            content: 'My skills possess';
             display: inline-block;
             position: absolute;
-            left: -14.5rem;
+            left: -14rem;
             bottom: 10.5rem;
 
             font : {
@@ -367,18 +375,17 @@
                height: 22rem;
                background: url(../img/인적성검사.png)center center no-repeat;
                background-size: cover;
-
                
             &::after {
                content: '';
                display: inline-block;
                @include absolute();
                transform: translate(-45%, -56%);
-               width: 19rem;
-               height: 13rem;
+               width: 0;
+               height: 0;
                background: url(../img/도형.png)center center no-repeat;
                background-size: cover;
-               opacity: 0.8;
+               animation: Aptitude 1.6s forwards;
             }
             }
          }

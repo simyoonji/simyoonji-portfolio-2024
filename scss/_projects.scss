@@ -1,94 +1,130 @@
 .projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: relative;
-    height: auto;
-    margin: 0 0 5rem 0;
+    padding: 0 0 10rem 0;
     box-sizing: border-box;
+    z-index: 1;
 
-    h2 {
-        font : {
-            size: 9rem;
-            weight: 800;
-            style : italic;
-            family:'Nanum Myeongjo';
-        }
-
-        &::after {
-            content: 'projects';
-            display: block;
-            max-width: 124rem;
-            margin: 0 auto;
-            color: transparent;
-            text-align: start;
-            -webkit-text-stroke-width: .1rem;
-            -webkit-text-stroke-color: $color-primary;
-        }
+    &::after {
+        content: '';
+        display: inline-block;
+        @include absolute();
+        transform: translate(-50%, -30%);
+        width: 100vw;
+        height: 50%;
+        background: url(../img/2.jpg) no-repeat;
+        background-size: cover;
+        opacity: 0.4;
+        z-index: 2;
     }
 
+    h2 {
+        padding: 8rem 0;
+        box-sizing: border-box;
+
+         font : {
+             size: 11rem;
+             weight: 800;
+             style : italic;
+             family:'Nanum Myeongjo';
+         }
+        text-align: center;
+         color: transparent;
+         -webkit-text-stroke-width: .1rem;
+         -webkit-text-stroke-color: $color-primary;
+     }
+
+     span {
+       
+     }
+
     &-inner {
-        max-width: 124rem;
-        height: 100%;
+        position: relative;
+        max-width: 120rem;
         margin: 0 auto;
-        overflow: hidden;
     }
 
     .swiper {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        padding: 6rem 0;
-        box-sizing: border-box;
+       width: 100%;
+       padding: 7rem 1rem 2rem 1rem;
+       box-sizing: border-box;
+       border-radius: 1rem;
+       border: .2rem solid $color-primary;
+       background-color: $color-sub;
+       z-index: 3;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4rem;
+            border : {
+                top-left-radius: 1rem;
+                top-right-radius: 1rem;
+            }
+            background-color: #fff;
+        }
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: .4rem;
+            right: 1rem;
+            width: 3rem;
+            height: 3rem;
+            background: url(../img/star-yellow.png)center center no-repeat;
+            background-size: contain;
+        }
 
         &-wrapper {
-
         }
 
         &-slide {
-            display: grid;
-            grid-template-columns: 35% 65%;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            padding: 4rem 1rem;
+            box-sizing: border-box;
+            background-color: #fff;
+            box-shadow: 0 0 .3rem 0 #00000066 inset;
             cursor: none;
-
-            &:nth-of-type(1) {
-            }
-            &:nth-of-type(2) {
-            }
-            &:nth-of-type(3) {
-            }
         }
 
         &-left {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            align-items: center;
+            justify-content: space-between;
+            width: 35%;
 
             h3 {
-                position: relative;
-                width: 80%;
+                text-align: center;
                 margin: 0 0 2rem 0;
-
-                &::after {
-                    display: block;
-                    text-transform: none;
-                    color: #000;
-                    font : {
-                        size: 1.4rem;
-                        weight: 100;
-                    }
-                }
+                font-size: 4rem;
             }
 
             &-txt {
-                width: 80%;
-                margin: 0 0 4rem 0;
+                margin: 0 0 2rem 0;
+                position: relative;
 
                 dl {
+                    display: flex;
+                    align-items: baseline;
                     padding: 1.3rem 0;
                     box-sizing: border-box;
+                    font-size: 2rem;
+                    font-weight: 600;
 
                     dt {
-                        margin: 0 0 .5rem 0;
-                        font-size: 2rem;
-                        font-weight: 600;
+                        margin: 0 2rem .5rem 0;
+                        background-color: pink;
                     }
+
                     dd {
                         color: #444444;
                     }
@@ -97,7 +133,7 @@
 
             ul {
                 display: flex;
-                width: 80%;
+                justify-content: center;
 
                 li {
                     position: relative;
@@ -163,109 +199,24 @@
 
         &-right {
             display: flex;
-            flex-direction: column;
-            position: relative;
-            max-width: 80rem;
-            max-height: 45.8rem;
-            padding: 5rem 2rem 2rem 2rem;
+            justify-content: end;
+            align-items: center;
+            width: 65%;
+            padding: 0 1rem 0 0;
             box-sizing: border-box;
-            border-radius: 1rem;
-            background-color: #eef5ff;
-            border: .3rem solid $color-primary;
-            transition: transform .2s ease, box-shadow .2s ease;
 
-            &:hover {
-                transform: translate(-.5%, -.5%);
-                box-shadow: .5rem .5rem 0 0 $color-primary;
-            }
+            img {
+                width: 80%;
+                object-fit: cover;
+                transition: transform .2s ease, box-shadow .2s ease;
+                box-shadow: 0 0 .5rem 0 #00000026;
 
-            span {
-                position: absolute;
-                left: 0;
-                top: 0;
-                display: block;
-                width: 100%;
-                padding: .7rem 1rem;
-                box-sizing: border-box;
-                border : {
-                    top-left-radius: 1rem;
-                    top-right-radius: 1rem;
-                    bottom: .3rem solid $color-sub;
+                &:hover {
+                    transform: translate(-1%, -1%);
+                    box-shadow: 1rem 1rem .4rem 0px #cccccc;
+                    -webkit-box-shadow: 1rem 1rem .4rem 0px #cccccc;
+                    -moz-box-shadow: 1rem 1rem .4rem 0px #cccccc;
                 }
-                color: #444444;
-                background-color: #fff;
-
-                font : {
-                    size: 1.4rem;
-                    weight: 800;
-                    style : italic;
-                    family:'Nanum Myeongjo';
-                }
-
-                &::after {
-                    content: '';
-                    display: inline-block;
-                    position: absolute;
-                    right: 1rem;
-                    top: .6rem;
-                    width: 3rem;
-                    height: 2rem;
-                    background: url(../img/star-yellow.png)center center no-repeat;
-                    background-size: contain;
-                }
-            }
-
-            figure {
-                height: 100%;
-    
-                img {
-                    width: 100%;
-                    height: 100%;
-                    transition: transform .2s ease;
-                    object-fit: cover;
-                    border-radius: 1rem;
-                    border: .3rem solid $color-sub;
-                }
-    
-                figcaption {
-                    display: none;
-                }
-            }
-        }
-    }
-    .sidmool {
-        h3 {
-            &::after {
-                content: '자연을 사랑하는 화장품 브랜드';
-            }
-        }
-    }
-    .muvic {
-        h3 {
-            &::after {
-                content: '영화와 음악을 한번에 즐길 수 있는 사이트';
-            }
-        }
-    }
-
-    .korean-air {
-        h3 {
-            &::after {
-                content: '비행의 완벽함 대한민국 대표 항공사';
-            }
-        }
-    }
-    .spar {
-        h3 {
-            &::after {
-                content: '글로벌 프리미엄 베이킹 브랜드';
-            }
-        }
-    }
-    .news {
-        h3 {
-            &::after {
-                content: 'news api를 사용하여 제작된 사이트';
             }
         }
     }
