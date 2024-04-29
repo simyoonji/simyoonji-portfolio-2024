@@ -1,7 +1,21 @@
 #contact {
+    position: relative;
     padding: 5rem 0 0 0;
     box-sizing: border-box;
     margin: 0 auto;
+
+    &::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 15rem;
+        background: url(../img/contact-img-1.png)center center no-repeat;
+        background-size: cover;
+        opacity: .5;
+        z-index: 0;
+    }
 
     h2 {
         position: relative;
@@ -28,18 +42,20 @@
             width: 100%;
             height: .4rem;
             border-radius: 1rem;
-            background: url(../img/그레인구름.jpg)center center;
+            background: url(../img/main-img-1.jpg)center center;
             opacity: .3;
         }
     }
 
     p {
+        position: relative;
         padding: 2rem 0;
         margin: 10rem 0 0 0;
         box-sizing: border-box;
         font-size: 1rem;
         text-align: center;
         color: #989898;
+        z-index: 1;
     }
 }
 
@@ -63,13 +79,10 @@
                 text-align: center;
                 font-size: 2rem;
 
-                &:hover {
-                    
-                }
-
                 &:nth-of-type(1) {
                     line-height: 4rem;
                     margin: 0 0 5rem 0;
+                    color: #1c1c1b;
 
                     &::before {
                         content: '';
@@ -79,7 +92,7 @@
                         top: -11rem;
                         width: 10rem;
                         height: 10rem;
-                        background: url(../img/구름일러스트.png)center center no-repeat;
+                        background: url(../img/contact-img-2.png)center center no-repeat;
                         background-size: contain;
                         animation: upDown 1.2s ease infinite alternate;
                     }
@@ -98,7 +111,7 @@
                         bottom: 0;
                         width: 10rem;
                         height: 10rem;
-                        background: url(../img/구름일러스트2.png)center center no-repeat;
+                        background: url(../img/contact-img-3.png)center center no-repeat;
                         background-size: contain;
                         animation: upDown 1.5s ease infinite alternate;
                     }
@@ -131,13 +144,13 @@
 
                     &:nth-of-type(1) {
                         span {
-                            background: url(../img/보내다.png)center center no-repeat;
+                            background: url(../img/contact-img-4.png)center center no-repeat;
                             background-size: contain;
                         }
                     }
                     &:nth-of-type(2) {
                         span {
-                            background: url(../img/전화기.png)center center no-repeat;
+                            background: url(../img/contact-img-5.png)center center no-repeat;
                             background-size: contain;
                         }
                     }

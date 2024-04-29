@@ -44,7 +44,7 @@
             img {
                width: 30rem;
                border-radius: 3rem;
-               background: url('../img/그레인구름.jpg') 0 center / 120% repeat-x;
+               background: url('../img/main-img-1.jpg') 0 center / 120% repeat-x;
                background: {
                   size: cover;
                   attachment: fixed;
@@ -60,17 +60,15 @@
                padding: 0 0 3rem 0;
                box-sizing: border-box;
                text-align: center;
-               font-weight: 500;
-               font-family: 'ONE-Mobile-Title';
+               
+               font : {
+                  family: 'Somi';
+                  weight : 500;
+               }
+               color: $color-primary;
 
                @include mq('1200'){
                   padding: 0 0 2rem 0;
-               }
-      
-               &::after {
-                  content: '(Sim Yoonji)';
-                  display: block;
-                  text-transform: none;
                }
             }
       
@@ -82,6 +80,7 @@
                }
                dd {
                   margin: 0 0 2rem 0;
+                  color: #1c1c1b;
 
                   font : {
                      size: 2rem;
@@ -142,11 +141,12 @@
             display: inline-block;
             position: relative;
             left: 2rem;
-            z-index: 1;
-            font-size: 2.5rem;
-            font-weight: 500;
+            font : {
+               size: 3rem;
+               family: 'Somi';
+            }
             color: $color-primary;
-            font-family: 'ONE-Mobile-Title';
+            z-index: 1;
 
             &::before {
                content: '';
@@ -154,7 +154,7 @@
                position: absolute;
                left: -1.5rem;
                top: -1.5rem;
-               background: url(../img/따옴표.png)center center no-repeat;
+               background: url(../img/profile-deco-img-1.png)center center no-repeat;
                background-size: contain;
                width: 2rem;
                height: 2rem;
@@ -167,7 +167,7 @@
                position: absolute;
                right: -1rem;
                bottom: 3rem;
-               background: url(../img/따옴표2.png)center center no-repeat;
+               background: url(../img/profile-deco-img-2.png)center center no-repeat;
                background-size: contain;
                width: 2rem;
                height: 2rem;
@@ -201,6 +201,7 @@
             dd {
                padding: 1rem 0;
                box-sizing: border-box;
+               color: #666666;
 
                em {
                   margin: 0 2rem 0 0;
@@ -217,7 +218,7 @@
             bottom: 1rem;
             width: 5rem;
             height: 8rem;
-            background: url(../img/지팡이.png)center center no-repeat;
+            background: url(../img/profile-img-2.png)center center no-repeat;
             background-size: cover;
             animation: upDown 0.5s ease infinite alternate;
 
@@ -261,7 +262,7 @@
 
       &-contents {
          @include absolute;
-         transform: translate(-50%,-50%);
+         transform: translate(-50%, -50%);
          width: 60rem;
          height: 65rem;
          padding: 2rem;
@@ -313,6 +314,7 @@
 
          h4 {
             position: relative;
+
             font : {
              size: 2rem;
              style: italic;
@@ -373,7 +375,7 @@
                position: relative;
                width: 24rem;
                height: 22rem;
-               background: url(../img/인적성검사.png)center center no-repeat;
+               background: url(../img/profile-img-3.png)center center no-repeat;
                background-size: cover;
                
             &::after {
@@ -383,7 +385,7 @@
                transform: translate(-45%, -56%);
                width: 0;
                height: 0;
-               background: url(../img/도형.png)center center no-repeat;
+               background: url(../img/profile-img-4.png)center center no-repeat;
                background-size: cover;
                animation: Aptitude 1.6s forwards;
             }
@@ -524,6 +526,6 @@
          }
       }
    .block {
-      display: block;
+    display: block;
    }
 }

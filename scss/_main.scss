@@ -9,7 +9,7 @@
           @include absolute(0,0);
           width: 100vw;
           height: 100vh;
-          background: url('../img/그레인구름.jpg') 0 center / 120% repeat-x;
+          background: url('../img/main-img-1.jpg') 0 center / 120% repeat-x;
           background: {
              size: cover;
              attachment: fixed;
@@ -54,25 +54,24 @@
 
             &:nth-of-type(1) {
                width: 50%;
-               background: url('../img/8비트-이름_03.png')center no-repeat;
+               background: url('../img/main-title-img-1.png')center no-repeat;
                background-size: contain;
             }
 
             &:nth-of-type(2) {
                position: relative;
                width: 50%;
-               background: url('../img/8비트-제목_03.png')center no-repeat;
+               background: url('../img/main-title-img-2.png')center no-repeat;
                background-size: contain;
                float: right;
 
                &::after {
                   content: '';
                   position: absolute;
-                  right: -1.5rem;
-                  top: -3.5rem;
+                  right: 1.5rem;
                   width: 5rem;
-                  height: 4rem;
-                  background: url(../img/star-yellow.png)center center no-repeat;
+                  height: 5.5rem;
+                  background: url(../img/main-title-deco.png)center center no-repeat;
                   background-size: cover;
                   animation: star .2s forwards;
                   animation-delay: 1s;

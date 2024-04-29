@@ -1,53 +1,44 @@
 #projects-script {
-    height: auto;
-    padding: 0 0 15rem 0;
+    max-width: 120rem;
+    margin: 0 auto; 
+    padding: 0 0 10rem 0;
     box-sizing: border-box;
 
     h2 {
-        padding: 1rem 0;
-        
-        font : {
-            size: 9rem;
-            weight: 800;
-            style : italic;
-            family:'Nanum Myeongjo';
-        }
+        padding: 0 0 8rem 0;
+        box-sizing: border-box;
+        letter-spacing: .2rem;
 
         &::after {
             content: 'script';
             display: block;
-            max-width: 120rem;
-            margin: 0 auto;
             color: transparent;
-            text-align: start;
-            -webkit-text-stroke-width: .1rem;
-            -webkit-text-stroke-color: $color-primary;
+            text-align: center;
+            -webkit-text-stroke: .1rem $color-primary;
         }
     }
 
     .script-inner {
-        max-width: 120rem;
-        margin: 0 auto;
+       
+        
         }
-
         > div {
-            padding: 5rem;
+            padding: 2rem;
             box-sizing: border-box;
             border-radius: 1rem;
             border: .4rem double $color-sub;
-
 
             ul {
                 li {
                     display: grid;
                     grid-template-columns: repeat(2,1fr);
-                    gap: 1rem;
+                    gap: 2rem;
                     margin: 0 0 5rem 0;
 
                     figure {
                         position: relative;
                         height: 50rem;
-                        padding: 3rem;
+                        padding: 2rem;
                         box-sizing: border-box;
 
                         img {

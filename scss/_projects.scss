@@ -3,45 +3,27 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    padding: 0 0 10rem 0;
+    padding: 0 0 8rem 0;
     box-sizing: border-box;
+    background-color: #fafafa;
     z-index: 1;
 
-    &::after {
-        content: '';
-        display: inline-block;
-        @include absolute();
-        transform: translate(-50%, -30%);
-        width: 100vw;
-        height: 50%;
-        background: url(../img/2.jpg) no-repeat;
-        background-size: cover;
-        opacity: 0.4;
-        z-index: 2;
-    }
-
     h2 {
-        padding: 8rem 0;
+        position: relative;
+        padding: 4rem 0;
+        margin: 0 0 8rem 0;
         box-sizing: border-box;
-
-         font : {
-             size: 11rem;
-             weight: 800;
-             style : italic;
-             family:'Nanum Myeongjo';
-         }
         text-align: center;
-         color: transparent;
-         -webkit-text-stroke-width: .1rem;
-         -webkit-text-stroke-color: $color-primary;
-     }
-
-     span {
-       
+        color: #fff;
+        background:url(../img/main-img-1.jpg)center center repeat-x;
+        background: {
+            size: cover;
+            attachment: fixed;
+         };
+         -webkit-text-stroke: .2rem $color-primary;
      }
 
     &-inner {
-        position: relative;
         max-width: 120rem;
         margin: 0 auto;
     }
@@ -54,6 +36,8 @@
        border: .2rem solid $color-primary;
        background-color: $color-sub;
        z-index: 3;
+       overflow: hidden;
+
 
         &::before {
             content: '';
@@ -77,7 +61,7 @@
             right: 1rem;
             width: 3rem;
             height: 3rem;
-            background: url(../img/star-yellow.png)center center no-repeat;
+            background: url(../img/project-deco-img.png)center center no-repeat;
             background-size: contain;
         }
 
@@ -98,18 +82,34 @@
         &-left {
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: space-between;
-            width: 35%;
+            padding: 0 0 0 1rem;
+            box-sizing: border-box;
+            width: 40%;
 
             h3 {
-                text-align: center;
-                margin: 0 0 2rem 0;
-                font-size: 4rem;
+                position: relative;
+                margin: 0 0 4rem 0;
+                color: #1c1c1b;
+                z-index: 0;
+
+                &::before {
+                    content: '';
+                    display: inline-block;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 40%;
+                    height: 2rem;
+                    background-color: $color-sub;
+                    z-index: -1;
+                    transform: skew(20deg);
+                    border-radius: 1rem;
+                }
             }
 
             &-txt {
-                margin: 0 0 2rem 0;
+                margin: 0 0 4rem 0;
                 position: relative;
 
                 dl {
@@ -117,23 +117,28 @@
                     align-items: baseline;
                     padding: 1.3rem 0;
                     box-sizing: border-box;
-                    font-size: 2rem;
-                    font-weight: 600;
+
+                    font : {
+                        size: 2rem;
+                        weight: 600;
+                    }
 
                     dt {
-                        margin: 0 2rem .5rem 0;
-                        background-color: pink;
+                        width: 5.1rem;
+                        text-align: center;
+                        margin: 0 1rem 1rem 0;
+                        color: #1c1c1b;
                     }
 
                     dd {
-                        color: #444444;
+                        font-weight: 500;
+                        color: #666666;
                     }
                 }
             }
 
             ul {
                 display: flex;
-                justify-content: center;
 
                 li {
                     position: relative;
@@ -167,20 +172,21 @@
                         animation: bounce 0.5s linear;
 
                         &::before  {
-                            transform: scale(24);
+                            transform: scale(60);
                             opacity: 1;
                         }
+
                         a{
                             color: #fff;
-                            transform: scale(1.1);
+                            transform: scale(1.15);
                         }
                     }
                     
                     a {
                         display: block;
                         width: 13rem;
-                        height: 4rem;
-                        line-height: 4rem;
+                        height: 4.5rem;
+                        line-height: 4.5rem;
                         text-align: center;
                         color: $color-primary;
                         transition: color .2s ease, transform .2s ease;
@@ -194,6 +200,12 @@
                 .hide {
                     display: none;
                 }
+
+                .view {
+                    a {
+                        width: 20rem;
+                    }
+                }
             }
         }
 
@@ -201,21 +213,20 @@
             display: flex;
             justify-content: end;
             align-items: center;
-            width: 65%;
+            width: 60%;
             padding: 0 1rem 0 0;
             box-sizing: border-box;
 
             img {
-                width: 80%;
+                position: relative;
+                width: 100%;
                 object-fit: cover;
-                transition: transform .2s ease, box-shadow .2s ease;
+                transition: transform .2s ease;
                 box-shadow: 0 0 .5rem 0 #00000026;
+                transition: transform .2s ease;
 
                 &:hover {
-                    transform: translate(-1%, -1%);
-                    box-shadow: 1rem 1rem .4rem 0px #cccccc;
-                    -webkit-box-shadow: 1rem 1rem .4rem 0px #cccccc;
-                    -moz-box-shadow: 1rem 1rem .4rem 0px #cccccc;
+                    transform: scale(1.01);
                 }
             }
         }

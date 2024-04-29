@@ -1,8 +1,9 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap");
 html {
   font-size: 10px;
-  font-font-family: "Pretendard-Regular";
+  font-font-family: "Noto Sans KR", sans-serif;
 }
 
 body, html {
@@ -56,12 +57,14 @@ span {
 }
 
 h2 {
-  font-size: 2.8rem;
+  font-size: 11rem;
+  font-weight: 800;
+  font-style: italic;
+  font-family: "Nanum Myeongjo";
 }
 
 h3 {
-  font-size: 2.5rem;
-  text-transform: uppercase;
+  font-size: 4rem;
 }
 
 p, dd {
@@ -108,7 +111,7 @@ input::-webkit-search-results-decoration {
   top: 50%;
   width: 3rem;
   height: 3rem;
-  background-image: url("../img/mouse-1.png");
+  background-image: url("../img/mouse-img-1.png");
   background-repeat: no-repeat;
   background-size: contain;
   transform: translate(-50%, -50%);
@@ -122,7 +125,7 @@ input::-webkit-search-results-decoration {
   top: 50%;
   width: 3rem;
   height: 3rem;
-  background-image: url("../img/mouse-2.png");
+  background-image: url("../img/mouse-img-2.png");
   background-repeat: no-repeat;
   background-size: contain;
   transform: translate(-50%, -50%);
@@ -131,19 +134,13 @@ input::-webkit-search-results-decoration {
 }
 
 ::selection {
-  background-color: rgb(254, 137, 164);
+  background-color: #74a9ec;
   color: #fff;
 }
 
 @font-face {
-  font-family: "Pretendard-Regular";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "ONE-Mobile-Title";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff") format("woff");
+  font-family: "Somi";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_10@1.0/Somi.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -206,7 +203,7 @@ nav ul li a img {
   top: 0;
   width: 100vw;
   height: 100vh;
-  background: url("../img/그레인구름.jpg") 0 center/120% repeat-x;
+  background: url("../img/main-img-1.jpg") 0 center/120% repeat-x;
   background-size: cover;
   background-attachment: fixed;
   animation: cloud 100s linear infinite alternate-reverse;
@@ -248,24 +245,23 @@ nav ul li a img {
 }
 #main .title div:nth-of-type(1) {
   width: 50%;
-  background: url("../img/8비트-이름_03.png") center no-repeat;
+  background: url("../img/main-title-img-1.png") center no-repeat;
   background-size: contain;
 }
 #main .title div:nth-of-type(2) {
   position: relative;
   width: 50%;
-  background: url("../img/8비트-제목_03.png") center no-repeat;
+  background: url("../img/main-title-img-2.png") center no-repeat;
   background-size: contain;
   float: right;
 }
 #main .title div:nth-of-type(2)::after {
   content: "";
   position: absolute;
-  right: -1.5rem;
-  top: -3.5rem;
+  right: 1.5rem;
   width: 5rem;
-  height: 4rem;
-  background: url(../img/star-yellow.png) center center no-repeat;
+  height: 5.5rem;
+  background: url(../img/main-title-deco.png) center center no-repeat;
   background-size: cover;
   animation: star 0.2s forwards;
   animation-delay: 1s;
@@ -317,7 +313,7 @@ nav ul li a img {
 .profile-about ul li:nth-of-type(1) img {
   width: 30rem;
   border-radius: 3rem;
-  background: url("../img/그레인구름.jpg") 0 center/120% repeat-x;
+  background: url("../img/main-img-1.jpg") 0 center/120% repeat-x;
   background-size: cover;
   background-attachment: fixed;
   box-shadow: 0 0 0.7rem 0 rgba(2, 2, 2, 0.199) inset;
@@ -328,19 +324,15 @@ nav ul li a img {
   padding: 0 0 3rem 0;
   box-sizing: border-box;
   text-align: center;
+  font-family: "Somi";
   font-weight: 500;
-  font-family: "ONE-Mobile-Title";
+  color: #74a9ec;
   /* desktop */
 }
 @media screen and (max-width: 1200px) {
   .profile-about ul li:nth-of-type(2) h3 {
     padding: 0 0 2rem 0;
   }
-}
-.profile-about ul li:nth-of-type(2) h3::after {
-  content: "(Sim Yoonji)";
-  display: block;
-  text-transform: none;
 }
 .profile-about ul li:nth-of-type(2) dl {
   white-space: nowrap;
@@ -350,6 +342,7 @@ nav ul li a img {
 }
 .profile-about ul li:nth-of-type(2) dl dd {
   margin: 0 0 2rem 0;
+  color: #1c1c1b;
   font-size: 2rem;
   font-weight: 600;
 }
@@ -390,11 +383,10 @@ nav ul li a img {
   display: inline-block;
   position: relative;
   left: 2rem;
-  z-index: 1;
-  font-size: 2.5rem;
-  font-weight: 500;
+  font-size: 3rem;
+  font-family: "Somi";
   color: #74a9ec;
-  font-family: "ONE-Mobile-Title";
+  z-index: 1;
 }
 .profile-txt-top p::before {
   content: "";
@@ -402,7 +394,7 @@ nav ul li a img {
   position: absolute;
   left: -1.5rem;
   top: -1.5rem;
-  background: url(../img/따옴표.png) center center no-repeat;
+  background: url(../img/profile-deco-img-1.png) center center no-repeat;
   background-size: contain;
   width: 2rem;
   height: 2rem;
@@ -414,7 +406,7 @@ nav ul li a img {
   position: absolute;
   right: -1rem;
   bottom: 3rem;
-  background: url(../img/따옴표2.png) center center no-repeat;
+  background: url(../img/profile-deco-img-2.png) center center no-repeat;
   background-size: contain;
   width: 2rem;
   height: 2rem;
@@ -442,6 +434,7 @@ nav ul li a img {
 .profile-txt-bottom dl dd {
   padding: 1rem 0;
   box-sizing: border-box;
+  color: #666666;
 }
 .profile-txt-bottom dl dd em {
   margin: 0 2rem 0 0;
@@ -455,7 +448,7 @@ nav ul li a img {
   bottom: 1rem;
   width: 5rem;
   height: 8rem;
-  background: url(../img/지팡이.png) center center no-repeat;
+  background: url(../img/profile-img-2.png) center center no-repeat;
   background-size: cover;
   animation: upDown 0.5s ease infinite alternate;
 }
@@ -587,7 +580,7 @@ nav ul li a img {
   position: relative;
   width: 24rem;
   height: 22rem;
-  background: url(../img/인적성검사.png) center center no-repeat;
+  background: url(../img/profile-img-3.png) center center no-repeat;
   background-size: cover;
 }
 .profile .ability-inner > div span::after {
@@ -599,7 +592,7 @@ nav ul li a img {
   transform: translate(-45%, -56%);
   width: 0;
   height: 0;
-  background: url(../img/도형.png) center center no-repeat;
+  background: url(../img/profile-img-4.png) center center no-repeat;
   background-size: cover;
   animation: Aptitude 1.6s forwards;
 }
@@ -729,38 +722,24 @@ nav ul li a img {
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  padding: 0 0 10rem 0;
+  padding: 0 0 8rem 0;
   box-sizing: border-box;
+  background-color: #fafafa;
   z-index: 1;
 }
-.projects::after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -30%);
-  width: 100vw;
-  height: 50%;
-  background: url(../img/2.jpg) no-repeat;
-  background-size: cover;
-  opacity: 0.4;
-  z-index: 2;
-}
 .projects h2 {
-  padding: 8rem 0;
+  position: relative;
+  padding: 4rem 0;
+  margin: 0 0 8rem 0;
   box-sizing: border-box;
-  font-size: 11rem;
-  font-weight: 800;
-  font-style: italic;
-  font-family: "Nanum Myeongjo";
   text-align: center;
-  color: transparent;
-  -webkit-text-stroke-width: 0.1rem;
-  -webkit-text-stroke-color: #74a9ec;
+  color: #fff;
+  background: url(../img/main-img-1.jpg) center center repeat-x;
+  background-size: cover;
+  background-attachment: fixed;
+  -webkit-text-stroke: 0.2rem #74a9ec;
 }
 .projects-inner {
-  position: relative;
   max-width: 120rem;
   margin: 0 auto;
 }
@@ -772,6 +751,7 @@ nav ul li a img {
   border: 0.2rem solid #74a9ec;
   background-color: #e2edff;
   z-index: 3;
+  overflow: hidden;
 }
 .projects .swiper::before {
   content: "";
@@ -793,7 +773,7 @@ nav ul li a img {
   right: 1rem;
   width: 3rem;
   height: 3rem;
-  background: url(../img/star-yellow.png) center center no-repeat;
+  background: url(../img/project-deco-img.png) center center no-repeat;
   background-size: contain;
 }
 .projects .swiper-slide {
@@ -809,17 +789,32 @@ nav ul li a img {
 .projects .swiper-left {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
-  width: 35%;
+  padding: 0 0 0 1rem;
+  box-sizing: border-box;
+  width: 40%;
 }
 .projects .swiper-left h3 {
-  text-align: center;
-  margin: 0 0 2rem 0;
-  font-size: 4rem;
+  position: relative;
+  margin: 0 0 4rem 0;
+  color: #1c1c1b;
+  z-index: 0;
+}
+.projects .swiper-left h3::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40%;
+  height: 2rem;
+  background-color: #e2edff;
+  z-index: -1;
+  transform: skew(20deg);
+  border-radius: 1rem;
 }
 .projects .swiper-left-txt {
-  margin: 0 0 2rem 0;
+  margin: 0 0 4rem 0;
   position: relative;
 }
 .projects .swiper-left-txt dl {
@@ -831,15 +826,17 @@ nav ul li a img {
   font-weight: 600;
 }
 .projects .swiper-left-txt dl dt {
-  margin: 0 2rem 0.5rem 0;
-  background-color: pink;
+  width: 5.1rem;
+  text-align: center;
+  margin: 0 1rem 1rem 0;
+  color: #1c1c1b;
 }
 .projects .swiper-left-txt dl dd {
-  color: #444444;
+  font-weight: 500;
+  color: #666666;
 }
 .projects .swiper-left ul {
   display: flex;
-  justify-content: center;
 }
 .projects .swiper-left ul li {
   position: relative;
@@ -870,18 +867,18 @@ nav ul li a img {
   animation: bounce 0.5s linear;
 }
 .projects .swiper-left ul li:hover::before {
-  transform: scale(24);
+  transform: scale(60);
   opacity: 1;
 }
 .projects .swiper-left ul li:hover a {
   color: #fff;
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 .projects .swiper-left ul li a {
   display: block;
   width: 13rem;
-  height: 4rem;
-  line-height: 4rem;
+  height: 4.5rem;
+  line-height: 4.5rem;
   text-align: center;
   color: #74a9ec;
   transition: color 0.2s ease, transform 0.2s ease;
@@ -893,55 +890,49 @@ nav ul li a img {
 .projects .swiper-left ul .hide {
   display: none;
 }
+.projects .swiper-left ul .view a {
+  width: 20rem;
+}
 .projects .swiper-right {
   display: flex;
   justify-content: end;
   align-items: center;
-  width: 65%;
+  width: 60%;
   padding: 0 1rem 0 0;
   box-sizing: border-box;
 }
 .projects .swiper-right img {
-  width: 80%;
+  position: relative;
+  width: 100%;
   object-fit: cover;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease;
   box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.1490196078);
+  transition: transform 0.2s ease;
 }
 .projects .swiper-right img:hover {
-  transform: translate(-1%, -1%);
-  box-shadow: 1rem 1rem 0.4rem 0px #cccccc;
-  -webkit-box-shadow: 1rem 1rem 0.4rem 0px #cccccc;
-  -moz-box-shadow: 1rem 1rem 0.4rem 0px #cccccc;
+  transform: scale(1.01);
 }
 
 #projects-script {
-  height: auto;
-  padding: 0 0 15rem 0;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 0 10rem 0;
   box-sizing: border-box;
 }
 #projects-script h2 {
-  padding: 1rem 0;
-  font-size: 9rem;
-  font-weight: 800;
-  font-style: italic;
-  font-family: "Nanum Myeongjo";
+  padding: 0 0 8rem 0;
+  box-sizing: border-box;
+  letter-spacing: 0.2rem;
 }
 #projects-script h2::after {
   content: "script";
   display: block;
-  max-width: 120rem;
-  margin: 0 auto;
   color: transparent;
-  text-align: start;
-  -webkit-text-stroke-width: 0.1rem;
-  -webkit-text-stroke-color: #74a9ec;
-}
-#projects-script .script-inner {
-  max-width: 120rem;
-  margin: 0 auto;
+  text-align: center;
+  -webkit-text-stroke: 0.1rem #74a9ec;
 }
 #projects-script > div {
-  padding: 5rem;
+  padding: 2rem;
   box-sizing: border-box;
   border-radius: 1rem;
   border: 0.4rem double #e2edff;
@@ -949,13 +940,13 @@ nav ul li a img {
 #projects-script > div ul li {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 2rem;
   margin: 0 0 5rem 0;
 }
 #projects-script > div ul li figure {
   position: relative;
   height: 50rem;
-  padding: 3rem;
+  padding: 2rem;
   box-sizing: border-box;
 }
 #projects-script > div ul li figure img {
@@ -973,9 +964,22 @@ nav ul li a img {
 }
 
 #contact {
+  position: relative;
   padding: 5rem 0 0 0;
   box-sizing: border-box;
   margin: 0 auto;
+}
+#contact::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 15rem;
+  background: url(../img/contact-img-1.png) center center no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  z-index: 0;
 }
 #contact h2 {
   position: relative;
@@ -999,16 +1003,18 @@ nav ul li a img {
   width: 100%;
   height: 0.4rem;
   border-radius: 1rem;
-  background: url(../img/그레인구름.jpg) center center;
+  background: url(../img/main-img-1.jpg) center center;
   opacity: 0.3;
 }
 #contact p {
+  position: relative;
   padding: 2rem 0;
   margin: 10rem 0 0 0;
   box-sizing: border-box;
   font-size: 1rem;
   text-align: center;
   color: #989898;
+  z-index: 1;
 }
 
 .contact-inner {
@@ -1033,6 +1039,7 @@ nav ul li a img {
 .contact-inner ul li:nth-of-type(1) {
   line-height: 4rem;
   margin: 0 0 5rem 0;
+  color: #1c1c1b;
 }
 .contact-inner ul li:nth-of-type(1)::before {
   content: "";
@@ -1042,7 +1049,7 @@ nav ul li a img {
   top: -11rem;
   width: 10rem;
   height: 10rem;
-  background: url(../img/구름일러스트.png) center center no-repeat;
+  background: url(../img/contact-img-2.png) center center no-repeat;
   background-size: contain;
   animation: upDown 1.2s ease infinite alternate;
 }
@@ -1059,7 +1066,7 @@ nav ul li a img {
   bottom: 0;
   width: 10rem;
   height: 10rem;
-  background: url(../img/구름일러스트2.png) center center no-repeat;
+  background: url(../img/contact-img-3.png) center center no-repeat;
   background-size: contain;
   animation: upDown 1.5s ease infinite alternate;
 }
@@ -1086,11 +1093,11 @@ nav ul li a img {
   animation: bounce 0.5s linear;
 }
 .contact-inner ul li a:nth-of-type(1) span {
-  background: url(../img/보내다.png) center center no-repeat;
+  background: url(../img/contact-img-4.png) center center no-repeat;
   background-size: contain;
 }
 .contact-inner ul li a:nth-of-type(2) span {
-  background: url(../img/전화기.png) center center no-repeat;
+  background: url(../img/contact-img-5.png) center center no-repeat;
   background-size: contain;
 }
 
