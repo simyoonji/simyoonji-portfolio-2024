@@ -1,7 +1,7 @@
 html {
     font : {
         size: 10px;
-        font-family: "Noto Sans KR", sans-serif;
+        family: "Noto Sans KR", sans-serif;
     }
 }
 body,html {
@@ -9,6 +9,7 @@ body,html {
 }
 
 body {
+    background-color: #fafafa;
     overflow-x: hidden;
     cursor: none;
 }
@@ -47,11 +48,11 @@ span {
 }
 h2 {
     font : {
-        size: 11rem;
+        size: 9rem;
         weight: 800;
         style : italic;
-        family:'Nanum Myeongjo';
     }
+    text-transform: uppercase;
 }
 h3 {
     font-size: 4rem;
