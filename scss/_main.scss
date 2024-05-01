@@ -15,6 +15,7 @@
              attachment: fixed;
           };
           animation: cloud 100s linear infinite alternate-reverse;
+          filter: grayscale(10%);
        }
 
        &-island {

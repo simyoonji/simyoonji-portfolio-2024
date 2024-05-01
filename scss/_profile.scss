@@ -268,40 +268,6 @@
          border-radius: 1rem;
          background-color: #f4f4f4;
          z-index: 1001;
-
-         &::before {
-            content: 'My skills possess';
-            display: inline-block;
-            position: absolute;
-            left: -14rem;
-            bottom: 10.5rem;
-
-            font : {
-               size: 3rem;
-               style : italic;
-               weight : 600;
-               family:'Nanum Myeongjo';
-            }
-            color: #fff;
-            transform: rotate(-90deg);
-         }
-
-         &::after {
-            content: 'Aptitude Test';
-            display: inline-block;
-            position: absolute;
-            right: -11.5rem;
-            top: 8rem;
-
-            font : {
-               size: 3rem;
-               style : italic;
-               weight : 600;
-               family:'Nanum Myeongjo';
-            }
-            color: #fff;
-            transform: rotate(90deg);
-         }
       }
 
       &-top {
@@ -316,8 +282,9 @@
             font : {
              size: 2rem;
              style: italic;
-             family:'Nanum Myeongjo';
+             weight : 500;
             }
+            color: #1c1c1b;
 
             &::after {
                content: '';
@@ -422,7 +389,7 @@
 
                         font : {
                            size: 1.2rem;
-                           weight : 700;
+                           weight : 600;
                            family:'Nanum Myeongjo';
                           }
                           text-transform: uppercase;

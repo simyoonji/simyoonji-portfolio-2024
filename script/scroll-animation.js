@@ -10,7 +10,7 @@ gsap.to(profileLeft, {
     x : 0,
 
 	scrollTrigger: {
-		trigger : profile,
+		trigger : profile
 	}
 });
 
@@ -21,7 +21,7 @@ gsap.to(profileTop, {
     x : 0,
 
 	scrollTrigger: {
-		trigger : profile,
+		trigger : profile
 	}
 });
 
@@ -32,6 +32,6 @@ gsap.to(profileBt, {
     x : 0,
 
 	scrollTrigger: {
-		trigger : profile,
+		trigger : profile
 	}
 });
