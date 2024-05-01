@@ -809,18 +809,6 @@ nav ul li a img {
   white-space: nowrap;
   cursor: none;
 }
-.personal .swiper-slide:nth-of-type(1) h4::before {
-  content: "01";
-}
-.personal .swiper-slide:nth-of-type(2) h4::before {
-  content: "02";
-}
-.personal .swiper-slide:nth-of-type(3) h4::before {
-  content: "03";
-}
-.personal .swiper-slide:nth-of-type(4) h4::before {
-  content: "04";
-}
 .personal .swiper-left {
   display: flex;
   flex-direction: column;
@@ -844,23 +832,12 @@ nav ul li a img {
   z-index: 2;
 }
 .personal .swiper-left h4 {
-  position: relative;
-  padding: 0 0 0.5rem 3.5rem;
+  padding: 0 0 0.5rem 0rem;
   margin: 0 0 2rem 0;
   box-sizing: border-box;
   font-size: 2.5rem;
   border-bottom: 0.1rem solid #1c1c1b;
   z-index: 0;
-}
-.personal .swiper-left h4::before {
-  display: inline-block;
-  position: absolute;
-  left: 0;
-  top: -2rem;
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: rgba(0, 0, 0, 0.1137254902);
-  z-index: -1;
 }
 .personal .swiper-left-txt {
   position: relative;
