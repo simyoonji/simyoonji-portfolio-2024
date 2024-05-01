@@ -318,11 +318,7 @@ nav ul li a img {
 .profile-about ul li:nth-of-type(1) img {
   width: 30rem;
   border-radius: 3rem;
-  background: url("../img/main-img-1.jpg") 0 center/120% repeat-x;
-  background-size: cover;
-  background-attachment: fixed;
   box-shadow: 0 0 0.7rem 0 rgba(2, 2, 2, 0.199) inset;
-  animation: cloud 100s linear infinite alternate-reverse;
 }
 .profile-about ul li:nth-of-type(2) h3 {
   width: 100%;
@@ -789,11 +785,11 @@ nav ul li a img {
 
 /* personal */
 .personal {
-  padding: 0 0 15rem 0;
+  padding: 0 0 8rem 0;
   box-sizing: border-box;
 }
 .personal h2 {
-  padding: 0 0 10rem 0;
+  padding: 0 0 8rem 0;
 }
 .personal-inner {
   padding: 0 3rem;
@@ -930,54 +926,31 @@ nav ul li a img {
   display: none;
 }
 
-#projects-script {
-  max-width: 120rem;
-  margin: 0 auto;
+/* script */
+.script {
   padding: 0 0 10rem 0;
   box-sizing: border-box;
 }
-#projects-script h2 {
+.script h2 {
   padding: 0 0 8rem 0;
   box-sizing: border-box;
-  letter-spacing: 0.2rem;
-}
-#projects-script h2::after {
-  content: "script";
-  display: block;
-  color: transparent;
   text-align: center;
-  -webkit-text-stroke: 0.1rem #74a9ec;
 }
-#projects-script > div {
-  padding: 2rem;
-  box-sizing: border-box;
-  border-radius: 1rem;
-  border: 0.4rem double #e2edff;
+.script-inner {
+  max-width: 120rem;
+  margin: 0 auto;
 }
-#projects-script > div ul li {
+.script-inner ul {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin: 0 0 5rem 0;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  height: 35rem;
 }
-#projects-script > div ul li figure {
-  position: relative;
-  height: 50rem;
-  padding: 2rem;
-  box-sizing: border-box;
+.script-inner ul li {
+  background-color: pink;
 }
-#projects-script > div ul li figure img {
+.script-inner ul li img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 2rem;
-  box-shadow: 0 0 0 1rem rgb(251, 251, 251);
-}
-#projects-script > div ul li figure figcaption {
-  display: none;
-}
-#projects-script > div ul li dl {
-  border: 1px solid red;
 }
 
 #contact {
@@ -1062,7 +1035,7 @@ nav ul li a img {
     background-position: 0 0;
   }
   100% {
-    background-position: 3000px 0;
+    background-position: 1000px 0;
   }
 }
 @keyframes island {

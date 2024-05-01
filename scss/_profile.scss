@@ -44,13 +44,7 @@
             img {
                width: 30rem;
                border-radius: 3rem;
-               background: url('../img/main-img-1.jpg') 0 center / 120% repeat-x;
-               background: {
-                  size: cover;
-                  attachment: fixed;
-               };
-               box-shadow:0 0 .7rem 0 rgba(2, 2, 2, 0.199) inset;
-               animation: cloud 100s linear infinite alternate-reverse;
+               box-shadow: 0 0 .7rem 0 rgba(2, 2, 2, 0.199) inset;
             }
          }
 

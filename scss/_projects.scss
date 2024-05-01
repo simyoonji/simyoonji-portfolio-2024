@@ -8,6 +8,7 @@
 
 /* team project */
 .team-project {
+
    h2 {
     padding: 8rem 0 0 0;
    }
@@ -114,11 +115,11 @@
 
 /* personal */
 .personal {
-    padding: 0 0 15rem 0;
+    padding: 0 0 8rem 0;
     box-sizing: border-box;
 
     h2 {
-        padding: 0 0 10rem 0;
+        padding: 0 0 8rem 0;
     }
 
     &-inner {
@@ -225,6 +226,7 @@
 
 /* 공통 */
 .team-project, .personal {
+
     h4,dl,dt,dd,a {
         color: #1c1c1b;
     }
@@ -286,3 +288,36 @@
 
     }
 } 
+
+/* script */
+
+.script {
+    padding: 0 0 10rem 0;
+    box-sizing: border-box;
+
+    h2 {
+        padding: 0 0 8rem 0;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    &-inner {
+        max-width: 120rem;
+        margin: 0 auto;
+
+        ul {
+           display: grid;
+           grid-template-columns: repeat(3,1fr);    
+           gap: 1rem;
+           height: 35rem;
+
+            li {
+                background-color: pink;
+                
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
