@@ -692,7 +692,6 @@ nav ul li a img {
   display: block;
 }
 
-/* banner */
 .banner {
   width: 100vw;
   height: 10rem;
@@ -928,7 +927,7 @@ nav ul li a img {
 
 /* script */
 .script {
-  padding: 0 0 10rem 0;
+  padding: 0 0 15rem 0;
   box-sizing: border-box;
 }
 .script h2 {
@@ -937,20 +936,39 @@ nav ul li a img {
   text-align: center;
 }
 .script-inner {
-  max-width: 120rem;
+  padding: 0 3rem;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 .script-inner ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  height: 35rem;
+  gap: 3rem;
 }
 .script-inner ul li {
-  background-color: pink;
+  position: relative;
+  height: 35rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 0.8rem 0 rgba(0, 0, 0, 0.0823529412);
+}
+.script-inner ul li:hover a {
+  visibility: visible;
 }
 .script-inner ul li img {
   width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  object-fit: cover;
+}
+.script-inner ul li a {
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 #contact {
