@@ -241,26 +241,24 @@ nav ul li a img {
   content: "";
   clear: both;
 }
-#main .title p {
-  display: none;
-}
-#main .title div {
+#main .title span {
+  display: block;
   width: 50%;
   height: 9rem;
 }
-#main .title div:nth-of-type(1) {
+#main .title span:nth-of-type(1) {
   width: 50%;
   background: url("../img/main-title-img-1.png") center no-repeat;
   background-size: contain;
 }
-#main .title div:nth-of-type(2) {
+#main .title span:nth-of-type(2) {
   position: relative;
   width: 50%;
   background: url("../img/main-title-img-2.png") center no-repeat;
   background-size: contain;
   float: right;
 }
-#main .title div:nth-of-type(2)::after {
+#main .title span:nth-of-type(2)::after {
   content: "";
   position: absolute;
   right: 1.5rem;
