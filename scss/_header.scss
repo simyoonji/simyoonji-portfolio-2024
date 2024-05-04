@@ -17,11 +17,26 @@ nav {
     border-radius: 2rem;
     z-index: 999;
 
+    
+     /* media */
+     @include mq('1026'){
+        right: 2rem;
+        top: 0%;
+        transform: translateY(0%);
+    }
+
+
     ul {
         display: grid;
         grid-template-columns: repeat(1fr,1);
         gap: 1.5rem;
         text-align: center;
+
+        /* media */
+        @include mq('1026'){
+            display: flex;
+        }
+
 
         li {
             position: relative;

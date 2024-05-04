@@ -36,18 +36,15 @@ const BLOCK = 'block';
 
 abilityOpen.addEventListener('click', () => {
             modalBg.classList.add(BLOCK);
-            document.body.style.overflow = 'hidden';
         });
 
 const abilityClose = document.querySelector('.ability-close')
         .addEventListener('click', () => {
             modalBg.classList.remove(BLOCK);
-            document.body.style.overflow = 'auto';
         });
 
 modalBg.addEventListener('click', (e) => {
             if (!abilityBox.contains(e.target)) {
                 modalBg.classList.remove(BLOCK);
-                document.body.style.overflow = 'auto';
             }
         });

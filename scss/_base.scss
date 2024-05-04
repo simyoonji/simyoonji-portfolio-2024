@@ -3,11 +3,11 @@ html {
         size: 10px;
         family: "Noto Sans KR", sans-serif;
     }
+    overflow-x: hidden;
 }
 body,html {
     scroll-behavior: smooth;
 }
-
 body {
     background-color: #fafafa;
     overflow-x: hidden;
