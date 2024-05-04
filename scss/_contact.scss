@@ -5,9 +5,6 @@
 
     h2 {
         text-align: center;
-
-        img {
-        }
     }
 
     p {
@@ -34,6 +31,11 @@
             gap: 5rem;
             margin: 4rem 0 0 0;
 
+            /* media */
+            @include mq('1026'){
+                margin: 3rem 0 0 0;
+            }
+
             li {
                 text-align: center;
                 font-size: 2rem;
@@ -41,7 +43,7 @@
                 &:nth-of-type(1) {
                     line-height: 4rem;
                     text-align: start;
-                    color: #1c1c1b;
+                    color: $color-normal;
                 }
 
                 &:nth-of-type(2) {

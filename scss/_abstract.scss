@@ -17,7 +17,14 @@
 // variables 
 $color-primary: #74a9ec;
 $color-sub: #e2edff;
+$color-normal: #1c1c1b;
 
+/*
+    예)
+    @include mq('1200'){
+       css
+    }
+*/
 /* media */
 @mixin mq($screen-width) {
     @if $screen-width == "1200" {
@@ -25,7 +32,13 @@ $color-sub: #e2edff;
         @media screen and (max-width:1200px){ 
             @content;
         }
-    }    
+    }   
+    @else if $screen-width == "1026" {
+        /* tablet */
+        @media screen and (max-width:1026px){
+            @content;
+        }
+    } 
     @else if $screen-width == "980" {
         /* tablet */
         @media screen and (max-width:980px){
@@ -50,6 +63,7 @@ $color-sub: #e2edff;
             @content;
         }
     }
+        /* 최소크기 */
     @else if $screen-width == "320" {
         @media screen and (max-width:320px){
             @content;

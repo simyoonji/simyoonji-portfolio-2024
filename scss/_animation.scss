@@ -3,36 +3,35 @@
        background-position: 0 0;
     }
     100% {
-       background-position: 1000px 0;
+       background-position: 500px 0;
    }
  }
  @keyframes island {
     0%{
-        top: 70%;
+      transform: translateY(-2%);
     }
     100% {
-        top: 72%;
+      transform: translateY(2%);
    }
  }
  @keyframes title {
    0%{
       opacity: 0;
-      top: -5%;
+      top: -5rem;
    }
-
    100% {
       opacity: 1;
-      top: 10%;
+      top: 0rem;
   }
 }
-@keyframes star {
+@keyframes clover {
    0%{
       opacity: 0;
-      top: -15rem;
+      top: -10rem;
    }
    100% {
       opacity: 1;
-      top: -3.5rem;
+      top: 5rem;
   }
 }
 @keyframes bounce {

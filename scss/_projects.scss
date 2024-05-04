@@ -4,18 +4,38 @@
     height: 10rem;
     background: url(../img/banner-img.png)center center repeat-x;
     animation: banner 20s infinite linear alternate-reverse;
+
+     /* media */
+     @include mq('1026'){
+        height: 8rem;
+     }
 }
 
 /* team project */
 .team-project {
+     /* media */
+     @include mq('1026'){
+        padding: 2rem;
+        box-sizing: border-box;
+     }
 
    h2 {
     padding: 8rem 0 0 0;
+
+    /* media */
+    @include mq('1026'){
+        padding: 5rem 0;
+     }
    }
 
    &-inner {
-    padding: 8rem 0;
+    padding: 8rem 2rem;
     box-sizing: border-box;
+
+    /* media */
+    @include mq('1026'){
+        padding: 0rem 0;
+    }
    }
 
    &-wrapper {
@@ -24,6 +44,13 @@
     row-gap: 15rem;
     max-width: 124rem;
     margin: 0 auto;
+
+     /* media */
+     @include mq('1026'){
+        max-width: none;
+        width: 100%;
+        row-gap: 5rem;
+     }
    }
 
    &-slide {
@@ -32,9 +59,28 @@
     gap: 5rem;
     height: 50rem;
 
+    /* media */
+    @include mq('1026'){
+        display: block;
+        height: auto;
+        box-shadow: 0 0 .8rem 0 #00000015;
+    }
+
+    figure {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         img {
             width: 100%;
+
+            /* media */
+            @include mq('1026'){
+                width: 50rem;
+                height: 40rem;
+            }
         }
+    }
 
     &-txt {
         display: flex;
@@ -56,6 +102,12 @@
             height: 7.5rem;
             background: url(../img/team-project-img-4.png)center center no-repeat;
             background-size: cover;
+
+           @include mq('1026'){
+                right: 1rem;
+                width: 4rem;
+                height: 6rem;
+            }
         }
 
         h4 {
@@ -66,6 +118,10 @@
             display: flex;
             align-items: center;
             margin: 0 0 2rem 0;
+
+           @include mq('1026'){
+                margin: 0 0 1.5rem 0;
+            }
     
             dt {
                 width: 6rem;
@@ -74,10 +130,20 @@
                     weight: 600;
                 }
                 margin: 0 2rem 0 0;
+
+                /* media */
+               @include mq('1026'){
+                    font-size: 1.8rem;
+                }
             }
             dd {
                 display: flex;
                 font-size: 1.8rem;
+
+                 /* media */
+                @include mq('1026'){
+                    font-size: 1.6rem;
+                }
                 
                 a {
                     margin: 0 0 0 1rem;
@@ -86,7 +152,7 @@
                     transition: transform .2s ease;
 
                     &:hover {
-                        color: #1c1c1b;
+                        color: $color-normal;
                         transform: translateY(5%);
                     }
                 }
@@ -135,6 +201,10 @@
             background-size: cover;
             opacity: .7;
             animation: moveX 1s ease infinite alternate;
+
+           @include mq('1026'){ 
+                bottom: 3rem;
+            }
         }
       }
    }
@@ -146,13 +216,28 @@
     padding: 0 0 8rem 0;
     box-sizing: border-box;
 
-    h2 {
-        padding: 0 0 8rem 0;
+    /* media */
+   @include mq('1026'){
+        padding: 5rem 2rem;
     }
 
+    h2 {
+        padding: 0 0 8rem 0;
+
+        /* media */
+       @include mq('1026'){
+            padding: 0 0 5rem 0;
+        }
+
+    }
     &-inner {
-        padding: 0 3rem;
+        padding: 0 2rem;
         box-sizing: border-box;
+
+        /* media */
+       @include mq('1026'){
+            padding: 0 0rem;
+        }
     }
 
     .swiper {
@@ -187,6 +272,11 @@
                 background-size: cover;
                 transform: rotate(-26deg);
                 z-index: 2;
+
+                /* media */
+               @include mq('1026'){
+                    top: -3.5rem;
+                }
             }
 
             h4 {
@@ -194,7 +284,7 @@
                 margin: 0 0 2rem 0;
                 box-sizing: border-box;
                 font-size: 2.5rem;
-                border-bottom: .1rem solid #1c1c1b;
+                border-bottom: .1rem solid $color-normal;
                 z-index: 0;
             }
 
@@ -227,7 +317,7 @@
                             transition: transform .2s ease;
         
                             &:hover {
-                                color: #1c1c1b;
+                                color: $color-normal;
                                 transform: translateY(5%);
                             }
                         }
@@ -242,6 +332,21 @@
                             content: none;
                             display: none;
                         }
+                    }
+                }
+                &::before {
+                    content: '';
+                    display: inline-block;
+                    position: absolute;
+                    left: 2rem;
+                    bottom: -8rem;
+                    width: 9rem;
+                    height: 3rem;
+                    opacity: .7;
+                    animation: moveX 1s ease infinite alternate;
+
+                   @include mq('1026'){ 
+                        bottom: -6rem;
                     }
                 }
             }
@@ -263,12 +368,29 @@
             }
         }
     }
+
+    .redesing {
+        &::before {
+            background: url(../img/project-img-6.png)center center no-repeat;
+            background-size: cover;
+        }
+    }
+    .clone2 {
+        &::before {
+            background: url(../img/team-project-img-5.png)center center no-repeat;
+            background-size: cover;
+
+           @include mq('1026'){ 
+                bottom: -6rem;
+            }
+        }
+    }
 }
 
 /* 공통 */
 .team-project, .personal {
     h4,dl,dt,dd,a {
-        color: #1c1c1b;
+        color: $color-normal;
     }
 
     h2 {
@@ -280,7 +402,12 @@
         margin: 0 0 4rem 0;
         box-sizing: border-box;
         font-size: 3rem;
-        border-bottom: 1px solid #1c1c1b;
+        border-bottom: 1px solid $color-normal;
+
+        @include mq('1026'){
+             margin: 0 0 3rem 0;
+             font-size: 2.5rem;
+        }
     }
 
     ul {
@@ -289,15 +416,23 @@
         margin: 4rem 0 0 0;
         padding: 0 0 1rem 0;
         box-sizing: border-box;
-        border-bottom: 1px solid #1c1c1b;
+        border-bottom: 1px solid $color-normal;
+
+       @include mq('1026'){
+            margin: 2rem 0 0 0;
+        }
 
         li {
             position: relative;
             font-size: 1.6rem;
-            border: 1px solid #1c1c1b;
+            border: 1px solid $color-normal;
             transition: background-color .2s ease;
             box-shadow: inset 0 -.3rem 0 0 #444444;
             overflow: hidden;
+
+           @include mq('1026'){
+                font-size: 1.4rem;
+            }
 
             &:hover {
                 animation: bounce 0.5s linear;
@@ -325,36 +460,6 @@
             display: none;
         }
     }
-    .redesing {
-        &::before {
-            content: '';
-            display: inline-block;
-            position: absolute;
-            left: 2rem;
-            bottom: -8rem;
-            width: 9rem;
-            height: 3rem;
-            background: url(../img/project-img-6.png)center center no-repeat;
-            background-size: cover;
-            opacity: .7;
-            animation: moveX 1s ease infinite alternate;
-        }
-    }
-    .clone2 {
-        &::before {
-            content: '';
-            display: inline-block;
-            position: absolute;
-            left: 2rem;
-            bottom: -8rem;
-            width: 9rem;
-            height: 3rem;
-            background: url(../img/team-project-img-5.png)center center no-repeat;
-            background-size: cover;
-            opacity: .7;
-            animation: moveX 1s ease infinite alternate;
-        }
-      }
 } 
 
 
@@ -363,10 +468,19 @@
     padding: 0 0 15rem 0;
     box-sizing: border-box;
 
+   @include mq('1026'){
+        padding: 0 0 10rem 0;
+     }
+
     h2 {
         padding: 0 0 8rem 0;
         box-sizing: border-box;
         text-align: center;
+
+        
+       @include mq('1026'){
+            padding: 0 0 5rem 0;
+        }
     }
 
     &-inner {
@@ -374,10 +488,22 @@
         margin: 0 auto;
         box-sizing: border-box;
 
+        /* media */
+       @include mq('1026'){
+            padding: 0 2rem;
+        }
+
         ul {
            display: grid;
            grid-template-columns: repeat(3,1fr);    
            gap: 3rem;
+
+           /* media */
+          @include mq('1026'){
+                grid-template-columns: repeat(1,1fr);    
+                justify-items: center;
+                gap: 5rem;
+            }
 
             li {
                 position: relative;
@@ -385,10 +511,15 @@
                 border-radius: 2rem;
                 box-shadow: 0 0 .8rem 0 #00000015;
 
+                /* media */
+               @include mq('1026'){
+                    max-width: 70rem;
+                    height: 40rem;
+                }
+
                 &:hover {
                     a {
-                        visibility: visible;
-                        
+                        opacity: 1;
                     }
                 }
                 
@@ -400,7 +531,6 @@
                 }
 
                 a {
-                    visibility: hidden;
                     display: flex;
                     flex-direction: column;
                     position: absolute;
@@ -411,18 +541,28 @@
                     padding: 4rem 5rem;
                     box-sizing: border-box;
                     border-radius: 2rem;
-                    background-color: rgba(0, 0, 0, 0.9);
+                    background-color: $color-primary;
+                    opacity: 0;
+                    transition: opacity .2s ease;
 
                     &::after {
                         content: '';
-                        display: inline-block;
+                        display: block;
                         position: absolute;
                         right: 2rem;
                         bottom: 2rem;
-                        width: 11rem;
+                        width: 8rem;
                         height: 3rem;
                         background: url(../img/script-img-4.png)center center no-repeat;
-                        background-size: cover;
+                        background-size: contain;
+                        animation: upDown 1s ease infinite alternate;
+
+                        /* media */
+                       @include mq('1026'){
+                            right: 5rem;
+                            width: 12rem;
+                            height: 5rem;
+                        }
                     }
 
                     h4 {
@@ -435,10 +575,6 @@
                         font-size: 2.5rem;
                         color: #fff;
                         white-space: nowrap;
-
-                        em {
-                            color: orange;
-                        }
                     }
 
                     dl {
@@ -448,7 +584,6 @@
                         margin: 0 0 1.5rem 0;
                         box-sizing: border-box;
                         color: #fff;
-                        white-space: nowrap;
                         border-bottom: .1rem solid #fff;
     
                         dt {
@@ -460,7 +595,6 @@
                                 weight: 600;
                             }
                         }
-    
                         dd {
                             font-size: 1.6rem;
                             display: flex;
