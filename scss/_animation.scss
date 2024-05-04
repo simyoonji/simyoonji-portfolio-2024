@@ -131,6 +131,14 @@
       transform: translateY(-1rem);
   }
 }
+@keyframes moveX {
+   0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-1rem);
+  }
+}
    
 @keyframes  banner{
    0% {

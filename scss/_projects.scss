@@ -22,7 +22,7 @@
     display: grid;
     grid-template-columns: repeat(1,1fr);
     row-gap: 15rem;
-    max-width: 120rem;
+    max-width: 124rem;
     margin: 0 auto;
    }
 
@@ -52,8 +52,8 @@
             position: absolute;
             right: 0;
             top: -3rem;
-            width: 6rem;
-            height: 7rem;
+            width: 5rem;
+            height: 7.5rem;
             background: url(../img/team-project-img-4.png)center center no-repeat;
             background-size: cover;
         }
@@ -76,7 +76,20 @@
                 margin: 0 2rem 0 0;
             }
             dd {
+                display: flex;
                 font-size: 1.8rem;
+                
+                a {
+                    margin: 0 0 0 1rem;
+                    color: $color-primary;
+                    text-decoration: underline;
+                    transition: transform .2s ease;
+
+                    &:hover {
+                        color: #1c1c1b;
+                        transform: translateY(5%);
+                    }
+                }
             }
         }
 
@@ -107,6 +120,21 @@
                     }
                 }
             }
+        }
+      }
+      .clone {
+        &::before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            left: 5.5rem;
+            bottom: 5rem;
+            width: 9rem;
+            height: 3rem;
+            background: url(../img/team-project-img-5.png)center center no-repeat;
+            background-size: cover;
+            opacity: .7;
+            animation: moveX 1s ease infinite alternate;
         }
       }
    }
@@ -154,7 +182,7 @@
                 right: 0;
                 top: -2rem;
                 width: 3rem;
-                height: 4rem;
+                height: 4.5rem;
                 background: url(../img/team-project-img-4.png)center center no-repeat;
                 background-size: cover;
                 transform: rotate(-26deg);
@@ -190,6 +218,19 @@
 
                     dd {
                         font-size: 1.6rem;
+                        display: flex;
+
+                        a {
+                            margin: 0 0 0 1rem;
+                            color: $color-primary;
+                            text-decoration: underline;
+                            transition: transform .2s ease;
+        
+                            &:hover {
+                                color: #1c1c1b;
+                                transform: translateY(5%);
+                            }
+                        }
                     }
                 }
 
@@ -226,7 +267,6 @@
 
 /* 공통 */
 .team-project, .personal {
-
     h4,dl,dt,dd,a {
         color: #1c1c1b;
     }
@@ -253,7 +293,7 @@
 
         li {
             position: relative;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             border: 1px solid #1c1c1b;
             transition: background-color .2s ease;
             box-shadow: inset 0 -.3rem 0 0 #444444;
@@ -261,7 +301,6 @@
 
             &:hover {
                 animation: bounce 0.5s linear;
-
                 a{
                     transform: scale(1.15);
                 }
@@ -269,9 +308,9 @@
             
             a {
                 display: block;
-                width: 13rem;
-                height: 4.5rem;
-                line-height: 4.5rem;
+                width: 10.5rem;
+                height: 4rem;
+                line-height: 4rem;
                 text-align: center;
                 transition: color .2s ease, transform .2s ease;
                 white-space: nowrap;
@@ -285,12 +324,41 @@
         .hide {
             display: none;
         }
-
     }
+    .redesing {
+        &::before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            left: 2rem;
+            bottom: -8rem;
+            width: 9rem;
+            height: 3rem;
+            background: url(../img/project-img-6.png)center center no-repeat;
+            background-size: cover;
+            opacity: .7;
+            animation: moveX 1s ease infinite alternate;
+        }
+    }
+    .clone2 {
+        &::before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            left: 2rem;
+            bottom: -8rem;
+            width: 9rem;
+            height: 3rem;
+            background: url(../img/team-project-img-5.png)center center no-repeat;
+            background-size: cover;
+            opacity: .7;
+            animation: moveX 1s ease infinite alternate;
+        }
+      }
 } 
 
-/* script */
 
+/* script */
 .script {
     padding: 0 0 15rem 0;
     box-sizing: border-box;
@@ -320,6 +388,7 @@
                 &:hover {
                     a {
                         visibility: visible;
+                        
                     }
                 }
                 
@@ -332,13 +401,71 @@
 
                 a {
                     visibility: hidden;
+                    display: flex;
+                    flex-direction: column;
                     position: absolute;
                     left: 0;
                     top: 0;
                     width: 100%;
                     height: 100%;
+                    padding: 4rem 5rem;
+                    box-sizing: border-box;
                     border-radius: 2rem;
-                    background-color: rgba(0, 0, 0, 0.8);
+                    background-color: rgba(0, 0, 0, 0.9);
+
+                    &::after {
+                        content: '';
+                        display: inline-block;
+                        position: absolute;
+                        right: 2rem;
+                        bottom: 2rem;
+                        width: 11rem;
+                        height: 3rem;
+                        background: url(../img/script-img-4.png)center center no-repeat;
+                        background-size: cover;
+                    }
+
+                    h4 {
+                        display: inline-block;
+                        text-align: center;
+                        padding: 0 0 .3rem 0;
+                        margin: 0 0 4rem 0;
+                        box-sizing: border-box;
+                        border-bottom: .1rem solid #fff;
+                        font-size: 2.5rem;
+                        color: #fff;
+                        white-space: nowrap;
+
+                        em {
+                            color: orange;
+                        }
+                    }
+
+                    dl {
+                        display: flex;
+                        align-items: center;
+                        padding: 0 0 1rem 0;
+                        margin: 0 0 1.5rem 0;
+                        box-sizing: border-box;
+                        color: #fff;
+                        white-space: nowrap;
+                        border-bottom: .1rem solid #fff;
+    
+                        dt {
+                            margin: 0 1rem 0 0;
+                            width: 5rem;
+    
+                            font : {
+                                size: 1.8rem;
+                                weight: 600;
+                            }
+                        }
+    
+                        dd {
+                            font-size: 1.6rem;
+                            display: flex;
+                        }
+                    }
                 }
             }
         }
