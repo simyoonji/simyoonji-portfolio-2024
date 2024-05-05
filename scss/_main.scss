@@ -22,6 +22,11 @@
          max-width: 124rem;
          height: 100%;
          margin: 0 auto;
+
+         @include mq ('767'){
+            max-width: none;
+            width: 100%;
+         }
      }
 
      /* title */
@@ -51,6 +56,10 @@
                height: 20rem;
                background: url(../img/main-title-img-2.png)center center no-repeat;
                background-size: contain;
+            }
+            @include mq ('767'){
+               max-width: 25rem;
+               height: 10rem;
             }
             
             &::after {  
@@ -94,6 +103,10 @@
             /* media */
             @include mq('1026'){
                max-width: 50rem;
+            }
+
+            @include mq ('767'){
+               max-width: 35rem;
             }
 
             img {

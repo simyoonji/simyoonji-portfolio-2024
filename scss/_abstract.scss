@@ -59,7 +59,13 @@ $color-normal: #1c1c1b;
     }
     @else if $screen-width == "480" {
         /* mobile */
-        @media screen and (max-width:480){
+        @media screen and (max-width:480px){
+            @content;
+        }
+    }
+    @else if $screen-width == "380" {
+        /* mobile */
+        @media screen and (max-width:380px){
             @content;
         }
     }

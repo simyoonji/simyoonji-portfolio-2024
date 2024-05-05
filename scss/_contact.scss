@@ -5,6 +5,15 @@
 
     h2 {
         text-align: center;
+
+        img {
+            @include mq ('767'){
+              max-width: 30rem;
+            }
+            @include mq ('480'){
+                max-width: 20rem;
+            }
+        }
     }
 
     p {
@@ -14,6 +23,11 @@
         font-size: 1rem;
         text-align: center;
         color: #989898;
+
+        @include mq ('480'){
+            padding: 1.5rem 0;
+            margin: 3rem 0 0 0;
+        }
     }
 }
 
@@ -22,7 +36,10 @@
         padding: 2rem;
         box-sizing: border-box;
         margin: 0 auto;
-        border-radius: 2rem;
+
+        @include mq ('767'){
+            padding: 2rem 1.5rem;
+        }
 
         ul {
             display: flex;
@@ -33,17 +50,38 @@
 
             /* media */
             @include mq('1026'){
+                flex-direction: column;
+                gap: 3rem;
                 margin: 3rem 0 0 0;
+            }
+            @include mq ('767'){
+                margin: 2rem 0 0 0;
+            }
+            @include mq ('480'){
+                margin: 1.5rem 0 0 0;
             }
 
             li {
                 text-align: center;
-                font-size: 2rem;
 
                 &:nth-of-type(1) {
-                    line-height: 4rem;
                     text-align: start;
+                    font-size: 2rem;
+                    line-height: 4rem;
                     color: $color-normal;
+
+                    /* media */
+                    @include mq('1026'){
+                        text-align: center;
+                    }
+                    @include mq ('767'){
+                        font-size: 1.6rem;
+                        line-height: 3rem;
+                    }
+                    @include mq ('480'){
+                        font-size: 1.4rem;
+                        line-height: 2.8rem;
+                    }
                 }
 
                 &:nth-of-type(2) {
@@ -52,7 +90,7 @@
                     text-align: left;
                 }
 
-                a {
+                a { 
                     display: flex;
                     align-items: center;
                     padding: 1.5rem;
@@ -61,6 +99,15 @@
                     border-radius: 2rem;
                     font-size: 1.5rem;
                     transition: box-shadow .2s ease;
+
+                    @include mq ('767'){
+                        font-size: 1.4rem;
+                    }
+                    @include mq ('480'){
+                        padding: 0rem;
+                        margin: 0 0rem 0 0;
+                        font-size: 1.2rem;
+                    }
 
                     span {
                         width: 3rem;
@@ -78,6 +125,7 @@
 
                     &:nth-of-type(1) {
                         margin: 0 0 1rem 0;
+                        
                         span {
                             background: url(../img/contact-img-4.png)center center no-repeat;
                             background-size: contain;

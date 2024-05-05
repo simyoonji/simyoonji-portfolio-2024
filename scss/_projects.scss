@@ -1,8 +1,9 @@
 //* banner */
 .banner{
-    width: 100vw;
+    width: 100%;
     height: 10rem;
     background: url(../img/banner-img.png)center center repeat-x;
+    background-size: cover;
     animation: banner 20s infinite linear alternate-reverse;
     overflow: hidden;
 
@@ -10,22 +11,40 @@
      @include mq('1026'){
         height: 8rem;
      }
+     /* media */
+     @include mq('767'){
+        height: 5rem;
+     }
+     @include mq('480'){
+        height: 4rem;
+     }
 }
 
 /* team project */
 .team-project {
-     /* media */
-     @include mq('1026'){
-        padding: 2rem;
-        box-sizing: border-box;
-     }
-
+    
    h2 {
     padding: 8rem 0 0 0;
 
     /* media */
     @include mq('1026'){
         padding: 5rem 0;
+     }
+    @include mq('767'){
+        padding: 3rem 0;
+    }
+    @include mq('480'){
+        padding: 0rem 0 2rem 0;
+    }
+
+     img {
+        /* media */
+        @include mq('767'){
+            max-width: 20rem;
+        }
+        @include mq('480'){
+            max-width: 15rem;
+        }
      }
    }
 
@@ -35,7 +54,11 @@
 
     /* media */
     @include mq('1026'){
-        padding: 0rem 0;
+        padding: 0rem 2rem;
+    }
+    /* media */
+    @include mq('767'){
+        padding: 0rem 1.5rem;
     }
    }
 
@@ -52,6 +75,10 @@
         width: 100%;
         row-gap: 5rem;
      }
+     /* media */
+    @include mq('767'){
+        row-gap: 3rem;
+    }
    }
 
    &-slide {
@@ -77,8 +104,18 @@
 
             /* media */
             @include mq('1026'){
-                width: 50rem;
-                height: 40rem;
+               max-width: 50rem;
+            }
+             /* media */
+            @include mq('767'){
+                max-width: 40rem;
+            }
+            @include mq('480'){
+                max-width: 30rem;
+            }
+            @include mq('380'){
+                max-width: none;
+                width: 100%;
             }
         }
     }
@@ -93,6 +130,13 @@
         background-color: #fff;
         box-shadow: 0 0 .8rem 0 #00000015;
 
+        @include mq('767'){
+            padding: 2rem 3rem;
+        }
+        @include mq('480'){
+            padding: 2rem 2rem;
+        }
+
         &::after {
             content: '';
             display: inline-block;
@@ -104,10 +148,20 @@
             background: url(../img/team-project-img-4.png)center center no-repeat;
             background-size: cover;
 
-           @include mq('1026'){
+           @include mq('1026') {
                 right: 1rem;
                 width: 4rem;
                 height: 6rem;
+            }
+            @include mq('767') {
+                width: 3rem;
+                height: 5em;
+            }
+            @include mq('480') {
+                right: 1.5rem;
+                top: -2rem;
+                width: 2.8rem;
+                height: 4.5em;
             }
         }
 
@@ -120,12 +174,20 @@
             align-items: center;
             margin: 0 0 2rem 0;
 
-           @include mq('1026'){
+            @include mq('1026'){
                 margin: 0 0 1.5rem 0;
+            }
+            @include mq('480'){
+                margin: 0 0 1rem 0;
+            }
+            @include mq('380'){
+                flex-direction: column;
+                align-items: start;
             }
     
             dt {
                 width: 6rem;
+
                 font : {
                     size: 2.5rem;
                     weight: 600;
@@ -136,6 +198,14 @@
                @include mq('1026'){
                     font-size: 1.8rem;
                 }
+                @include mq('767'){
+                    font-size: 1.6rem;
+                }
+                @include mq('480'){
+                    width: 4rem;
+                    margin: 0 .5rem 0 0;
+                    font-size: 1.5rem;
+                }
             }
             dd {
                 display: flex;
@@ -144,6 +214,9 @@
                  /* media */
                 @include mq('1026'){
                     font-size: 1.6rem;
+                }
+                @include mq('1026'){
+                    font-size: 1.4rem;
                 }
                 
                 a {
@@ -206,6 +279,17 @@
            @include mq('1026'){ 
                 bottom: 3rem;
             }
+            @include mq('767'){ 
+                width: 7rem;
+                height: 3rem;
+                bottom: 3rem;
+                background-size: contain;
+            }
+            @include mq('480') {
+                left: 3rem;
+                width: 6rem;
+                height: 3rem;
+            }
         }
       }
    }
@@ -221,6 +305,13 @@
    @include mq('1026'){
         padding: 5rem 2rem;
     }
+     /* media */
+    @include mq('767'){
+        padding: 3rem 2rem;
+    }
+    @include mq('480'){
+        padding: 2rem 1.5rem;
+    }
 
     h2 {
         padding: 0 0 8rem 0;
@@ -229,7 +320,22 @@
        @include mq('1026'){
             padding: 0 0 5rem 0;
         }
+            /* media */
+        @include mq('767'){
+            padding: 0 0 3rem 0;
+        }
+        @include mq('480'){
+            padding: 0 0 2rem 0;
+        }
 
+        img {
+            @include mq('767'){ 
+                max-width: 30rem;
+            }
+            @include mq('480'){
+                max-width: 23rem;
+            }
+        }
     }
     &-inner {
         padding: 0 2rem;
@@ -261,6 +367,10 @@
             box-sizing: border-box;
             background-color: #fff;
 
+            @include mq('480'){
+                padding: 1rem 2rem;
+            }
+
             &::after {
                 content: '';
                 display: inline-block;
@@ -275,8 +385,18 @@
                 z-index: 2;
 
                 /* media */
-               @include mq('1026'){
+               @include mq('1026') {
                     top: -3.5rem;
+                }
+                /* media */
+               @include mq('767') {
+                    right: 1rem;
+                    top: -3rem;
+                    width: 2.5rem;
+                    height: 4.5rem;
+                }
+                
+                @include mq('480'){
                 }
             }
 
@@ -287,6 +407,13 @@
                 font-size: 2.5rem;
                 border-bottom: .1rem solid $color-normal;
                 z-index: 0;
+
+                @include mq('767'){ 
+                    font-size: 2rem;
+                }
+                @include mq('480'){
+                    font-size: 1.8rem;
+                }
             }
 
             &-txt {
@@ -305,11 +432,22 @@
                             size: 1.8rem;
                             weight: 600;
                         }
+
+                        @include mq('767'){ 
+                            font-size: 1.6rem;
+                        }
+                        @include mq('480'){
+                            font-size: 1.5rem;
+                        }
                     }
 
                     dd {
                         font-size: 1.6rem;
                         display: flex;
+
+                        @include mq('767'){ 
+                            font-size: 1.4rem;
+                        }
 
                         a {
                             margin: 0 0 0 1rem;
@@ -321,17 +459,6 @@
                                 color: $color-normal;
                                 transform: translateY(5%);
                             }
-                        }
-                    }
-                }
-
-                ul {
-                    margin: 2rem 0 0 0;
-
-                    li {
-                        &::before {
-                            content: none;
-                            display: none;
                         }
                     }
                 }
@@ -349,6 +476,18 @@
                    @include mq('1026'){ 
                         bottom: -6rem;
                     }
+                    @include mq('767'){
+                        width: 7rem;
+                        height: 3rem;
+                    }
+                    @include mq('480'){
+                        bottom: -5.5rem;
+                        width: 6rem;
+                        height: 3rem;
+                    }
+                    @include mq('380'){
+                        bottom: -5rem;
+                    }
                 }
             }
         }
@@ -365,11 +504,14 @@
     
                 &:hover {
                     transform: scale(1.1);
+
+                    @include mq('767'){ 
+                        transform: scale(1.05);
+                    }
                 }
             }
         }
     }
-
     .redesing {
         &::before {
             background: url(../img/project-img-6.png)center center no-repeat;
@@ -379,11 +521,7 @@
     .clone2 {
         &::before {
             background: url(../img/team-project-img-5.png)center center no-repeat;
-            background-size: cover;
-
-           @include mq('1026'){ 
-                bottom: -6rem;
-            }
+            background-size: contain;
         }
     }
 }
@@ -409,6 +547,9 @@
              margin: 0 0 3rem 0;
              font-size: 2.5rem;
         }
+        @include mq('767'){
+            font-size: 2rem;
+       }
     }
 
     ul {
@@ -422,6 +563,12 @@
        @include mq('1026'){
             margin: 2rem 0 0 0;
         }
+        @include mq('767'){
+            margin: 1.5rem 0 0 0;
+        }
+        @include mq('480'){
+            margin: 1rem 0 0 0;
+        }
 
         li {
             position: relative;
@@ -433,6 +580,12 @@
 
            @include mq('1026'){
                 font-size: 1.4rem;
+            }
+            @include mq('767'){
+                font-size: 1.2rem;
+            }
+            @include mq('380'){
+                font-size: 1rem;
             }
 
             &:hover {
@@ -450,6 +603,17 @@
                 text-align: center;
                 transition: color .2s ease, transform .2s ease;
                 white-space: nowrap;
+
+                @include mq('480'){
+                    width: 9rem;
+                    height: 3.8rem;
+                    line-height: 3.8rem;
+                }
+                @include mq('380'){
+                    width: 7rem;
+                    height: 3rem;
+                    line-height: 3rem;
+                }
             }
 
             &:nth-of-type(1) {
@@ -469,9 +633,12 @@
     padding: 0 0 15rem 0;
     box-sizing: border-box;
 
-   @include mq('1026'){
+    @include mq('1026'){
         padding: 0 0 10rem 0;
      }
+    @include mq('480'){
+        padding: 0 0 8rem 0;
+    }
 
     h2 {
         padding: 0 0 8rem 0;
@@ -479,8 +646,23 @@
         text-align: center;
 
         
-       @include mq('1026'){
+        @include mq('1026') {
             padding: 0 0 5rem 0;
+        }
+        @include mq('767') {
+            padding: 0 0 3rem 0;
+        }
+        @include mq('480'){
+            padding: 0 0 2rem 0;
+        }
+
+        img {
+            @include mq('767') {
+              max-width: 20rem;
+            }
+            @include mq('480'){
+              max-width: 15rem;
+            }
         }
     }
 
@@ -493,29 +675,42 @@
        @include mq('1026'){
             padding: 0 2rem;
         }
+        @include mq('767'){
+            padding: 0 1.5rem;
+        }
 
         ul {
            display: grid;
            grid-template-columns: repeat(3,1fr);    
            gap: 3rem;
 
-           /* media */
-          @include mq('1026'){
+            /* media */
+            @include mq('1026'){
                 grid-template-columns: repeat(1,1fr);    
                 justify-items: center;
                 gap: 5rem;
+            }
+            @include mq('480'){
+                gap: 3rem;
             }
 
             li {
                 position: relative;
                 height: 35rem;
-                border-radius: 2rem;
                 box-shadow: 0 0 .8rem 0 #00000015;
 
                 /* media */
                @include mq('1026'){
                     max-width: 70rem;
                     height: 40rem;
+                }
+                @include mq('767'){
+                    max-width: 50rem;
+                    height: 30rem;
+                }
+                @include mq('480'){
+                    max-width: 40rem;
+                    height: 25rem;
                 }
 
                 &:hover {
@@ -527,7 +722,6 @@
                 img {
                     width: 100%;
                     height: 100%;
-                    border-radius: 2rem;
                     object-fit: cover;
                 }
 
@@ -541,10 +735,13 @@
                     height: 100%;
                     padding: 4rem 5rem;
                     box-sizing: border-box;
-                    border-radius: 2rem;
                     background-color: #fff;
                     opacity: 0;
                     transition: opacity .2s ease;
+
+                    @include mq('480'){
+                        padding: 2rem 2rem;
+                    }
 
                     &::after {
                         content: '';
@@ -564,18 +761,33 @@
                             width: 12rem;
                             height: 5rem;
                         }
+                        @include mq('767'){
+                            width: 10rem;
+                            height: 3rem;
+                        }
+                        @include mq('480'){
+                            right: 2rem;
+                            bottom: 0rem;
+                            width: 8rem;
+                            height: 3rem;
+                        }
                     }
 
                     h4 {
                         display: inline-block;
-                        text-align: center;
                         padding: 0 0 .3rem 0;
                         margin: 0 0 4rem 0;
                         box-sizing: border-box;
-                        border-bottom: .1rem solid $color-normal;
+                        text-align: center;
                         font-size: 2.5rem;
+                        border-bottom: .1rem solid $color-normal;
                         color: $color-normal;
                         white-space: nowrap;
+
+                        @include mq('767'){
+                            margin: 0 0 2rem 0;
+                            font-size: 2rem;
+                        }
                     }
 
                     dl {
@@ -586,6 +798,10 @@
                         box-sizing: border-box;
                         color: $color-normal;
                         border-bottom: .1rem solid $color-normal;
+
+                        @include mq('767'){
+                            margin: 0 0 1rem 0;
+                        }
     
                         dt {
                             margin: 0 1rem 0 0;
@@ -595,10 +811,18 @@
                                 size: 1.8rem;
                                 weight: 600;
                             }
+
+                            @include mq('767'){
+                                font-size: 1.6rem;
+                            }
                         }
                         dd {
                             font-size: 1.6rem;
                             display: flex;
+
+                            @include mq('767'){
+                                font-size: 1.4rem;
+                            }
                         }
                     }
                 }

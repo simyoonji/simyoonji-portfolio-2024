@@ -8,6 +8,10 @@
       padding: 5rem 2rem;
       box-sizing: border-box;
    }
+    /* media */
+    @include mq('767'){
+      padding: 3rem 1.5rem;
+   }
 
    &-inner {
       display: grid;
@@ -79,6 +83,13 @@
                   border-radius: 1rem;
                   box-shadow: none;
                }
+               /* media */
+               @include mq('767'){
+                  width: 20rem;
+               }
+               @include mq('480'){
+                  width: 15rem;
+               }
             }
          }
 
@@ -99,6 +110,13 @@
                   font-size: 3rem;
                   padding: 0 0 2rem 0;
                }
+                /* media */
+                @include mq('767'){
+                  font-size: 2.5rem;
+               }
+               @include mq('480'){
+                  padding: 0 0 1.8rem 0;
+               }
             }
       
             dl {
@@ -106,25 +124,32 @@
                align-items: center;
                white-space: nowrap;
                margin: 0 0 1rem 0;
-               font : {
-                  size: 2rem;
-                  weight: 600;
-               }
+               font-weight: 600;
 
                dt {
                   width: 6.2rem;
                   margin: 0 1.5rem 0 0;
+                  font-size: 2rem;
                   color: $color-primary;
 
                   @include mq('1026'){
-                     font : {
-                        size: 1.8rem;
-                     }
+                     font-size: 1.8rem;
                      margin: 0 1rem 0 0;
+                  }
+                  @include mq('767'){
+                     font-size: 1.6rem;
                   }
                }
                dd {
+                  font-size: 2rem;
                   color: $color-normal;
+
+                  @include mq('1026'){
+                     font-size: 1.8rem;
+                  }
+                  @include mq('767'){
+                     font-size: 1.4rem;
+                  }
 
                   &::before {
                      display: inline-block;
@@ -158,14 +183,29 @@
          -webkit-box-shadow: 0 0 .8rem 0 #00000015;
          -moz-box-shadow: 0 0 .8rem 0 #00000015;
       }
+      @include mq('767'){
+         padding: 5rem 3rem;
+         margin: 3rem 0 0 0;
+      }
+      @include mq('480'){
+         padding: 3rem 0rem;
+      }
 
       &-top {
          box-sizing: border-box;
          opacity: 0;
          transform: translateX(10%);
 
+         /* media */
          @include mq('1026'){
             margin: 0 0 2rem 0;
+         }
+         @include mq('767'){
+         }
+         @include mq('480'){
+            padding: 0 2rem;
+            margin: 0 0 1.5rem 0;
+            box-sizing: border-box;
          }
 
          p {
@@ -178,6 +218,14 @@
             }
             color: $color-primary;
             z-index: 1;
+
+            @include mq('767'){
+               font-size: 2.5rem;
+            }
+            @include mq('480'){
+               left: 1rem;
+               font-size: 2rem;
+            }
 
             &::before {
                content: '';
@@ -193,6 +241,13 @@
 
                @include mq('1026'){
                   top: -.5rem;
+               }
+               @include mq('767'){
+                  width: 1.5rem;
+                  height: 1.5rem;
+               }
+               @include mq('480'){
+                  display: none;
                }
             }
 
@@ -211,6 +266,14 @@
                @include mq('1026'){
                   bottom: 2.3rem;
                }
+               @include mq('767'){
+                  bottom: 2rem;
+                  width: 1.5rem;
+                  height: 1.5rem;
+               }
+               @include mq('480'){
+                  display: none;
+               }
             }
          }
       }
@@ -227,8 +290,13 @@
             padding: 2rem;
             box-sizing: border-box;
 
+            @include mq('480'){
+               padding: 1.5rem;
+            }
+
             dt {
                margin: 0 0 2rem 0;
+
                font : {
                   size: 2rem;
                   weight: 600;
@@ -236,23 +304,42 @@
                border-bottom: 2px solid $color-sub;
                color: $color-primary;
 
-               /* media */
-               @include mq('1026'){
-                  font : {
-                     size: 1.8rem;
-                  }
+               @include mq('767'){
+                  font-size: 1.8rem;
+               }
+               @include mq('480'){
+                  margin: 0 0 1.5rem 0;
+                  font-size: 1.6rem;
                }
             }
             
             dd {
+               display: flex;
+               align-items: center;
                padding: 1rem 0;
                box-sizing: border-box;
+               font-size: 1.6rem;
                color: #666666;
+
+               @include mq('1026'){
+                  font-size: 1.6rem;
+               }
+               @include mq('767'){
+                  font-size: 1.4rem;
+               }
 
                em {
                   margin: 0 2rem 0 0;
                   font-weight: 600;
                   color: $color-primary;
+                  font-size: 1.8rem;
+
+                  @include mq('767'){
+                     font-size: 1.6rem;
+                  }
+                  @include mq('480'){
+                     font-size: 1.5rem;
+                  }
                }
             }
          }
@@ -272,6 +359,18 @@
             @include mq('1026'){
                width: 3rem;
                height: 6rem;
+            }
+            @include mq('767'){
+               right: 0rem;
+               bottom: 0rem;
+               width: 3rem;
+               height: 4rem;
+            }
+            @include mq('480'){
+               right: 2rem;
+               bottom: -2rem;
+               width: 2.5rem;
+               height: 3.5rem;
             }
 
             &:hover {
@@ -299,6 +398,12 @@
                @include mq('1026'){
                   letter-spacing : .1rem;
                }
+               @include mq('767'){
+                  font-size: 1.1rem;
+               }
+               @include mq('480'){
+                  font-size: 1rem;
+               }
             }
           }
       }
@@ -316,6 +421,9 @@
          background-color: rgba(0, 0, 0, 0.8);
          z-index: 1000;
 
+         @include mq('480'){
+            
+         }
       }
 
       &-contents {
@@ -335,6 +443,11 @@
             height: 50rem;
             padding: 1.5rem;
             box-sizing: border-box;
+         }
+
+         @include mq('480'){
+            max-width: none;
+            width: 95%;
          }
       }
 
@@ -361,9 +474,11 @@
 
             /* media */
          @include mq('1026'){
-            font : {
-               size: 1.8rem;
-            }
+            font-size: 1.8rem;
+         }
+          /* media */
+          @include mq('767'){
+            font-size: 1.6rem;
          }
 
             &::after {
@@ -375,6 +490,11 @@
                width: 10rem;
                height: .1rem;
                background-color: #000;
+
+               /* media */
+               @include mq('1026'){
+                  width: 6rem;
+               }
             }
          }
 
@@ -385,6 +505,12 @@
              border-radius: .4rem;
              border: .2rem solid #444444;
              background-color: #ececec;
+
+            /* media */
+            @include mq('1026'){
+               width: 2rem;
+               height: 2rem;
+            }
 
              &::before, &::after {
                content: '';
@@ -412,9 +538,21 @@
          display: flex;
          flex-direction: column;
 
+         @include mq('480'){
+            justify-content: center;
+         }
+
          > div {
             margin: 0 0 2rem 0;
             text-align: center;
+
+            /* media */
+            @include mq('1026'){
+               margin: 0 0 1rem 0;
+            }
+            @include mq('480'){
+               display: none;
+            }
 
             span {
                position: relative;
@@ -422,6 +560,12 @@
                height: 22rem;
                background: url(../img/profile-img-3.png)center center no-repeat;
                background-size: cover;
+
+               /* media */
+               @include mq('1026'){
+                  width: 18rem;
+                  height: 16rem;
+               }
                
             &::after {
                content: '';
@@ -433,10 +577,17 @@
                background: url(../img/profile-img-4.png)center center no-repeat;
                background-size: cover;
                animation: Aptitude 1.6s forwards;
-            }
+
+                /* media */
+                @include mq('1026'){
+                  width: 14rem;
+                  height: 9.5rem;
+                  animation: none;
+                  opacity: .8;
+               }
             }
          }
-
+      }
              ul {
                display: grid;
                grid-template-columns: repeat(2,1fr);
@@ -445,14 +596,40 @@
                box-sizing: border-box;
                border-top: .2rem dashed #444444;
 
+               /* media */
+               @include mq('1026'){
+                  border-top: .1rem dashed #444444;
+               }
+
+               @include mq('480'){
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  gap: 1rem;
+                  padding: 1.5rem 0 0 0;
+               }
+
                li {
                   display: grid;
                   grid-template-columns: 20% 75%;
                   gap: 1rem;
                   align-items: center;
 
+                  @include mq('480'){
+                     display: flex;
+                     justify-content: space-around;
+                     align-items: center;
+                     padding: 0 1rem 0 0;
+                     box-sizing: border-box;
+                     gap: 1.5rem;
+                  }
+
                   img {
                      width: 100%;
+
+                     @include mq('480'){
+                        max-width: 4.3rem;
+                     }
                   }
 
                   p {
@@ -461,6 +638,13 @@
                      height: 1.5rem;
                      background-color: #fff;
                      box-shadow: 0 0 .5rem 0 #00000025;
+
+                     /* media */
+                     @include mq('1026'){
+                        height: 1rem;
+                     }
+                     @include mq('480'){
+                     }
 
                      &::before {
                         display: block;
@@ -475,6 +659,12 @@
                           text-transform: uppercase;
                           letter-spacing: .1rem;
                         color: #444444;
+
+                        /* media */
+                        @include mq('1026'){
+                           font-size: 1rem;
+                           letter-spacing: 0rem;
+                        }
                      }
 
                      &::after {
@@ -485,6 +675,11 @@
                         bottom: 0;
                         background-color: $color-primary;
                         height: 1.5rem;
+
+                        /* media */
+                        @include mq('1026'){
+                           height: 1rem;
+                        }
                      }
                   }
                }
