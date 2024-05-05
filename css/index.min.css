@@ -2197,21 +2197,6 @@ nav ul li a img {
     max-width: 20rem;
   }
 }
-#contact p {
-  padding: 2rem 0;
-  margin: 4rem 0 0 0;
-  box-sizing: border-box;
-  font-size: 1rem;
-  text-align: center;
-  color: #989898;
-  /* mobile */
-}
-@media screen and (max-width: 480px) {
-  #contact p {
-    padding: 1.5rem 0;
-    margin: 3rem 0 0 0;
-  }
-}
 
 .contact-inner {
   padding: 2rem;
@@ -2332,6 +2317,24 @@ nav ul li a img {
 .contact-inner ul li a:nth-of-type(2) span {
   background: url(../img/contact-img-5.png) center center no-repeat;
   background-size: contain;
+}
+.contact .copyright {
+  padding: 2rem 0;
+  margin: 4rem 0 0 0;
+  box-sizing: border-box;
+  font-size: 1rem;
+  text-align: center;
+  color: #989898;
+  /* mobile */
+}
+@media screen and (max-width: 480px) {
+  .contact .copyright {
+    padding: 1.5rem 0;
+    margin: 3rem 0 0 0;
+  }
+}
+.contact .w3c {
+  text-align: center;
 }
 
 @keyframes cloud {

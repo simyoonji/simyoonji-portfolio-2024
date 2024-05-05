@@ -15,20 +15,6 @@
             }
         }
     }
-
-    p {
-        padding: 2rem 0;
-        margin: 4rem 0 0 0;
-        box-sizing: border-box;
-        font-size: 1rem;
-        text-align: center;
-        color: #989898;
-
-        @include mq ('480'){
-            padding: 1.5rem 0;
-            margin: 3rem 0 0 0;
-        }
-    }
 }
 
 .contact {
@@ -140,5 +126,21 @@
                 }
             }
         }
+    }
+    .copyright {
+        padding: 2rem 0;
+        margin: 4rem 0 0 0;
+        box-sizing: border-box;
+        font-size: 1rem;
+        text-align: center;
+        color: #989898;
+
+        @include mq ('480'){
+            padding: 1.5rem 0;
+            margin: 3rem 0 0 0;
+        }
+    }
+    .w3c {
+        text-align: center;
     }
 }
