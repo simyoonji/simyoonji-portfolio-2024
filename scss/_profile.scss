@@ -412,7 +412,7 @@
    /* ability */
    .ability {
       &-modal {
-         visibility: hidden;
+         display: none;
          position: fixed;
          left: 0;
          top: 0;
@@ -420,10 +420,6 @@
          height: 100%;
          background-color: rgba(0, 0, 0, 0.8);
          z-index: 1000;
-
-         @include mq('480'){
-            
-         }
       }
 
       &-contents {
@@ -582,8 +578,8 @@
                 @include mq('1026'){
                   width: 14rem;
                   height: 9.5rem;
-                  animation: none;
                   opacity: .8;
+                  animation: none;
                }
             }
          }
@@ -766,6 +762,6 @@
          }
       }
    .block {
-      visibility: visible;
+      display: block;
    }
 }
