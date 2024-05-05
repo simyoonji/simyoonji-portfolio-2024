@@ -1,6 +1,6 @@
 // loading
 window.addEventListener('load', () => {
-    var loading = document.querySelector('.loading');
+    let loading = document.querySelector('.loading');
     loading.style.display = 'none';
 });
 
