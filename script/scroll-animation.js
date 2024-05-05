@@ -1,4 +1,4 @@
-const main = document.querySelector('#main');
+// profile area
 const profile = document.querySelector('#profile');
 const profileLeft = profile.querySelector('.profile-about ul');
 const profileTop = profile.querySelector('.profile-txt-top');
@@ -33,5 +33,29 @@ gsap.to(profileBt, {
 
 	scrollTrigger: {
 		trigger : profile
+	}
+});
+
+const contact = document.querySelector('#contact');
+const contactTxtLeft = contact.querySelector('ul li:nth-of-type(1)');
+const contactTxtRight = contact.querySelector('ul li:nth-of-type(2)');
+
+gsap.to(contactTxtLeft, {
+	duration: 2,
+	opacity : 1,
+    x : 0,
+
+	scrollTrigger: {
+		trigger : contact
+	}
+});
+
+gsap.to(contactTxtRight, {
+	duration: 2,
+	opacity : 1,
+    x : 0,
+
+	scrollTrigger: {
+		trigger : contact
 	}
 });

@@ -64,20 +64,6 @@ figcaption {
     display: none;
 }
 
-/* input x 지우기 */
-/* IE */
-input::-ms-clear,
-input::-ms-reveal {
-    display:none;
-}
-/* 크롬 */
-input::-webkit-search-decoration,
-input::-webkit-search-cancel-button,
-input::-webkit-search-results-button,
-input::-webkit-search-results-decoration {
-    display:none;
-}
-
 /* scroll */
 ::-webkit-scrollbar {
     width: 10px;

@@ -76,21 +76,6 @@ figcaption {
   display: none;
 }
 
-/* input x 지우기 */
-/* IE */
-input::-ms-clear,
-input::-ms-reveal {
-  display: none;
-}
-
-/* 크롬 */
-input::-webkit-search-decoration,
-input::-webkit-search-cancel-button,
-input::-webkit-search-results-button,
-input::-webkit-search-results-decoration {
-  display: none;
-}
-
 /* scroll */
 ::-webkit-scrollbar {
   width: 10px;
@@ -2245,6 +2230,8 @@ nav ul li a img {
   font-size: 2rem;
   line-height: 4rem;
   color: #1c1c1b;
+  transform: translateX(-10%);
+  opacity: 0;
   /* media */
   /* tablet */
   /* mobile */
@@ -2271,6 +2258,8 @@ nav ul li a img {
   display: flex;
   flex-direction: column;
   text-align: left;
+  transform: translateX(10%);
+  opacity: 0;
 }
 .contact-inner ul li a {
   display: flex;
@@ -2286,6 +2275,7 @@ nav ul li a img {
 }
 @media screen and (max-width: 767px) {
   .contact-inner ul li a {
+    padding: 0.5rem;
     font-size: 1.4rem;
   }
 }

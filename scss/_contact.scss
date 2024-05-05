@@ -55,6 +55,8 @@
                     font-size: 2rem;
                     line-height: 4rem;
                     color: $color-normal;
+                    transform: translateX(-10%);
+                    opacity: 0;
 
                     /* media */
                     @include mq('1026'){
@@ -74,6 +76,8 @@
                     display: flex;
                     flex-direction: column;
                     text-align: left;
+                    transform: translateX(10%);
+                    opacity: 0;
                 }
 
                 a { 
@@ -87,6 +91,7 @@
                     transition: box-shadow .2s ease;
 
                     @include mq ('767'){
+                        padding: .5rem;
                         font-size: 1.4rem;
                     }
                     @include mq ('480'){
