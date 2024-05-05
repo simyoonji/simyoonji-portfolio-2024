@@ -1,3 +1,9 @@
+// loading
+window.addEventListener('load', () => {
+    let loading = document.querySelector('.loading');
+    loading.style.display = 'none';
+});
+
 const mouse = document.querySelector('.mouse');
 const buttonAll = document.querySelectorAll('button');
 const aAll = document.querySelectorAll('a');

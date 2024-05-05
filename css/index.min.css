@@ -221,6 +221,24 @@ nav ul li a img {
   }
 }
 
+/* loading */
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
 .main {
   position: relative;
   width: 100%;
