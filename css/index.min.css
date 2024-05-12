@@ -1335,6 +1335,8 @@ nav ul li a img {
 }
 .team-project-slide figure img {
   width: 100%;
+  opacity: 0;
+  transform: translateY(50%);
   /* media */
   /* tablet */
   /* media */
@@ -2033,6 +2035,8 @@ nav ul li a img {
   position: relative;
   height: 35rem;
   box-shadow: 0 0 0.8rem 0 rgba(0, 0, 0, 0.0823529412);
+  opacity: 0;
+  transform: translateY(50%);
   /* media */
   /* tablet */
   /* mobile */

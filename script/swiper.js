@@ -7,8 +7,6 @@ const swiper = new Swiper('.swiper', {
       delay: 10000,
       disableOnInteraction: false, 
   },
-  loop: true, 
-  
   breakpoints: {
     
     320: {
