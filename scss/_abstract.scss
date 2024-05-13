@@ -4,14 +4,17 @@
     top: $rt;
 }
 @mixin clearFix(){
-    display: block;
 	content: '';
+    display: block;
 	clear: both;
 }
 @mixin textHide(){
-    line-height: 0;
-	font-size: 1;
-	overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    color: transparent;
 }
 
 // variables 

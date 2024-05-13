@@ -51,11 +51,11 @@
                 text-align: center;
 
                 &:nth-of-type(1) {
-                    text-align: start;
-                    font-size: 2rem;
+                    transform: translateX(-10%);
                     line-height: 4rem;
                     color: $color-normal;
-                    transform: translateX(-10%);
+                    font-size: 2rem;
+                    text-align: start;
                     opacity: 0;
 
                     /* media */
@@ -63,20 +63,20 @@
                         text-align: center;
                     }
                     @include mq ('767'){
-                        font-size: 1.6rem;
                         line-height: 3rem;
+                        font-size: 1.6rem;
                     }
                     @include mq ('480'){
-                        font-size: 1.4rem;
                         line-height: 2.8rem;
+                        font-size: 1.4rem;
                     }
                 }
 
                 &:nth-of-type(2) {
                     display: flex;
                     flex-direction: column;
-                    text-align: left;
                     transform: translateX(10%);
+                    text-align: left;
                     opacity: 0;
                 }
 
@@ -89,6 +89,9 @@
                     border-radius: 2rem;
                     font-size: 1.5rem;
                     transition: box-shadow .2s ease;
+                    -webkit-transition: box-shadow .2s ease;
+                    -moz-transition: box-shadow .2s ease;
+                    -o-transition: box-shadow .2s ease;
 
                     @include mq ('767'){
                         padding: .5rem;
@@ -99,7 +102,6 @@
                         margin: 0 0rem 0 0;
                         font-size: 1.2rem;
                     }
-
                     span {
                         width: 3rem;
                         height: 3rem;
@@ -108,7 +110,6 @@
 
                     &:hover {
                         text-decoration: underline;
-
                         span{
                             animation: bounce 0.5s linear;
                         }
@@ -136,9 +137,9 @@
         padding: 2rem 0;
         margin: 4rem 0 0 0;
         box-sizing: border-box;
+        color: #989898;
         font-size: 1rem;
         text-align: center;
-        color: #989898;
 
         @include mq ('480'){
             padding: 1.5rem 0;

@@ -72,10 +72,6 @@ p, dd {
   font-size: 1.6rem;
 }
 
-figcaption {
-  display: none;
-}
-
 /* scroll */
 ::-webkit-scrollbar {
   width: 10px;
@@ -215,9 +211,9 @@ nav ul li a {
   justify-content: center;
   width: 4rem;
   height: 4rem;
-  background-color: #fff;
-  box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.1882352941);
   border-radius: 50%;
+  box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.1882352941);
+  background-color: #fff;
   /* mobile */
 }
 @media screen and (max-width: 600px) {
@@ -249,8 +245,6 @@ nav ul li a img {
   background-attachment: fixed;
   animation: cloud 100s linear infinite alternate-reverse;
   overflow: hidden;
-  /* media */
-  /* tablet */
   /* title */
   /* island */
 }
@@ -399,10 +393,10 @@ nav ul li a img {
   }
 }
 .profile-about {
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
   /* tablet */
 }
 @media screen and (max-width: 1026px) {
@@ -411,15 +405,18 @@ nav ul li a img {
   }
 }
 .profile-about h2 {
-  line-height: 0;
-  font-size: 1;
-  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  color: transparent;
 }
 .profile-about ul {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   transform: translateX(-10%);
   opacity: 0;
   /* media */
@@ -503,22 +500,22 @@ nav ul li a img {
 .profile-about ul li:nth-of-type(2) dl {
   display: flex;
   align-items: center;
-  white-space: nowrap;
   margin: 0 0 1rem 0;
+  white-space: nowrap;
   font-weight: 600;
 }
 .profile-about ul li:nth-of-type(2) dl dt {
   width: 6.2rem;
   margin: 0 1.5rem 0 0;
-  font-size: 2rem;
   color: #74a9ec;
+  font-size: 2rem;
   /* tablet */
   /* mobile */
 }
 @media screen and (max-width: 1026px) {
   .profile-about ul li:nth-of-type(2) dl dt {
-    font-size: 1.8rem;
     margin: 0 1rem 0 0;
+    font-size: 1.8rem;
   }
 }
 @media screen and (max-width: 767px) {
@@ -527,8 +524,8 @@ nav ul li a img {
   }
 }
 .profile-about ul li:nth-of-type(2) dl dd {
-  font-size: 2rem;
   color: #1c1c1b;
+  font-size: 2rem;
   /* tablet */
   /* mobile */
 }
@@ -547,10 +544,10 @@ nav ul li a img {
   color: #74a9ec;
 }
 .profile-txt {
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  position: relative;
   padding: 5rem;
   box-sizing: border-box;
   box-shadow: 8px 1px 5px -3px rgba(2, 2, 2, 0.071) inset;
@@ -581,9 +578,9 @@ nav ul li a img {
   }
 }
 .profile-txt-top {
+  transform: translateX(10%);
   box-sizing: border-box;
   opacity: 0;
-  transform: translateX(10%);
   /* media */
   /* tablet */
   /* mobile */
@@ -629,10 +626,10 @@ nav ul li a img {
   position: absolute;
   left: -1.5rem;
   top: -1.5rem;
-  background: url(../img/profile-deco-img-1.png) center center no-repeat;
-  background-size: contain;
   width: 2rem;
   height: 2rem;
+  background: url(../img/profile-deco-img-1.png) center center no-repeat;
+  background-size: contain;
   z-index: -1;
   /* tablet */
   /* mobile */
@@ -660,10 +657,10 @@ nav ul li a img {
   position: absolute;
   right: -1rem;
   bottom: 3rem;
-  background: url(../img/profile-deco-img-2.png) center center no-repeat;
-  background-size: contain;
   width: 2rem;
   height: 2rem;
+  background: url(../img/profile-deco-img-2.png) center center no-repeat;
+  background-size: contain;
   z-index: -1;
   /* tablet */
   /* mobile */
@@ -690,9 +687,9 @@ nav ul li a img {
   display: flex;
   flex-direction: column;
   position: relative;
+  transform: translateX(10%);
   text-transform: uppercase;
   opacity: 0;
-  transform: translateX(10%);
 }
 .profile-txt-bottom dl {
   padding: 2rem;
@@ -706,10 +703,10 @@ nav ul li a img {
 }
 .profile-txt-bottom dl dt {
   margin: 0 0 2rem 0;
-  font-size: 2rem;
-  font-weight: 600;
   border-bottom: 2px solid #e2edff;
   color: #74a9ec;
+  font-size: 2rem;
+  font-weight: 600;
   /* mobile */
   /* mobile */
 }
@@ -729,8 +726,8 @@ nav ul li a img {
   align-items: center;
   padding: 1rem 0;
   box-sizing: border-box;
-  font-size: 1.6rem;
   color: #666666;
+  font-size: 1.6rem;
   /* tablet */
   /* mobile */
 }
@@ -746,8 +743,8 @@ nav ul li a img {
 }
 .profile-txt-bottom dl dd em {
   margin: 0 2rem 0 0;
-  font-weight: 600;
   color: #74a9ec;
+  font-weight: 600;
   font-size: 1.8rem;
   /* mobile */
   /* mobile */
@@ -809,12 +806,12 @@ nav ul li a img {
   left: 50%;
   bottom: 1rem;
   transform: translateX(-50%);
+  color: rgb(255, 196, 0);
   text-transform: uppercase;
   letter-spacing: 0.3rem;
   font-size: 1.4rem;
   font-weight: 700;
   font-style: italic;
-  color: rgb(255, 196, 0);
   background-color: #fafafa;
   /* media */
   /* tablet */
@@ -938,8 +935,8 @@ nav ul li a img {
   position: relative;
   width: 2.5rem;
   height: 2.5rem;
-  border-radius: 0.4rem;
   border: 0.2rem solid #444444;
+  border-radius: 0.4rem;
   background-color: #ececec;
   /* media */
   /* tablet */
@@ -969,10 +966,9 @@ nav ul li a img {
   transform: rotate(-45deg);
 }
 .profile .ability-inner {
-  position: relative;
   display: flex;
   flex-direction: column;
-  /* mobile */
+  position: relative;
 }
 .profile .ability-inner > div {
   display: flex;
@@ -1011,7 +1007,6 @@ nav ul li a img {
   border-top: 0.1rem dashed #444444;
   /* media */
   /* mobile */
-  /* mobile */
   /* before */
   /* after */
 }
@@ -1037,7 +1032,9 @@ nav ul li a img {
   }
 }
 .profile .ability-inner ul li figure {
+  position: relative;
   width: 100%;
+  overflow: hidden;
   /* mobile */
 }
 @media screen and (max-width: 600px) {
@@ -1046,9 +1043,12 @@ nav ul li a img {
   }
 }
 .profile .ability-inner ul li figure figcaption {
-  line-height: 0;
-  font-size: 1;
-  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  color: transparent;
 }
 .profile .ability-inner ul li figure img {
   width: 100%;
@@ -1063,8 +1063,8 @@ nav ul li a img {
   position: relative;
   width: 100%;
   height: 1.5rem;
-  background-color: #fff;
   box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.1450980392);
+  background-color: #fff;
   /* media */
   /* tablet */
 }
@@ -1077,12 +1077,12 @@ nav ul li a img {
   display: block;
   position: absolute;
   top: -1.6rem;
+  color: #444444;
   font-size: 1.2rem;
   font-weight: 600;
   font-family: "Nanum Myeongjo";
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  color: #444444;
   /* media */
   /* tablet */
 }
@@ -1098,8 +1098,8 @@ nav ul li a img {
   position: absolute;
   left: 0;
   bottom: 0;
-  background-color: #74a9ec;
   height: 1.5rem;
+  background-color: #74a9ec;
   /* media */
   /* tablet */
 }
@@ -1281,9 +1281,9 @@ nav ul li a img {
 }
 @media screen and (max-width: 1026px) {
   .team-project-wrapper {
+    row-gap: 5rem;
     max-width: none;
     width: 100%;
-    row-gap: 5rem;
   }
 }
 @media screen and (max-width: 767px) {
@@ -1310,11 +1310,20 @@ nav ul li a img {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+.team-project-slide figure figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  color: transparent;
 }
 .team-project-slide figure img {
+  transform: translateY(50%);
   width: 100%;
   opacity: 0;
-  transform: translateY(50%);
   /* media */
   /* tablet */
   /* media */
@@ -1350,8 +1359,8 @@ nav ul li a img {
   position: relative;
   padding: 2rem 5rem;
   box-sizing: border-box;
-  background-color: #fff;
   box-shadow: 0 0 0.8rem 0 rgba(0, 0, 0, 0.0823529412);
+  background-color: #fff;
   /* mobile */
   /* mobile */
 }
@@ -1476,10 +1485,13 @@ nav ul li a img {
   color: #74a9ec;
   text-decoration: underline;
   transition: transform 0.2s ease;
+  -webkit-transition: transform 0.2s ease;
+  -moz-transition: transform 0.2s ease;
+  -o-transition: transform 0.2s ease;
 }
 .team-project-slide-txt dl dd a:hover {
-  color: #1c1c1b;
   transform: translateY(5%);
+  color: #1c1c1b;
 }
 .team-project-slide-txt ul li::before {
   content: "";
@@ -1491,6 +1503,9 @@ nav ul li a img {
   border-radius: 50%;
   background-color: #74a9ec;
   transition: transform 0.5s ease-in-out, opacity 0.2s ease;
+  -webkit-transition: transform 0.5s ease-in-out, opacity 0.2s ease;
+  -moz-transition: transform 0.5s ease-in-out, opacity 0.2s ease;
+  -o-transition: transform 0.5s ease-in-out, opacity 0.2s ease;
   opacity: 0;
 }
 .team-project-slide-txt ul li:hover::before {
@@ -1498,8 +1513,8 @@ nav ul li a img {
   opacity: 1;
 }
 .team-project-slide-txt ul li:hover a {
-  color: #fff;
   transform: scale(1.15);
+  color: #fff;
 }
 .team-project-slide .clone::before {
   content: "";
@@ -1642,16 +1657,15 @@ nav ul li a img {
   position: absolute;
   right: 0;
   top: -2rem;
+  transform: rotate(-26deg);
   width: 3rem;
   height: 4.5rem;
   background: url(../img/team-project-img-4.png) center center no-repeat;
   background-size: cover;
-  transform: rotate(-26deg);
   z-index: 2;
   /* media */
   /* tablet */
   /* media */
-  /* mobile */
   /* mobile */
 }
 @media screen and (max-width: 1026px) {
@@ -1671,8 +1685,8 @@ nav ul li a img {
   padding: 0 0 0.5rem 0rem;
   margin: 0 0 2rem 0;
   box-sizing: border-box;
-  font-size: 2.5rem;
   border-bottom: 0.1rem solid #1c1c1b;
+  font-size: 2.5rem;
   z-index: 0;
   /* mobile */
   /* mobile */
@@ -1714,8 +1728,8 @@ nav ul li a img {
   }
 }
 .personal .swiper-left-txt dl dd {
-  font-size: 1.6rem;
   display: flex;
+  font-size: 1.6rem;
   /* mobile */
 }
 @media screen and (max-width: 767px) {
@@ -1728,10 +1742,13 @@ nav ul li a img {
   color: #74a9ec;
   text-decoration: underline;
   transition: transform 0.2s ease;
+  -webkit-transition: transform 0.2s ease;
+  -moz-transition: transform 0.2s ease;
+  -o-transition: transform 0.2s ease;
 }
 .personal .swiper-left-txt dl dd a:hover {
-  color: #1c1c1b;
   transform: translateY(5%);
+  color: #1c1c1b;
 }
 .personal .swiper-left-txt::before {
   content: "";
@@ -1772,14 +1789,26 @@ nav ul li a img {
   }
 }
 .personal .swiper figure {
-  overflow: hidden;
+  position: relative;
   padding: 1rem;
   box-sizing: border-box;
   background-color: #fff;
+  overflow: hidden;
+}
+.personal .swiper figure figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  color: transparent;
 }
 .personal .swiper figure img {
   width: 100%;
   transition: transform 0.2s ease;
+  -webkit-transition: transform 0.2s ease;
+  -moz-transition: transform 0.2s ease;
+  -o-transition: transform 0.2s ease;
 }
 .personal .swiper figure img:hover {
   transform: scale(1.1);
@@ -1804,15 +1833,15 @@ nav ul li a img {
   color: #1c1c1b;
 }
 .team-project h2, .personal h2 {
-  text-align: center;
   box-sizing: border-box;
+  text-align: center;
 }
 .team-project h4, .personal h4 {
   padding: 0 0 1rem 0;
   margin: 0 0 4rem 0;
   box-sizing: border-box;
-  font-size: 3rem;
   border-bottom: 1px solid #1c1c1b;
+  font-size: 3rem;
   /* tablet */
   /* mobile */
 }
@@ -1830,8 +1859,8 @@ nav ul li a img {
 .team-project ul, .personal ul {
   display: flex;
   justify-content: end;
-  margin: 4rem 0 0 0;
   padding: 0 0 1rem 0;
+  margin: 4rem 0 0 0;
   box-sizing: border-box;
   border-bottom: 1px solid #1c1c1b;
   /* tablet */
@@ -1855,10 +1884,13 @@ nav ul li a img {
 }
 .team-project ul li, .personal ul li {
   position: relative;
-  font-size: 1.6rem;
   border: 1px solid #1c1c1b;
-  transition: background-color 0.2s ease;
+  font-size: 1.6rem;
   box-shadow: inset 0 -0.3rem 0 0 #444444;
+  transition: background-color 0.2s ease;
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  -o-transition: background-color 0.2s ease;
   overflow: hidden;
   /* tablet */
   /* mobile */
@@ -1891,8 +1923,11 @@ nav ul li a img {
   height: 4rem;
   line-height: 4rem;
   text-align: center;
-  transition: color 0.2s ease, transform 0.2s ease;
   white-space: nowrap;
+  transition: color 0.2s ease, transform 0.2s ease;
+  -webkit-transition: color 0.2s ease, transform 0.2s ease;
+  -moz-transition: color 0.2s ease, transform 0.2s ease;
+  -o-transition: color 0.2s ease, transform 0.2s ease;
   /* mobile */
   /* mobile */
 }
@@ -2012,9 +2047,9 @@ nav ul li a img {
 .script-inner ul li {
   position: relative;
   height: 35rem;
+  transform: translateY(50%);
   box-shadow: 0 0 0.8rem 0 rgba(0, 0, 0, 0.0823529412);
   opacity: 0;
-  transform: translateY(50%);
   /* media */
   /* tablet */
   /* mobile */
@@ -2059,6 +2094,9 @@ nav ul li a img {
   background-color: #fff;
   opacity: 0;
   transition: opacity 0.2s ease;
+  -webkit-transition: opacity 0.2s ease;
+  -moz-transition: opacity 0.2s ease;
+  -o-transition: opacity 0.2s ease;
   /* mobile */
 }
 @media screen and (max-width: 480px) {
@@ -2108,10 +2146,10 @@ nav ul li a img {
   padding: 0 0 0.3rem 0;
   margin: 0 0 4rem 0;
   box-sizing: border-box;
-  text-align: center;
-  font-size: 2.5rem;
   border-bottom: 0.1rem solid #1c1c1b;
   color: #1c1c1b;
+  font-size: 2.5rem;
+  text-align: center;
   white-space: nowrap;
   /* mobile */
 }
@@ -2127,8 +2165,8 @@ nav ul li a img {
   padding: 0 0 1rem 0;
   margin: 0 0 1.5rem 0;
   box-sizing: border-box;
-  color: #1c1c1b;
   border-bottom: 0.1rem solid #1c1c1b;
+  color: #1c1c1b;
   /* mobile */
 }
 @media screen and (max-width: 767px) {
@@ -2137,8 +2175,8 @@ nav ul li a img {
   }
 }
 .script-inner ul li a dl dt {
-  margin: 0 1rem 0 0;
   width: 5rem;
+  margin: 0 1rem 0 0;
   font-size: 1.8rem;
   font-weight: 600;
   /* mobile */
@@ -2225,11 +2263,11 @@ nav ul li a img {
   text-align: center;
 }
 .contact-inner ul li:nth-of-type(1) {
-  text-align: start;
-  font-size: 2rem;
+  transform: translateX(-10%);
   line-height: 4rem;
   color: #1c1c1b;
-  transform: translateX(-10%);
+  font-size: 2rem;
+  text-align: start;
   opacity: 0;
   /* media */
   /* tablet */
@@ -2243,21 +2281,21 @@ nav ul li a img {
 }
 @media screen and (max-width: 767px) {
   .contact-inner ul li:nth-of-type(1) {
-    font-size: 1.6rem;
     line-height: 3rem;
+    font-size: 1.6rem;
   }
 }
 @media screen and (max-width: 480px) {
   .contact-inner ul li:nth-of-type(1) {
-    font-size: 1.4rem;
     line-height: 2.8rem;
+    font-size: 1.4rem;
   }
 }
 .contact-inner ul li:nth-of-type(2) {
   display: flex;
   flex-direction: column;
-  text-align: left;
   transform: translateX(10%);
+  text-align: left;
   opacity: 0;
 }
 .contact-inner ul li a {
@@ -2269,6 +2307,9 @@ nav ul li a img {
   border-radius: 2rem;
   font-size: 1.5rem;
   transition: box-shadow 0.2s ease;
+  -webkit-transition: box-shadow 0.2s ease;
+  -moz-transition: box-shadow 0.2s ease;
+  -o-transition: box-shadow 0.2s ease;
   /* mobile */
   /* mobile */
 }
@@ -2311,9 +2352,9 @@ nav ul li a img {
   padding: 2rem 0;
   margin: 4rem 0 0 0;
   box-sizing: border-box;
+  color: #989898;
   font-size: 1rem;
   text-align: center;
-  color: #989898;
   /* mobile */
 }
 @media screen and (max-width: 480px) {

@@ -33,10 +33,10 @@
    }
    
    &-about {
-      position: relative;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      position: relative;
 
       @include mq('1026'){
          box-shadow: 0 0 .8rem 0 #00000015;
@@ -47,10 +47,10 @@
    }
 
    ul {
-      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: relative;
       transform: translateX(-10%);
       opacity: 0;
 
@@ -122,27 +122,27 @@
             dl {
                display: flex;
                align-items: center;
-               white-space: nowrap;
                margin: 0 0 1rem 0;
+               white-space: nowrap;
                font-weight: 600;
 
                dt {
                   width: 6.2rem;
                   margin: 0 1.5rem 0 0;
-                  font-size: 2rem;
                   color: $color-primary;
+                  font-size: 2rem;
 
                   @include mq('1026'){
-                     font-size: 1.8rem;
                      margin: 0 1rem 0 0;
+                     font-size: 1.8rem;
                   }
                   @include mq('767'){
                      font-size: 1.6rem;
                   }
                }
                dd {
-                  font-size: 2rem;
                   color: $color-normal;
+                  font-size: 2rem;
 
                   @include mq('1026'){
                      font-size: 1.8rem;
@@ -164,10 +164,10 @@
 
    /* profile-txt */
    &-txt {
-      position: relative;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
+      position: relative;
       padding: 5rem;
       box : {
          sizing: border-box;
@@ -190,11 +190,10 @@
       @include mq('480'){
          padding: 3rem 0rem;
       }
-
       &-top {
+         transform: translateX(10%);
          box-sizing: border-box;
          opacity: 0;
-         transform: translateX(10%);
 
          /* media */
          @include mq('1026'){
@@ -233,10 +232,10 @@
                position: absolute;
                left: -1.5rem;
                top: -1.5rem;
-               background: url(../img/profile-deco-img-1.png)center center no-repeat;
-               background-size: contain;
                width: 2rem;
                height: 2rem;
+               background: url(../img/profile-deco-img-1.png)center center no-repeat;
+               background-size: contain;
                z-index: -1;
 
                @include mq('1026'){
@@ -257,10 +256,10 @@
                position: absolute;
                right: -1rem;
                bottom: 3rem;
-               background: url(../img/profile-deco-img-2.png)center center no-repeat;
-               background-size: contain;
                width: 2rem;
                height: 2rem;
+               background: url(../img/profile-deco-img-2.png)center center no-repeat;
+               background-size: contain;
                z-index: -1;
 
                @include mq('1026'){
@@ -282,9 +281,9 @@
          display: flex;
          flex-direction: column;
          position: relative;
+         transform: translateX(10%);
          text-transform: uppercase;
          opacity: 0;
-         transform: translateX(10%);
 
          dl {
             padding: 2rem;
@@ -293,17 +292,14 @@
             @include mq('480'){
                padding: 1.5rem;
             }
-
             dt {
                margin: 0 0 2rem 0;
-
+               border-bottom: 2px solid $color-sub;
+               color: $color-primary;
                font : {
                   size: 2rem;
                   weight: 600;
                }
-               border-bottom: 2px solid $color-sub;
-               color: $color-primary;
-
                @include mq('767'){
                   font-size: 1.8rem;
                }
@@ -318,8 +314,8 @@
                align-items: center;
                padding: 1rem 0;
                box-sizing: border-box;
-               font-size: 1.6rem;
                color: #666666;
+               font-size: 1.6rem;
 
                @include mq('1026'){
                   font-size: 1.6rem;
@@ -330,8 +326,8 @@
 
                em {
                   margin: 0 2rem 0 0;
-                  font-weight: 600;
                   color: $color-primary;
+                  font-weight: 600;
                   font-size: 1.8rem;
 
                   @include mq('767'){
@@ -372,11 +368,9 @@
                width: 2.5rem;
                height: 3.5rem;
             }
-
             &:hover {
                animation: none;
             }
-
             &::before {
                content: 'ability';
                display: inline-block;
@@ -384,6 +378,7 @@
                left: 50%;
                bottom: 1rem;
                transform: translateX(-50%);
+               color: rgb(255, 196, 0);
                text-transform: uppercase;
                letter-spacing : .3rem;
                font : {
@@ -391,7 +386,6 @@
                   weight : 700;
                   style : italic;
                }
-               color: rgb(255, 196, 0);
                background-color: #fafafa;
 
                /* media */
@@ -501,8 +495,8 @@
              position: relative;
              width: 2.5rem;
              height: 2.5rem;
-             border-radius: .4rem;
              border: .2rem solid #444444;
+             border-radius: .4rem;
              background-color: #ececec;
 
             /* media */
@@ -533,12 +527,9 @@
          }
       }
       &-inner {
-         position: relative;
          display: flex;
          flex-direction: column;
-
-         @include mq('600') {
-         }
+         position: relative;
 
          > div {
             display: flex;
@@ -555,8 +546,8 @@
 
                /* media */
                @include mq('600'){
-                   width: 14rem;
-                   height: 14rem;
+                  width: 14rem;
+                  height: 14rem;
                }
                @include mq('380') {
                   width: 12rem;
@@ -577,9 +568,6 @@
                   grid-template-columns: repeat(1,1fr);
                   gap: .5rem;
                }
-               @include mq('480'){
-               }
-
                li {
                   display: grid;
                   grid-template-columns: 20% 75%;
@@ -594,7 +582,9 @@
                   }
 
                   figure {
+                     position: relative;
                      width: 100%;
+                     overflow: hidden;
 
                      @include mq('600'){ 
                         text-align: center
@@ -617,8 +607,8 @@
                      position: relative;
                      width: 100%;
                      height: 1.5rem;
-                     background-color: #fff;
                      box-shadow: 0 0 .5rem 0 #00000025;
+                     background-color: #fff;
 
                      /* media */
                      @include mq('1026'){
@@ -629,7 +619,7 @@
                         display: block;
                         position: absolute;
                         top: -1.6rem;
-
+                        color: #444444;
                         font : {
                            size: 1.2rem;
                            weight : 600;
@@ -637,7 +627,6 @@
                           }
                           text-transform: uppercase;
                           letter-spacing: .1rem;
-                        color: #444444;
 
                         /* media */
                         @include mq('1026'){
@@ -652,8 +641,8 @@
                         position: absolute;
                         left: 0;
                         bottom: 0;
-                        background-color: $color-primary;
                         height: 1.5rem;
+                        background-color: $color-primary;
 
                         /* media */
                         @include mq('1026'){

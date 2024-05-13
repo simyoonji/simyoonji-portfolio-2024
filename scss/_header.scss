@@ -17,13 +17,10 @@ nav {
     @include mq('600'){
         right: 1rem;
     }
-
-
     ul {
         display: grid;
         grid-template-columns: repeat(1fr,1);
         gap: 1.5rem;
-
         /* media */
         @include mq('1026'){
             grid-template-columns: repeat(4,1fr);
@@ -31,8 +28,6 @@ nav {
         @include mq('600'){
             gap: .8rem;
         }
-
-
         li {
             position: relative;
             z-index: 998;
@@ -47,9 +42,9 @@ nav {
                 justify-content: center;
                 width: 4rem;
                 height: 4rem;
-                background-color: #fff;
-                box-shadow: 0 0 .5rem 0 #00000030;
                 border-radius: 50%;
+                box-shadow: 0 0 .5rem 0 #00000030;
+                background-color: #fff;
 
                 @include mq('600'){
                     width: 2.8rem;

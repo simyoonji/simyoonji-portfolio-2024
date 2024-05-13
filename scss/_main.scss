@@ -10,11 +10,7 @@
     };
     animation: cloud 100s linear infinite alternate-reverse;
     overflow: hidden;
-
-     /* media */
-    @include mq('1026'){
-     }
-
+    
      &-inner {
          display: flex;
          flex-direction: column;
