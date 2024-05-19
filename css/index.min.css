@@ -2298,6 +2298,7 @@ nav ul li a img {
   display: flex;
   flex-direction: column;
   transform: translateX(10%);
+  margin: 0 0 1rem 0;
   text-align: left;
   opacity: 0;
 }
@@ -2340,15 +2341,17 @@ nav ul li a img {
 .contact-inner ul li a:hover span {
   animation: bounce 0.5s linear;
 }
-.contact-inner ul li a:nth-of-type(1) {
-  margin: 0 0 1rem 0;
-}
 .contact-inner ul li a:nth-of-type(1) span {
-  background: url(../img/contact-img-4.png) center center no-repeat;
+  background: url(../img/contact-img-5.png) center center no-repeat;
   background-size: contain;
 }
 .contact-inner ul li a:nth-of-type(2) span {
-  background: url(../img/contact-img-5.png) center center no-repeat;
+  background: url(../img/contact-img-4.png) center center no-repeat;
+  background-size: contain;
+}
+.contact-inner ul li a:nth-of-type(3) span {
+  border-radius: 0.5rem;
+  background: url(../img/contact-img-6.webp) center center no-repeat;
   background-size: contain;
 }
 .contact .copyright {

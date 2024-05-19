@@ -76,6 +76,7 @@
                     display: flex;
                     flex-direction: column;
                     transform: translateX(10%);
+                    margin: 0 0 1rem 0;
                     text-align: left;
                     opacity: 0;
                 }
@@ -116,16 +117,21 @@
                     }
 
                     &:nth-of-type(1) {
-                        margin: 0 0 1rem 0;
-                        
                         span {
-                            background: url(../img/contact-img-4.png)center center no-repeat;
+                            background: url(../img/contact-img-5.png)center center no-repeat;
                             background-size: contain;
                         }
                     }
                     &:nth-of-type(2) {
                         span {
-                            background: url(../img/contact-img-5.png)center center no-repeat;
+                            background: url(../img/contact-img-4.png)center center no-repeat;
+                            background-size: contain;
+                        }
+                    }
+                    &:nth-of-type(3) {
+                        span {
+                            border-radius: .5rem;
+                            background: url(../img/contact-img-6.webp)center center no-repeat;
                             background-size: contain;
                         }
                     }
